@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="個人経営のカフェ・飲食店向け1ページWebサイトテンプレート。コンセプト、メニュー、アクセス、予約フォームを掲載できます。">
+  <title>Cafe Hinata | 街角の小さなカフェ</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="cafe-styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#hero" aria-label="Cafe Hinata ホーム">
+        <span class="brand-mark">H</span>
+        <span class="brand-text">
+          <span class="brand-name">Cafe Hinata</span>
+          <span class="brand-sub">Coffee & Lunch</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="ページ内ナビゲーション">
+        <a href="#concept">Concept</a>
+        <a href="#menu">Menu</a>
+        <a href="#access">Access</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="hero" aria-label="ファーストビュー">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="section-kicker">Fresh Coffee, Homemade Lunch</p>
+        <h1><span>いつもの街に、</span><span>ほっとする一杯を。</span></h1>
+        <p class="hero-lead">
+          自家焙煎コーヒーと季節のランチを、木漏れ日のように落ち着く空間で。
+        </p>
+        <div class="hero-actions" aria-label="主要リンク">
+          <a class="button button-primary" href="#menu">おすすめメニューを見る</a>
+          <a class="button button-secondary" href="#contact">予約する</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-info" aria-label="基本情報">
+      <div class="quick-info-inner">
+        <dl>
+          <div>
+            <dt>本日の営業</dt>
+            <dd>11:00 - 19:00</dd>
+          </div>
+          <div>
+            <dt>定休日</dt>
+            <dd>水曜日</dd>
+          </div>
+          <div>
+            <dt>最寄り</dt>
+            <dd>ひなた駅 徒歩4分</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section concept-section" id="concept">
+      <div class="section-inner concept-layout">
+        <div class="concept-copy">
+          <p class="section-kicker">Concept</p>
+          <h2>日々の小さな休憩が、<br>少し特別になる場所。</h2>
+          <p>
+            Cafe Hinataは、地元の食材と丁寧に淹れるコーヒーを大切にした小さなカフェです。
+            朝の一杯、友人とのランチ、仕事帰りの甘い時間まで、気取らず立ち寄れる場所でありたいと考えています。
+          </p>
+          <p>
+            焙煎度の異なる豆を日替わりでご用意し、ランチは旬の野菜を使ったプレートを中心に。
+            ひと皿ごとに、つくり手の温度が伝わるようなメニューをお届けします。
+          </p>
+        </div>
+
+        <div class="concept-image-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=85"
+            alt="木のテーブルに置かれたコーヒーと焼き菓子"
+            class="concept-image"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="section-kicker">Menu</p>
+          <h2>おすすめメニュー</h2>
+          <p>
+            写真と説明文を差し替えるだけで、お店らしさが伝わるカード型レイアウトです。
+          </p>
+        </div>
+
+        <div class="menu-grid" aria-label="おすすめメニュー一覧">
+          <article class="menu-card">
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85"
+              alt="カップに注がれたホットコーヒー"
+            >
+            <div class="menu-card-body">
+              <div class="menu-card-heading">
+                <h3>ハンドドリップコーヒー</h3>
+                <span class="price">¥580</span>
+              </div>
+              <p>香りの余韻を楽しめる、店主おすすめの日替わりブレンド。</p>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img
+              src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=85"
+              alt="彩り豊かな野菜のランチプレート"
+            >
+            <div class="menu-card-body">
+              <div class="menu-card-heading">
+                <h3>季節野菜のランチプレート</h3>
+                <span class="price">¥1,280</span>
+              </div>
+              <p>旬の野菜と自家製デリを少しずつ楽しめる、満足感のある一皿。</p>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img
+              src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85"
+              alt="ベリーを添えたチーズケーキ"
+            >
+            <div class="menu-card-body">
+              <div class="menu-card-heading">
+                <h3>自家製チーズケーキ</h3>
+                <span class="price">¥620</span>
+              </div>
+              <p>なめらかな口どけとほどよい酸味。コーヒーとの相性も抜群です。</p>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img
+              src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=85"
+              alt="グラスに入ったアイスラテ"
+            >
+            <div class="menu-card-body">
+              <div class="menu-card-heading">
+                <h3>自家製シロップのアイスラテ</h3>
+                <span class="price">¥650</span>
+              </div>
+              <p>やさしい甘さのシロップを合わせた、午後に飲みたい一杯。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section access-section" id="access">
+      <div class="section-inner">
+        <div class="section-heading access-heading">
+          <p class="section-kicker">Access</p>
+          <h2>アクセス・店舗情報</h2>
+          <p>初めての方にも迷わず来ていただけるよう、必要な情報をまとめています。</p>
+        </div>
+
+        <div class="access-layout">
+          <div class="shop-info" aria-label="店舗情報">
+            <dl class="info-list">
+              <div>
+                <dt>営業時間</dt>
+                <dd>11:00 - 19:00<br><span>ランチ 11:30 - 14:30</span></dd>
+              </div>
+              <div>
+                <dt>定休日</dt>
+                <dd>水曜日・第2火曜日</dd>
+              </div>
+              <div>
+                <dt>住所</dt>
+                <dd>〒100-0000 東京都ひなた区青葉町1-2-3</dd>
+              </div>
+              <div>
+                <dt>電話番号</dt>
+                <dd><a href="tel:0312345678">03-1234-5678</a></dd>
+              </div>
+              <div>
+                <dt>席数</dt>
+                <dd>18席 / ベビーカー入店可</dd>
+              </div>
+              <div>
+                <dt>支払い</dt>
+                <dd>現金・各種キャッシュレス決済</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="map-wrap">
+            <iframe
+              title="Cafe Hinata周辺のGoogleマップ"
+              src="https://www.google.com/maps?q=Tokyo%20Station&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-inner contact-layout">
+        <div class="contact-copy">
+          <p class="section-kicker">Contact</p>
+          <h2>ご予約・お問い合わせ</h2>
+          <p>
+            席のご予約、貸切、ケータリングのご相談など、お気軽にお問い合わせください。
+            返信には1〜2営業日ほどいただく場合があります。
+          </p>
+          <div class="contact-call">
+            <span>お急ぎの方</span>
+            <a href="tel:0312345678">03-1234-5678</a>
+          </div>
+        </div>
+
+        <form class="contact-form" action="#" method="post">
+          <div class="form-row">
+            <label for="name">お名前</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="form-row">
+            <label for="phone">電話番号</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+
+          <div class="form-row form-row-split">
+            <div>
+              <label for="date">希望日</label>
+              <input type="date" id="date" name="date">
+            </div>
+            <div>
+              <label for="people">人数</label>
+              <select id="people" name="people">
+                <option value="">選択してください</option>
+                <option value="1">1名</option>
+                <option value="2">2名</option>
+                <option value="3-4">3〜4名</option>
+                <option value="5-8">5〜8名</option>
+                <option value="private">貸切相談</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="message">お問い合わせ内容</label>
+            <textarea id="message" name="message" rows="5" placeholder="ご希望の時間帯やご相談内容をご記入ください。"></textarea>
+          </div>
+
+          <button class="button button-primary form-button" type="submit">送信する</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="#hero">Cafe Hinata</a>
+
+      <ul class="social-links" aria-label="SNSリンク">
+        <li>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.6.4-1 1-1Z"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 4l16 16M20 4 4 20"></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <p class="copyright">&copy; 2026 Cafe Hinata. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
