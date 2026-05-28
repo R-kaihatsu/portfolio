@@ -857,6 +857,80 @@ a {
   }
 }
 
+@media (max-width: 768px) {
+  .site-header__nav {
+    font-size: 0.875rem;
+  }
+
+  .about,
+  .services,
+  .contact {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .about {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .services,
+  .contact {
+    min-height: auto;
+  }
+
+  .services {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .contact {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .services__grid--initial,
+  .services__grid--monthly,
+  .services__details {
+    grid-template-columns: 1fr;
+  }
+
+  .services__grid,
+  .services__details {
+    gap: 16px;
+  }
+
+  .service-card__badge,
+  .service-card__price,
+  .service-card__text,
+  .services-detail__lead,
+  .services-detail__list li {
+    font-size: 0.875rem;
+  }
+
+  .services-accordion__summary {
+    min-height: 44px;
+    font-size: 1rem;
+  }
+
+  .contact__input,
+  .contact__select {
+    min-height: 44px;
+    font-size: 1rem;
+  }
+
+  .contact__textarea {
+    min-height: 7.5rem;
+    font-size: 1rem;
+  }
+
+  .contact__button {
+    min-height: 48px;
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 520px) {
   .site-header__nav {
     display: grid;
