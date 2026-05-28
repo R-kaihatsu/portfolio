@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>一番に頼れるWeb制作パートナー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="site-header">
+        <a class="site-header__logo" href="#" aria-label="ホームへ戻る">菊中R Web Design</a>
+        <nav class="site-header__nav" aria-label="主要ナビゲーション">
+          <a class="site-header__link" href="#">ホーム</a>
+          <a class="site-header__link" href="#about">私の強み</a>
+          <a class="site-header__link" href="#services">サービス内容</a>
+          <a class="site-header__link" href="#contact">お問い合わせ</a>
+        </nav>
+      </header>
+
+      <section class="hero" aria-label="Web制作ポートフォリオのファーストビュー">
+        <section class="hero__panel hero__panel--primary">
+          <div class="hero__ink-edge" aria-hidden="true"></div>
+
+          <div class="hero__content">
+            <h1 class="hero__title">一番に頼れる存在へ。</h1>
+            <p class="hero__lead">
+              対話力と論理的思考で、ビジネスを止めないWeb制作
+            </p>
+            <div class="creator-card" aria-label="制作者情報">
+              <p class="creator-card__name">Web制作者：菊中R</p>
+              <div class="creator-card__socials" aria-label="SNSリンク">
+                <a
+                  class="creator-card__link"
+                  href="https://x.com/rkiuuxy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Xを見る"
+                >
+                  <svg class="creator-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 4h4.1l3.6 5.2L17.3 4H21l-6.5 7.4L22 20h-4.1l-4.2-6-5.2 6H4.8l7.1-8.1L5 4Z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <a class="hero__button" href="#">まずは無料で相談する</a>
+          </div>
+
+          <footer class="hero__footer">
+            <a class="hero__scroll" href="#about" aria-label="私の強みセクションへスクロール">
+              <span class="hero__scroll-mark" aria-hidden="true">↓</span>
+              Scroll
+            </a>
+          </footer>
+        </section>
+
+        <section class="hero__panel hero__panel--canvas" aria-hidden="true"></section>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="about__inner">
+          <div class="about__icon" aria-hidden="true">
+            <svg class="about__icon-svg" viewBox="0 0 24 24">
+              <path d="M12 2.5 19 5v5.6c0 4.5-2.8 8.6-7 10.1-4.2-1.5-7-5.6-7-10.1V5l7-2.5Z" />
+              <path d="m9.1 11.9 2 2 4.1-4.4" />
+            </svg>
+          </div>
+          <h2 class="about__title" id="about-title">私の強み（About）</h2>
+          <div class="about__body">
+            <p>
+              はじめまして。私はエンジニアとしての「論理的思考力」と、顧客対応のプロとしての「対話力」を掛け合わせた、安心できるWeb制作を提供しています。
+            </p>
+            <p>
+              ユーザーを迷わせない「直感的なUI設計」への強いこだわりと、裏側の複雑な処理を紐解くプログラミングスキルで培った、要件を正確に形にする開発力。
+              そして、日々多くのお客様の声を聴き、トラブルを冷静に鎮火してきた実務経験。
+            </p>
+            <p>
+              Web制作において多くの方が抱える「作って終わりになったらどうしよう」「トラブルが起きたら誰に聞けばいいか分からない」という不安を、この2つの力で解決します。
+            </p>
+            <p>
+              スマートで美しいデザインの構築から、公開後の安定した保守・運用まで。「とりあえず丸投げして安心できる」パートナーとして、依頼者のビジネスに力添えをします。
+            </p>
+            <p class="about__signature">Web制作者：菊中R</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="services" aria-labelledby="services-title">
+        <div class="services__inner">
+          <h2 class="services__title" id="services-title">
+            サービス内容・料金（Services）
+          </h2>
+
+          <div class="services__block">
+            <h3 class="services__heading">初期制作プラン</h3>
+            <div class="services__grid services__grid--initial">
+              <article class="service-card service-card--featured">
+                <div class="service-card__header">
+                  <p class="service-card__badge">人気No.1・おすすめ</p>
+                  <h4 class="service-card__title">保守セットプラン</h4>
+                </div>
+                <p class="service-card__price">
+                  初期制作費: <span>58,000円</span>（税別）
+                </p>
+                <p class="service-card__text">
+                  制作後の面倒なサーバー管理やトラブル対応を、すべて当方にお任せいただけるプランです。
+                </p>
+              </article>
+
+              <article class="service-card">
+                <div class="service-card__header">
+                  <p class="service-card__badge service-card__badge--muted">買い切り</p>
+                  <h4 class="service-card__title">制作のみプラン</h4>
+                </div>
+                <p class="service-card__price">
+                  初期制作費: <span>120,000円</span>（税別）
+                </p>
+                <p class="service-card__text">
+                  お客様ご自身のサーバーにWebサイトを構築し、納品後に手を引くプランです。
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="services__block">
+            <h3 class="services__heading">保守・運用プラン</h3>
+            <div class="services__grid services__grid--monthly">
+              <article class="service-card">
+                <div class="service-card__header">
+                  <p class="service-card__badge service-card__badge--muted">梅</p>
+                  <h4 class="service-card__title">ライトプラン</h4>
+                </div>
+                <p class="service-card__price">
+                  月額: <span>6,980円</span>（税込）
+                </p>
+                <p class="service-card__text">
+                  「とりあえずサイトを安全に維持したい」という方向けの現状維持プラン
+                </p>
+              </article>
+
+              <article class="service-card service-card--featured">
+                <div class="service-card__header">
+                  <p class="service-card__badge">竹</p>
+                  <h4 class="service-card__title">スタンダードプラン</h4>
+                </div>
+                <p class="service-card__price">
+                  月額: <span>9,800円</span>（税込）
+                </p>
+                <p class="service-card__text">
+                  「季節ごとにお知らせや画像を更新して、お店を活気づけたい」方向け
+                </p>
+              </article>
+
+              <article class="service-card">
+                <div class="service-card__header">
+                  <p class="service-card__badge service-card__badge--muted">松</p>
+                  <h4 class="service-card__title">プレミアムプラン</h4>
+                </div>
+                <p class="service-card__price">
+                  月額: <span>14,800円</span>（税込）
+                </p>
+                <p class="service-card__text">
+                  「Webのことは何も分からないから、全部丸投げしたい」方向け
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact__inner">
+          <h2 class="contact__title" id="contact-title">お問い合わせ（Contact）</h2>
+          <p class="contact__lead">
+            Web制作に関するご相談や、料金のお見積りなど、まずはお気軽にお問い合わせください。24時間以内にご返信いたします。
+          </p>
+
+          <form class="contact__form" action="" method="post">
+            <div class="contact__field">
+              <label class="contact__label" for="name">お名前</label>
+              <input class="contact__input" id="name" name="name" type="text" />
+            </div>
+
+            <div class="contact__field">
+              <label class="contact__label" for="email">メールアドレス</label>
+              <input class="contact__input" id="email" name="email" type="email" />
+            </div>
+
+            <div class="contact__field">
+              <label class="contact__label" for="subject">お問い合わせの種類</label>
+              <select class="contact__select" id="subject" name="subject" required>
+                <option value="" disabled selected>お問い合わせ内容を選択してください</option>
+                <option value="Web制作のご依頼・お見積り">Web制作のご依頼・お見積り</option>
+                <option value="保守管理・運用のご相談">保守管理・運用のご相談</option>
+                <option value="既存サイトのリニューアル">既存サイトのリニューアル</option>
+                <option value="まずは話を聞いてみたい／その他">まずは話を聞いてみたい／その他</option>
+              </select>
+            </div>
+
+            <div class="contact__field">
+              <label class="contact__label" for="message">ご相談内容</label>
+              <textarea class="contact__textarea" id="message" name="message" rows="5"></textarea>
+            </div>
+
+            <button class="contact__button" type="submit">無料で相談する</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
