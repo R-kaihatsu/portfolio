@@ -185,6 +185,10 @@ a {
   line-height: 1.85;
 }
 
+.hero__lead span {
+  display: inline-block;
+}
+
 .creator-card {
   display: flex;
   align-items: center;
@@ -859,7 +863,25 @@ a {
 
 @media (max-width: 768px) {
   .site-header__nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 16px;
+    overflow-x: auto;
+    width: 100%;
     font-size: 0.875rem;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-header__nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-header__link {
+    flex: 0 0 auto;
   }
 
   .about,
@@ -933,9 +955,8 @@ a {
 
 @media (max-width: 520px) {
   .site-header__nav {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 0.35rem;
+    display: flex;
+    gap: 16px;
   }
 
   .hero__title {
