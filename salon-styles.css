@@ -793,6 +793,10 @@ svg {
 }
 
 @media (max-width: 768px) {
+  html {
+    scroll-snap-type: none;
+  }
+
   body {
     padding-bottom: 0;
   }
@@ -805,27 +809,48 @@ svg {
     height: var(--header-height);
   }
 
+  #hero,
+  #concept,
+  #gallery,
+  #menu,
+  .hero,
+  .concept,
   .gallery,
   .menu {
-    padding: 68px 0 86px;
+    min-height: auto;
+    display: block;
+    align-items: stretch;
+    padding: 80px 0;
+    scroll-snap-align: none;
   }
 
-  .menu {
-    padding: 60px 0 68px;
+  .hero {
+    padding: 0;
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.46)),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.42));
+  }
+
+  .hero__content {
+    width: min(calc(100% - 36px), 640px);
+    padding: 118px 0 90px;
   }
 
   .gallery .section__heading,
   .menu .section__heading {
-    margin-bottom: 20px;
+    margin-bottom: 28px;
   }
 
   .menu .section__heading {
-    margin-bottom: 12px;
+    margin-bottom: 18px;
   }
 
   .menu .section-cta {
-    gap: 8px;
-    margin-top: 12px;
+    gap: 10px;
+    margin-top: 18px;
   }
 
   .menu .section-cta p {
@@ -855,8 +880,10 @@ svg {
   }
 
   .hero__title {
-    max-width: 620px;
+    max-width: 360px;
     margin: 0 auto;
+    font-size: 1.68rem;
+    line-height: 1.6;
   }
 
   .hero__title span {
@@ -867,6 +894,15 @@ svg {
     max-width: 640px;
   }
 
+  .menu .section__inner {
+    width: 100%;
+  }
+
+  .gallery__grid {
+    padding: 0 5%;
+    scroll-padding-inline: 5%;
+  }
+
   .style-card {
     flex-basis: var(--gallery-card-width);
     width: var(--gallery-card-width);
@@ -875,8 +911,11 @@ svg {
   }
 
   .menu__panel {
-    max-height: calc(100vh - 445px);
-    overflow-y: auto;
+    width: 90%;
+    max-height: none;
+    margin: 0 auto;
+    padding: 24px;
+    overflow: visible;
     scrollbar-width: none;
   }
 
@@ -885,11 +924,28 @@ svg {
   }
 
   .menu__item {
-    gap: 8px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 10px;
+    padding: 12px 0;
   }
 
   .menu__item dt {
-    max-width: 13em;
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: none;
+    white-space: normal;
+    line-height: 1.6;
+  }
+
+  .menu__leader {
+    flex: 1 1 32px;
+    min-width: 24px;
+  }
+
+  .menu__price {
+    flex: 0 0 auto;
   }
 
   .footer__inner {
@@ -909,7 +965,8 @@ svg {
   }
 
   .hero__title {
-    font-size: 1.86rem;
+    font-size: 1.52rem;
+    line-height: 1.62;
   }
 
   .hero__copy {
@@ -945,7 +1002,7 @@ svg {
 
   .menu__panel {
     gap: 14px;
-    padding: 16px 15px;
+    padding: 22px 18px;
   }
 
   .menu__item dt,
