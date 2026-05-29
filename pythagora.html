@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pythagora Portfolio</title>
+  <link rel="stylesheet" href="pythagora.css">
+</head>
+<body>
+  <div class="start-screen">
+    <button class="start-button" type="button" aria-label="ページ構築アニメーションを開始する">
+      <span>START</span>
+    </button>
+  </div>
+
+  <div class="machine" aria-hidden="true">
+    <div class="rail rail-1"></div>
+    <div class="rail rail-2"></div>
+    <div class="rail rail-3"></div>
+    <div class="rail rail-4"></div>
+    <div class="rail rail-5"></div>
+
+    <i class="domino domino-1"></i>
+    <i class="domino domino-2"></i>
+    <i class="domino domino-3"></i>
+    <i class="domino domino-4"></i>
+    <i class="domino domino-5"></i>
+    <i class="domino domino-6"></i>
+
+    <i class="impact impact-header"></i>
+    <i class="impact impact-image"></i>
+    <i class="impact impact-text"></i>
+    <i class="impact impact-cards"></i>
+    <i class="impact impact-finish"></i>
+
+    <div class="ball"></div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Pythagora Portfolio home">
+      <span class="brand-mark">P</span>
+      <span>Pythagora Portfolio</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top" class="page">
+    <section id="about" class="hero">
+      <div class="hero-copy">
+        <p class="kicker">Rube Goldberg Motion Design</p>
+        <h1 class="stagger-title" aria-label="Motion Craft Portfolio">
+          <span style="--d:0s">M</span>
+          <span style="--d:0.045s">o</span>
+          <span style="--d:0.09s">t</span>
+          <span style="--d:0.135s">i</span>
+          <span style="--d:0.18s">o</span>
+          <span style="--d:0.225s">n</span>
+          <span class="gap" aria-hidden="true"></span>
+          <span style="--d:0.27s">C</span>
+          <span style="--d:0.315s">r</span>
+          <span style="--d:0.36s">a</span>
+          <span style="--d:0.405s">f</span>
+          <span style="--d:0.45s">t</span>
+          <span class="gap" aria-hidden="true"></span>
+          <span style="--d:0.495s">P</span>
+          <span style="--d:0.54s">o</span>
+          <span style="--d:0.585s">r</span>
+          <span style="--d:0.63s">t</span>
+          <span style="--d:0.675s">f</span>
+          <span style="--d:0.72s">o</span>
+          <span style="--d:0.765s">l</span>
+          <span style="--d:0.81s">i</span>
+          <span style="--d:0.855s">o</span>
+        </h1>
+        <p class="lead">
+          小さなボールがページを走り、衝突のたびに情報が組み上がる。
+          最後には落ち着いて読める、普通に操作できるポートフォリオが完成します。
+        </p>
+        <div class="meta-list">
+          <span>CSS Timeline</span>
+          <span>Precise Delays</span>
+          <span>Calm Final UX</span>
+        </div>
+      </div>
+
+      <figure class="visual-card">
+        <div class="portrait-art" role="img" aria-label="抽象的なポートフォリオ画像"></div>
+        <figcaption>
+          <strong>Designer / Frontend Experimenter</strong>
+          <span>Building quiet pages through theatrical CSS.</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="works" class="portfolio-grid" aria-label="Selected works">
+      <article class="work-card work-1">
+        <span class="work-number">01</span>
+        <h2>Corporate Site</h2>
+        <p>信頼感のある企業サイト設計。情報の優先順位と読みやすさを丁寧に整えます。</p>
+      </article>
+      <article class="work-card work-2">
+        <span class="work-number">02</span>
+        <h2>Portfolio UI</h2>
+        <p>制作実績と人物像が自然に伝わる、軽やかな1ページ構成を設計します。</p>
+      </article>
+      <article id="contact" class="contact-card">
+        <span class="work-number">03</span>
+        <h2>Contact</h2>
+        <p>アニメーション完了後は、普通のボタンとして気持ちよくクリックできます。</p>
+        <a class="contact-button" href="mailto:hello@example.com">
+          お問い合わせ
+        </a>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    document.querySelector('.start-button').addEventListener('click', () => document.body.classList.add('is-active'));
+  </script>
+</body>
+</html>
