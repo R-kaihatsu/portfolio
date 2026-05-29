@@ -13,7 +13,16 @@
   --header-height: 68px;
 }
 
-* {
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -1081,23 +1090,55 @@ svg {
 
   #concept .section__inner,
   #concept .concept__grid {
-    width: min(calc(100% - 36px), 640px) !important;
+    width: 100% !important;
+    max-width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     grid-template-columns: 1fr !important;
     align-items: stretch !important;
     gap: 28px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
   }
 
   #concept .concept__photo {
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     aspect-ratio: 4 / 5 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  #concept .concept__photo img,
+  #concept img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
   }
 
   #concept .concept__body {
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  #concept .concept__body,
+  #concept .concept__body *,
+  #concept .section__title,
+  #concept .section__title span,
+  #concept .concept__lead,
+  #concept p {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+
+  #concept .section__title span {
+    display: inline !important;
   }
 
   #concept .section__title,
