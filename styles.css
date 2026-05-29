@@ -145,8 +145,8 @@ h3,
 }
 
 .hero-visuals__mockup,
-.hero-visuals__code,
-.hero-visuals__hp {
+.hero-visuals__seo,
+.hero-visuals__booking {
   position: absolute;
   z-index: 10;
   opacity: 1;
@@ -199,11 +199,13 @@ h3,
 .hero-mockup__eyebrow,
 .hero-mockup__tag,
 .hero-mockup__button,
-.hero-code-card__file,
-.hero-code-card__code,
-.hero-hp-card__label,
-.hero-hp-card__value,
-.hero-hp-card__stats {
+.hero-seo-card__query,
+.hero-seo-card__badge,
+.hero-seo-card__text,
+.hero-booking-card__label,
+.hero-booking-card__title,
+.hero-booking-card__meta,
+.hero-booking-card__button {
   font-family: var(--font-display);
 }
 
@@ -284,66 +286,86 @@ h3,
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
-.hero-code-card {
+.hero-seo-card {
   top: 11%;
   left: 3%;
   z-index: 13;
   width: min(46%, 17.5rem);
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 0.9rem;
+  border: 1px solid rgba(10, 17, 40, 0.08);
   border-radius: 1rem;
-  color: var(--color-white);
-  background: rgba(10, 17, 40, 0.94);
-  box-shadow: 0 1.5rem 3.5rem rgba(10, 17, 40, 0.28);
-  backdrop-filter: blur(16px);
+  color: var(--color-navy);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 1.5rem 3.5rem rgba(10, 17, 40, 0.16);
+  backdrop-filter: blur(18px);
   animation: heroFloatCode 6.8s ease-in-out infinite;
 }
 
-.hero-code-card__top {
+.hero-seo-card__search {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  padding: 0.72rem 0.85rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.04);
+  min-height: 2.6rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid rgba(10, 17, 40, 0.08);
+  border-radius: 999px;
+  background: #f7f8fb;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.82);
 }
 
-.hero-code-card__dot {
-  width: 0.58rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--color-accent);
-  box-shadow:
-    0 0 0 0.32rem rgba(244, 200, 106, 0.13),
-    1.05rem 0 0 rgba(255, 255, 255, 0.2),
-    2.1rem 0 0 rgba(255, 255, 255, 0.12);
+.hero-seo-card__icon {
+  flex: 0 0 auto;
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: var(--color-navy);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
 }
 
-.hero-code-card__file {
-  margin: 0 0 0 2.35rem;
-  color: rgba(255, 255, 255, 0.74);
-  font-size: 0.72rem;
-  font-weight: 700;
+.hero-seo-card__query {
+  color: rgba(10, 17, 40, 0.78);
+  font-size: clamp(0.78rem, 0.9vw, 0.9rem);
+  font-weight: 800;
   line-height: 1.2;
   letter-spacing: 0.05em;
 }
 
-.hero-code-card__code {
-  margin: 0;
-  padding: 0.9rem 0.95rem 1rem;
-  color: #d7e2ff;
-  font-size: clamp(0.66rem, 0.78vw, 0.78rem);
-  font-weight: 600;
-  line-height: 1.65;
-  letter-spacing: 0.01em;
-  white-space: pre-wrap;
+.hero-seo-card__result {
+  margin-top: 0.75rem;
+  padding: 0.85rem;
+  border-radius: 0.8rem;
+  background:
+    linear-gradient(135deg, rgba(244, 200, 106, 0.24), transparent 58%),
+    #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(10, 17, 40, 0.06);
 }
 
-.code-token--key {
-  color: #f4c86a;
+.hero-seo-card__badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.8rem;
+  padding: 0.35rem 0.62rem;
+  border-radius: 999px;
+  color: var(--color-navy);
+  font-size: clamp(0.74rem, 0.86vw, 0.86rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  background: var(--color-accent);
 }
 
-.hero-hp-card {
+.hero-seo-card__text {
+  margin: 0.55rem 0 0;
+  color: rgba(10, 17, 40, 0.68);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+}
+
+.hero-booking-card {
   right: 4%;
   bottom: 12%;
   z-index: 14;
@@ -351,21 +373,44 @@ h3,
   padding: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.58);
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.74);
+  background: rgba(255, 255, 255, 0.84);
   box-shadow: 0 1.6rem 3.5rem rgba(10, 17, 40, 0.2);
   backdrop-filter: blur(18px);
   animation: heroFloatHp 6.2s ease-in-out 0.35s infinite;
 }
 
-.hero-hp-card__top,
-.hero-hp-card__stats {
+.hero-booking-card__top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 0.75rem;
 }
 
-.hero-hp-card__label {
+.hero-booking-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2.65rem;
+  aspect-ratio: 1;
+  border-radius: 0.8rem;
+  color: var(--color-navy);
+  background: var(--color-accent);
+  box-shadow: 0 0.75rem 1.6rem rgba(244, 200, 106, 0.32);
+}
+
+.hero-booking-card__icon svg,
+.hero-booking-card__meta svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.hero-booking-card__label {
+  margin: 0 0 0.2rem;
   color: rgba(10, 17, 40, 0.58);
   font-size: 0.68rem;
   font-weight: 800;
@@ -373,39 +418,46 @@ h3,
   letter-spacing: 0.09em;
 }
 
-.hero-hp-card__value {
+.hero-booking-card__title {
+  display: block;
   color: var(--color-navy);
-  font-size: 0.95rem;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+.hero-booking-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.95rem 0 0.8rem;
+  color: rgba(10, 17, 40, 0.62);
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.04em;
+}
+
+.hero-booking-card__meta svg {
+  flex: 0 0 auto;
+  color: rgba(10, 17, 40, 0.58);
+}
+
+.hero-booking-card__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.65rem;
+  border-radius: 999px;
+  color: var(--color-navy);
+  font-size: 0.9rem;
   font-weight: 800;
   line-height: 1.2;
-  letter-spacing: 0.04em;
-}
-
-.hero-hp-card__bar {
-  height: 0.8rem;
-  margin: 0.85rem 0 0.7rem;
-  overflow: hidden;
-  border-radius: 999px;
-  background: rgba(10, 17, 40, 0.12);
-}
-
-.hero-hp-card__bar span {
-  display: block;
-  width: 86%;
-  height: 100%;
-  border-radius: inherit;
-  background:
-    linear-gradient(90deg, #7de3a6, #f4c86a 78%),
-    var(--color-accent);
-  box-shadow: 0 0 1.2rem rgba(244, 200, 106, 0.5);
-}
-
-.hero-hp-card__stats {
-  color: rgba(10, 17, 40, 0.62);
-  font-size: 0.72rem;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  background: var(--color-accent);
+  box-shadow: 0 0.95rem 1.8rem rgba(244, 200, 106, 0.34);
 }
 
 @keyframes heroFloatMockup {
