@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -77,17 +77,16 @@
           <h2 class="about__title" id="about-title">私の強み（About）</h2>
           <div class="about__body">
             <p>
-              はじめまして。私はエンジニアとしてのWeb設計と、顧客対応のプロとしての「対話力」を掛け合わせた、安心できるWebを提供しています。
+              はじめまして、菊中Rです。個人店のWebサイト制作と、公開後に困った時すぐ相談できる保守を行っています。派手な言葉より、きちんと動き続けること、分からないことをそのままにしないことを大切にしています。
             </p>
             <p>
-              ユーザーを迷わせない「直感的なUI設計」への強いこだわりと、裏側の複雑な処理を紐解くプログラミングスキルで培った、要件を正確に形にする開発力。
-              そして、日々多くのお客様の声を聴き、トラブルを冷静に鎮火してきた実務経験。
+              HTML/CSSでは、スマホで迷わず予約・問い合わせへ進める画面を組みます。余白、文字サイズ、ボタンの押しやすさまで、店舗のお客様が実際に触る場面から逆算して調整します。
             </p>
             <p>
-              Web制作において多くの方が抱える「作って終わりになったらどうしよう」「トラブルが起きたら誰に聞けばいいか分からない」という不安を、この2つの力で解決します。
+              UnityのCanvasを用いたゲームUI設計、C#によるプレイヤーパーティの戦闘システム構築、HPゲージ更新、状態管理など、画面に見える部分と裏側のロジックをつなぐ開発にも対応できます。
             </p>
             <p>
-              スマートで美しいデザインの構築から、公開後の安定した保守・運用まで。「とりあえず丸投げして安心できる」パートナーとして、依頼者のビジネスに力添えをします。
+              制作前の整理、公開後の修正相談、トラブル時の切り分けまで、Webに詳しくない方にも状況が分かる言葉で進めます。「作って終わり」ではなく、必要な時に声をかけられる制作パートナーとして支えます。
             </p>
             <p class="about__signature">Web制作者：菊中R</p>
           </div>
@@ -98,7 +97,7 @@
         <div class="works__inner">
           <h2 class="works__title" id="works-title">制作実績（Works）</h2>
           <p class="works__lead">
-            個人店舗の魅力が伝わるWebサイトから、今後はC# / UnityでのUI・システム開発まで。見た目だけでなく、安心して使い続けられる設計を大切にしています。
+            店舗サイトは「雰囲気が伝わること」と「迷わず問い合わせできること」を両立させます。今後はUnity / C#で組んだゲームUIや戦闘ロジックの実装実績も、ここに追加していきます。
           </p>
 
           <div class="works__grid">
@@ -108,6 +107,9 @@
               </div>
               <div class="work-card__body">
                 <h3 class="work-card__title">カフェ向けWebサイト</h3>
+                <p class="work-card__text">
+                  小さなカフェの空気感とメニューの見やすさを両立。営業時間、場所、おすすめが来店前にすぐ分かる導線を意識しています。
+                </p>
                 <a class="work-card__button" href="cafe-template.html">サイトを見る</a>
               </div>
             </article>
@@ -118,6 +120,9 @@
               </div>
               <div class="work-card__body">
                 <h3 class="work-card__title">サロン向けWebサイト</h3>
+                <p class="work-card__text">
+                  予約前の不安を減らすため、施術メニューと雰囲気が伝わる落ち着いたUIに。スマホで読み進めやすい余白にしています。
+                </p>
                 <a class="work-card__button" href="salon-template.html">サイトを見る</a>
               </div>
             </article>
@@ -128,6 +133,9 @@
               </div>
               <div class="work-card__body">
                 <h3 class="work-card__title">コーポレートサイト</h3>
+                <p class="work-card__text">
+                  信頼感を優先した構成。事業内容、強み、問い合わせまでを迷わず追えるBtoB向けの情報設計です。
+                </p>
                 <a class="work-card__button" href="corporate-template.html">サイトを見る</a>
               </div>
             </article>
@@ -138,6 +146,9 @@
               </div>
               <div class="work-card__body">
                 <h3 class="work-card__title">アプリプロモーション用LP</h3>
+                <p class="work-card__text">
+                  アプリの特徴を短時間で伝え、CTAまで自然に進めるLP。セクションごとの役割が伝わる流れを意識しています。
+                </p>
                 <a class="work-card__button" href="lp-template.html">サイトを見る</a>
               </div>
             </article>
@@ -149,7 +160,7 @@
               <div class="work-card__body">
                 <h3 class="work-card__title">C# / Unity UI・システム開発</h3>
                 <p class="work-card__text">
-                  戦闘処理やHPゲージなど、ゲーム開発実績を追加予定です。
+                  Unity CanvasでのHPゲージやコマンドUI、C#でのプレイヤーパーティ戦闘処理・状態管理などを掲載予定です。
                 </p>
                 <span class="work-card__button work-card__button--disabled">Coming Soon</span>
               </div>
@@ -319,7 +330,7 @@
         <div class="contact__inner">
           <h2 class="contact__title" id="contact-title">お問い合わせ（Contact）</h2>
           <p class="contact__lead">
-            Web制作に関するご相談や、料金のお見積りなど、まずはお気軽にお問い合わせください。24時間以内にご返信いたします。
+            内容がまだ固まっていなくても大丈夫です。お店の状況、困っていること、必要な更新頻度を伺いながら、無理のない進め方とお見積りをお返しします。
           </p>
 
           <form class="contact__form" action="" method="post">
