@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="お問い合わせ送信完了ページ">
-  <title>お問い合わせ完了 | Cafe Hinata</title>
+  <meta name="description" content="Cafe Hinataへのお問い合わせ送信完了ページ">
+  <title>お問い合わせありがとうございました | Cafe Hinata</title>
   <link rel="stylesheet" href="cafe-styles.css">
   <link rel="stylesheet" href="my-signature.css">
   <style>
@@ -21,7 +21,7 @@
     }
 
     .thanks-card {
-      width: min(100%, 620px);
+      width: min(100%, 640px);
       padding: clamp(32px, 7vw, 56px);
       text-align: center;
       background: var(--color-white);
@@ -30,18 +30,24 @@
       box-shadow: var(--shadow-soft);
     }
 
+    .thanks-card .section-kicker {
+      margin-bottom: 12px;
+    }
+
     .thanks-card h1 {
       margin: 0;
       color: var(--color-brown);
       font-family: Georgia, "Hiragino Mincho ProN", "Yu Mincho", serif;
-      font-size: clamp(2rem, 8vw, 3rem);
-      line-height: 1.25;
+      font-size: clamp(2rem, 7vw, 3rem);
+      line-height: 1.35;
       letter-spacing: 0;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
 
     .thanks-card p {
       margin: 18px auto 0;
-      max-width: 420px;
+      max-width: 460px;
       color: var(--color-muted);
       line-height: 1.9;
     }
@@ -55,8 +61,8 @@
   <main class="thanks-page">
     <section class="thanks-card" aria-labelledby="thanks-title">
       <p class="section-kicker">Thank You</p>
-      <h1 id="thanks-title">お問い合わせ完了</h1>
-      <p>メッセージを送信しました。確認次第、折り返しご連絡いたします。</p>
+      <h1 id="thanks-title">お問い合わせありがとうございました</h1>
+      <p>メッセージを正常に送信しました。内容を確認次第、折り返しご連絡いたします。</p>
       <a class="button button-primary btn-tactile" href="cafe-template.html">トップページに戻る</a>
     </section>
   </main>
