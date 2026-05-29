@@ -819,14 +819,18 @@ h3,
 }
 
 .works__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px 22px;
 }
 
 .work-card {
   display: flex;
+  flex: 0 1 calc((100% - 44px) / 3);
   flex-direction: column;
+  min-width: 205px;
+  max-width: 340px;
   min-height: 100%;
   overflow: hidden;
   border: 1px solid rgba(10, 17, 40, 0.07);
@@ -906,14 +910,15 @@ h3,
     linear-gradient(160deg, #0a1128, #335149);
 }
 
-.work-card__thumb--game {
+.work-card__thumb--animation {
   background:
+    linear-gradient(135deg, rgba(244, 200, 106, 0.26), transparent 44%),
     repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.08) 0 1px,
-      transparent 1px 18px
+      135deg,
+      rgba(255, 255, 255, 0.12) 0 2px,
+      transparent 2px 18px
     ),
-    linear-gradient(160deg, #0a1128, #272f52);
+    linear-gradient(160deg, #0a1128, #3b4b72 52%, #31594f);
 }
 
 .work-card__thumb span {
@@ -930,6 +935,16 @@ h3,
   flex: 1;
   flex-direction: column;
   padding: 20px 18px 18px;
+}
+
+.work-card__category {
+  margin: 0 0 0.45rem;
+  color: rgba(10, 17, 40, 0.58);
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
 }
 
 .work-card__title {
@@ -1544,6 +1559,16 @@ h3,
   .services__grid,
   .services__details {
     gap: 16px;
+  }
+
+  .works__grid {
+    align-items: stretch;
+  }
+
+  .work-card {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: none;
   }
 
   .work-card__thumb {
