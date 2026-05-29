@@ -215,19 +215,45 @@ select {
 
 .hero {
   position: relative;
-  min-height: 720px;
-  display: grid;
-  place-items: center;
+  overflow: hidden;
+  min-height: calc(100vh - var(--header-height));
+  margin-top: var(--header-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   isolation: isolate;
-  padding: calc(var(--header-height) + 88px) 20px 112px;
+  padding: 72px 20px;
   color: var(--color-white);
   text-align: center;
 }
 
-.hero-image {
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 20px;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.slide-image {
   position: absolute;
   inset: 0;
-  z-index: -3;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -237,17 +263,19 @@ select {
 .hero-shade {
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: 1;
   background:
     linear-gradient(180deg, rgba(10, 24, 42, 0.48), rgba(10, 24, 42, 0.68)),
     linear-gradient(90deg, rgba(10, 24, 42, 0.28), rgba(10, 24, 42, 0.08), rgba(10, 24, 42, 0.28));
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   width: min(920px, 100%);
   display: grid;
   justify-items: center;
-  gap: 22px;
+  gap: 20px;
 }
 
 .section-label {
@@ -258,8 +286,7 @@ select {
   text-transform: uppercase;
 }
 
-.hero .section-label,
-.contact .section-label {
+.hero .section-label {
   color: #d6e7ff;
 }
 
@@ -303,7 +330,8 @@ select {
 }
 
 .section {
-  padding: 104px 0;
+  padding: 112px 0;
+  scroll-margin-top: var(--header-height);
 }
 
 .section-inner {
@@ -317,14 +345,14 @@ select {
 
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.88fr);
   align-items: center;
-  gap: 64px;
+  gap: clamp(56px, 6vw, 76px);
 }
 
 .about-copy {
   display: grid;
-  gap: 22px;
+  gap: 18px;
 }
 
 .about-copy h2,
@@ -332,8 +360,8 @@ select {
 .company-copy h2,
 .contact h2 {
   color: var(--color-blue-dark);
-  font-size: clamp(1.85rem, 3vw, 2.65rem);
-  line-height: 1.45;
+  font-size: clamp(1.78rem, 2.7vw, 2.5rem);
+  line-height: 1.38;
   font-weight: 900;
   letter-spacing: 0;
 }
@@ -364,7 +392,7 @@ select {
 .about-figure figcaption {
   display: grid;
   gap: 4px;
-  padding: 22px 24px;
+  padding: 18px 22px;
   background: var(--color-white);
 }
 
@@ -379,32 +407,31 @@ select {
 }
 
 .services {
-  background:
-    linear-gradient(180deg, var(--color-gray-050), var(--color-gray-100));
+  background: #f4f6f9;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
 
 .section-heading {
-  max-width: 760px;
-  margin: 0 auto 46px;
+  max-width: 820px;
+  margin: 0 auto 50px;
   display: grid;
-  gap: 14px;
+  gap: 12px;
   text-align: center;
 }
 
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: 22px;
 }
 
 .service-card {
   min-width: 0;
   display: grid;
   align-content: start;
-  gap: 18px;
-  padding: 34px 30px;
+  gap: 16px;
+  padding: 30px 28px;
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: 6px;
@@ -413,8 +440,8 @@ select {
 
 .service-icon {
   display: grid;
-  width: 58px;
-  height: 58px;
+  width: 54px;
+  height: 54px;
   place-items: center;
   color: var(--color-blue);
   background: #eaf2fb;
@@ -423,8 +450,8 @@ select {
 }
 
 .service-icon svg {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   fill: none;
   stroke: currentColor;
   stroke-width: 3;
@@ -434,14 +461,15 @@ select {
 
 .service-card h3 {
   color: var(--color-blue-dark);
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 1.16rem;
+  line-height: 1.42;
   font-weight: 900;
 }
 
 .service-card p {
   color: var(--color-gray-700);
-  font-size: 0.96rem;
+  font-size: 0.94rem;
+  line-height: 1.7;
 }
 
 .company {
@@ -451,15 +479,13 @@ select {
 .company-grid {
   display: grid;
   grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
-  align-items: start;
-  gap: 54px;
+  align-items: center;
+  gap: 48px;
 }
 
 .company-copy {
-  position: sticky;
-  top: calc(var(--header-height) + 32px);
   display: grid;
-  gap: 18px;
+  gap: 14px;
 }
 
 .company-table-wrap {
@@ -485,7 +511,7 @@ select {
 
 .company-table th,
 .company-table td {
-  padding: 20px 24px;
+  padding: 14px 22px;
   text-align: left;
   vertical-align: top;
 }
@@ -505,11 +531,11 @@ select {
 
 .contact {
   position: relative;
-  padding: 96px 20px;
-  color: var(--color-white);
-  background:
-    linear-gradient(135deg, rgba(16, 40, 70, 0.96), rgba(36, 95, 159, 0.9)),
-    url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=82") center / cover;
+  padding: 112px 20px;
+  scroll-margin-top: var(--header-height);
+  color: var(--color-gray-900);
+  background: #f4f6f9;
+  border-top: 1px solid var(--color-border);
   text-align: center;
 }
 
@@ -522,20 +548,20 @@ select {
 }
 
 .contact h2 {
-  color: var(--color-white);
+  color: var(--color-blue-dark);
 }
 
 .contact p {
   max-width: 700px;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-gray-700);
   font-weight: 600;
 }
 
 .contact-button {
-  margin-top: 10px;
-  color: var(--color-blue-dark);
-  background: var(--color-white);
-  border: 1px solid var(--color-white);
+  margin-top: 6px;
+  color: var(--color-white);
+  background: var(--color-blue);
+  border: 1px solid var(--color-blue);
   min-width: 240px;
 }
 
@@ -615,6 +641,13 @@ select {
     line-height: 1.75;
   }
 
+  .about,
+  .services,
+  .company,
+  .contact {
+    min-height: auto !important;
+  }
+
   .header-inner {
     width: 100%;
     min-height: var(--header-height);
@@ -662,11 +695,16 @@ select {
   }
 
   .hero {
-    min-height: auto;
-    padding: calc(var(--header-height) + 70px) 18px 76px;
+    min-height: calc(100vh - var(--header-height));
+    margin-top: var(--header-height);
+    padding: 0;
   }
 
-  .hero-image {
+  .slide {
+    padding: 48px 18px 64px;
+  }
+
+  .slide-image {
     object-position: 52% center;
   }
 

@@ -168,6 +168,109 @@ textarea {
   outline: none;
 }
 
+.hamburger-button {
+  display: none;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  padding: 0;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-white);
+  cursor: pointer;
+  align-content: center;
+  justify-items: center;
+  gap: 5px;
+  position: relative;
+  z-index: 120;
+}
+
+.hamburger-button span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-brown);
+  border-radius: 999px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.hamburger-button.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-button.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-button.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-nav {
+  position: fixed;
+  inset: var(--header-height) 0 0;
+  z-index: 90;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(42, 36, 29, 0.36);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.mobile-nav-panel {
+  width: min(100%, 360px);
+  height: 100%;
+  padding: 22px 18px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--color-ivory);
+  border-left: 1px solid var(--color-line);
+  box-shadow: -18px 0 44px rgba(42, 36, 29, 0.18);
+  transform: translateX(28px);
+  transition: transform 0.28s ease;
+}
+
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 14px;
+  color: var(--color-brown);
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.mobile-nav a span {
+  color: var(--color-muted);
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+body.nav-open .mobile-nav,
+.mobile-nav.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+body.nav-open .mobile-nav-panel,
+.mobile-nav.active .mobile-nav-panel {
+  transform: translateX(0);
+}
+
 .hero {
   position: relative;
   min-height: 92svh;
@@ -552,6 +655,13 @@ textarea {
   color: var(--color-white);
 }
 
+#contact h2 {
+  font-size: clamp(24px, 3.5vw, 40px);
+  line-height: 1.4;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 .contact-copy p {
   color: rgba(255, 255, 255, 0.76);
 }
@@ -849,6 +959,18 @@ textarea:focus {
     margin-top: 8px;
     font-size: 0.9rem;
     line-height: 1.65;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-nav,
+  .pc-nav {
+    display: none !important;
+  }
+
+  .hamburger-button,
+  .hamburger {
+    display: grid !important;
   }
 }
 

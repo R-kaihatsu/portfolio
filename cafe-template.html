@@ -22,13 +22,28 @@
         </span>
       </a>
 
-      <nav class="site-nav" aria-label="ページ内ナビゲーション">
+      <nav class="site-nav pc-nav" aria-label="ページ内ナビゲーション">
         <a href="#concept">Concept</a>
         <a href="#menu">Menu</a>
         <a href="#access">Access</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <button class="hamburger-button hamburger" type="button" aria-label="メニューを開く" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+
+    <nav class="mobile-nav" id="mobile-menu" aria-label="スマートフォン用ナビゲーション" aria-hidden="true">
+      <div class="mobile-nav-panel">
+        <a href="#concept">Concept<span>コンセプト</span></a>
+        <a href="#menu">Menu<span>おすすめメニュー</span></a>
+        <a href="#access">Access<span>アクセス・店舗情報</span></a>
+        <a href="#contact">Contact<span>ご予約・お問い合わせ</span></a>
+      </div>
+    </nav>
   </header>
 
   <main id="main">
@@ -217,7 +232,7 @@
       <div class="section-inner contact-layout">
         <div class="contact-copy">
           <p class="section-kicker">Contact</p>
-          <h2>ご予約・お問い合わせ</h2>
+          <h2>ご予約・<br>お問い合わせ</h2>
           <p>
             席のご予約、貸切、ケータリングのご相談など、お気軽にお問い合わせください。
             返信には1〜2営業日ほどいただく場合があります。
@@ -228,7 +243,7 @@
           </div>
         </div>
 
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="https://formspree.io/f/mbdbwwne" method="POST">
           <div class="form-row">
             <label for="name">お名前</label>
             <input type="text" id="name" name="name" autocomplete="name" required>
@@ -306,5 +321,6 @@
       <p class="copyright">&copy; 2026 Cafe Hinata. All Rights Reserved.</p>
     </div>
   </footer>
+  <script src="cafe-script.js"></script>
 </body>
 </html>

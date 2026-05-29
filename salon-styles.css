@@ -1020,6 +1020,17 @@ svg {
   }
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 768px) {
   html {
     scroll-snap-type: none !important;

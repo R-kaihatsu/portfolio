@@ -2,11 +2,12 @@
 .btn-tactile {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  will-change: transform, box-shadow;
+  will-change: transform, box-shadow, filter;
 }
 
 .btn-tactile:hover {
   transform: translateY(-4px);
+  filter: brightness(1.15);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
