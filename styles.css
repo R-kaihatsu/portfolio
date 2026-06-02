@@ -811,6 +811,47 @@ h3,
   margin-bottom: 0;
 }
 
+.about__promise {
+  margin-top: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.about__promise-title {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-navy);
+  font-weight: 800;
+}
+
+.about__promise-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about__promise-list li {
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(10, 17, 40, 0.1);
+  border-radius: 0.5rem;
+  background: rgba(10, 17, 40, 0.035);
+}
+
+.about__promise-list strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--color-navy);
+  font-weight: 800;
+  line-height: 1.55;
+}
+
+.about__promise-list span {
+  display: block;
+  color: rgba(51, 51, 51, 0.82);
+}
+
 .about__signature {
   margin-top: 2rem;
   color: rgba(51, 51, 51, 0.68);
