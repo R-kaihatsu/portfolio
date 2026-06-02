@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>特定商取引法に基づく表記 | 菊中R Web Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-navy: #0b132b;
+        --color-navy-soft: #111b37;
+        --color-white: #ffffff;
+        --color-gold: #f5c568;
+        --color-text-soft: rgba(255, 255, 255, 0.88);
+        --color-line: rgba(255, 255, 255, 0.15);
+        --font-sans: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN",
+          Meiryo, system-ui, sans-serif;
+        --font-display: "Montserrat", "Noto Sans JP", "Yu Gothic",
+          "Hiragino Kaku Gothic ProN", Meiryo, system-ui, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--color-white);
+        font-family: var(--font-sans);
+        line-height: 1.8;
+        letter-spacing: 0;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 34%),
+          var(--color-navy);
+        font-feature-settings: "palt";
+        text-rendering: optimizeLegibility;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .legal-page {
+        min-height: 100vh;
+        padding: clamp(3rem, 7vw, 5.5rem) clamp(1rem, 4vw, 2rem);
+      }
+
+      .legal-inner {
+        width: min(100%, 960px);
+        margin: 0 auto;
+      }
+
+      .legal-header {
+        margin-bottom: clamp(2rem, 5vw, 3rem);
+      }
+
+      .legal-back {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 1.6rem;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.92rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: color 0.25s ease;
+      }
+
+      .legal-back:hover,
+      .legal-back:focus-visible {
+        color: var(--color-gold);
+      }
+
+      .legal-title {
+        margin: 0;
+        color: var(--color-white);
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 5vw, 3rem);
+        font-weight: 800;
+        line-height: 1.35;
+        letter-spacing: 0;
+      }
+
+      .legal-title::after {
+        content: "";
+        display: block;
+        width: 72px;
+        height: 3px;
+        margin-top: 1.2rem;
+        background: var(--color-gold);
+      }
+
+      .legal-table {
+        width: 100%;
+        overflow: hidden;
+        border: 1px solid var(--color-line);
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .legal-table th,
+      .legal-table td {
+        padding: 1.35rem 1.5rem;
+        border-bottom: 1px solid var(--color-line);
+        vertical-align: top;
+        text-align: left;
+      }
+
+      .legal-table tr:last-child th,
+      .legal-table tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .legal-table th {
+        width: 270px;
+        color: var(--color-gold);
+        font-weight: 800;
+        background: rgba(245, 197, 104, 0.08);
+      }
+
+      .legal-table td {
+        color: var(--color-text-soft);
+        font-weight: 400;
+      }
+
+      .legal-table ul {
+        margin: 0;
+        padding-left: 1.2em;
+      }
+
+      .legal-table li + li {
+        margin-top: 0.45rem;
+      }
+
+      .legal-footer {
+        margin-top: 2rem;
+        color: rgba(255, 255, 255, 0.64);
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      @media (max-width: 720px) {
+        .legal-page {
+          padding-top: 2.5rem;
+          padding-bottom: 2.5rem;
+        }
+
+        .legal-table,
+        .legal-table tbody,
+        .legal-table tr,
+        .legal-table th,
+        .legal-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .legal-table tr {
+          border-bottom: 1px solid var(--color-line);
+        }
+
+        .legal-table tr:last-child {
+          border-bottom: 0;
+        }
+
+        .legal-table th,
+        .legal-table td {
+          border-bottom: 0;
+          padding: 1rem 1.1rem;
+        }
+
+        .legal-table th {
+          padding-bottom: 0.45rem;
+        }
+
+        .legal-table td {
+          padding-top: 0.45rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="legal-page">
+      <div class="legal-inner">
+        <header class="legal-header">
+          <a class="legal-back" href="./index.html">トップページへ戻る</a>
+          <h1 class="legal-title">特定商取引法に基づく表記</h1>
+        </header>
+
+        <table class="legal-table">
+          <tbody>
+            <tr>
+              <th scope="row">事業者の名称</th>
+              <td>菊中R</td>
+            </tr>
+            <tr>
+              <th scope="row">代表責任者</th>
+              <td>ご請求があった場合、遅滞なく開示いたします。</td>
+            </tr>
+            <tr>
+              <th scope="row">所在地</th>
+              <td>ご請求があった場合、遅滞なく開示いたします。</td>
+            </tr>
+            <tr>
+              <th scope="row">電話番号</th>
+              <td>ご請求があった場合、遅滞なく開示いたします。</td>
+            </tr>
+            <tr>
+              <th scope="row">メールアドレス</th>
+              <td>info@example.com</td>
+            </tr>
+            <tr>
+              <th scope="row">販売価格</th>
+              <td>サイト内の料金案内ページ、または個別のお見積り書にて提示いたします。</td>
+            </tr>
+            <tr>
+              <th scope="row">商品代金以外の必要料金</th>
+              <td>銀行振込でのお支払いの場合は、振込手数料をご負担いただきます。</td>
+            </tr>
+            <tr>
+              <th scope="row">支払方法</th>
+              <td>銀行振込、クレジットカード決済</td>
+            </tr>
+            <tr>
+              <th scope="row">支払時期</th>
+              <td>
+                <ul>
+                  <li>制作費は、お見積り時に取り決めた期日までにお支払いいただきます。</li>
+                  <li>保守費（月払）は、毎月末日までに当月分をお支払いいただきます。</li>
+                  <li>保守費（年払）は、契約開始月の末日までに1年分をお支払いいただきます。</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">サービスの提供時期</th>
+              <td>契約時に個別に取り決めた納期（検収完了日）といたします。</td>
+            </tr>
+            <tr>
+              <th scope="row">返品・キャンセルについて</th>
+              <td>
+                <ul>
+                  <li>提供するサービスの性質上、制作着手後のキャンセル、および納品後の返金は原則としてお受けできません。</li>
+                  <li>納品後2ヶ月以内に発見されたプログラム等の不具合（契約不適合）については、無償で修正対応を行います。</li>
+                  <li>保守契約の中途解約については、解約希望月の1ヶ月前までにお申し出いただくものとします。</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="legal-footer">菊中R Web Design</p>
+      </div>
+    </main>
+  </body>
+</html>
