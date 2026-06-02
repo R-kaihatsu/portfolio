@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./estimate-tool.css" />
   </head>
   <body>
     <main>
@@ -21,6 +22,7 @@
           <a class="site-header__link" href="#about">私の強み</a>
           <a class="site-header__link" href="#works">制作実績</a>
           <a class="site-header__link" href="#services">サービス内容</a>
+          <a class="site-header__link" href="#estimate">見積もり</a>
           <a class="site-header__link" href="#contact">お問い合わせ</a>
         </nav>
       </header>
@@ -388,6 +390,132 @@
         </div>
       </section>
 
+      <section class="estimate-tool" id="estimate" data-estimate-tool aria-labelledby="estimate-title">
+        <div class="estimate-tool__inner">
+          <p class="estimate-tool__eyebrow">Quick Estimate</p>
+          <h2 class="estimate-tool__title" id="estimate-title">Web制作 自動見積もり</h2>
+          <p class="estimate-tool__lead">
+            3つの質問に答えるだけで、初期費用と保守費用の概算が分かります。
+          </p>
+
+          <div class="estimate-tool__progress" aria-hidden="true">
+            <span data-progress></span>
+          </div>
+
+          <div class="estimate-step is-active" data-step="1">
+            <h3 class="estimate-step__title">
+              <span>Q1</span>
+              ご希望の基本プランはどちらですか？
+            </h3>
+            <div class="estimate-options" role="group" aria-label="基本プラン">
+              <button class="estimate-card" type="button" data-plan="maintenance">
+                <span class="estimate-card__tag">おすすめ</span>
+                <strong>保守セットプラン</strong>
+                <small>制作後のサーバー管理やトラブル対応もお任せ</small>
+                <span>初期費用 58,000円 / 月額 6,970円</span>
+              </button>
+              <button class="estimate-card" type="button" data-plan="once">
+                <span class="estimate-card__tag estimate-card__tag--muted">買い切り</span>
+                <strong>制作のみプラン</strong>
+                <small>自社でサーバーを管理する買い切り型</small>
+                <span>初期費用 120,000円 / 月額 0円</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="estimate-step" data-step="2">
+            <h3 class="estimate-step__title">
+              <span>Q2</span>
+              必要な追加ページ数は？
+            </h3>
+            <p class="estimate-step__note">トップページ以外の追加ページ数を選んでください。</p>
+            <div class="estimate-options" role="group" aria-label="追加ページ">
+              <button class="estimate-card" type="button" data-pages="none">
+                <strong>追加なし</strong>
+                <small>基本パッケージの1ページにまとめる</small>
+                <span>追加費用 0円</span>
+              </button>
+              <button class="estimate-card" type="button" data-pages="multiple">
+                <strong>追加あり</strong>
+                <small>複数ページで構成する</small>
+                <span>1ページごとに +10,000円</span>
+              </button>
+            </div>
+
+            <div class="page-counter" data-page-counter hidden>
+              <p>追加ページ数</p>
+              <div class="page-counter__control">
+                <button type="button" data-page-dec aria-label="追加ページ数を減らす">-</button>
+                <strong data-page-count>1</strong>
+                <button type="button" data-page-inc aria-label="追加ページ数を増やす">+</button>
+              </div>
+              <button class="estimate-tool__next" type="button" data-page-next>
+                このページ数で進む
+              </button>
+            </div>
+          </div>
+
+          <div class="estimate-step" data-step="3">
+            <h3 class="estimate-step__title">
+              <span>Q3</span>
+              ホームページに使う写真や文章のご用意は？
+            </h3>
+            <div class="estimate-options" role="group" aria-label="素材の準備">
+              <button class="estimate-card" type="button" data-material="self">
+                <strong>すべて自分たちで用意する</strong>
+                <small>写真・文章・ロゴなどをご支給いただく場合</small>
+                <span>追加費用 0円</span>
+              </button>
+              <button class="estimate-card" type="button" data-material="support">
+                <strong>写真選定や文章作成をおまかせしたい</strong>
+                <small>掲載内容の整理から一緒に進めたい場合</small>
+                <span>追加費用 +20,000円</span>
+              </button>
+            </div>
+            <button class="estimate-tool__result-button" type="button" data-show-result disabled>
+              見積もり結果を見る
+            </button>
+          </div>
+
+          <section class="estimate-result" data-result hidden aria-live="polite">
+            <h3 class="estimate-result__title">見積もり結果</h3>
+            <div class="estimate-result__breakdown">
+              <div class="estimate-result__row">
+                <span>初期費用ベース</span>
+                <strong data-result-base>0円（税別）</strong>
+              </div>
+              <div class="estimate-result__row">
+                <span>追加ページ費</span>
+                <strong data-result-pages>0円（税別）</strong>
+              </div>
+              <div class="estimate-result__row">
+                <span>素材準備費</span>
+                <strong data-result-material>0円（税別）</strong>
+              </div>
+              <div class="estimate-result__row">
+                <span>保守費用</span>
+                <strong data-result-monthly>0円（税別）</strong>
+              </div>
+            </div>
+
+            <div class="estimate-result__total">
+              <p>初期費用 総額</p>
+              <strong data-result-total>0円（税別）</strong>
+              <p class="estimate-result__maintenance" data-result-maintenance>
+                保守費用 0円（税別）
+              </p>
+            </div>
+
+            <div class="estimate-result__notes">
+              <p>※上記は概算目安となります。1ページあたりのボリューム（目安：A4用紙1.5〜2枚分）やご要望の機能により変動する場合がございます。</p>
+              <p>※お問い合わせフォームの設置をご希望の場合は、別途+20,000円（税別）となります。</p>
+            </div>
+
+            <a class="estimate-result__cta" href="#contact">この条件で相談する</a>
+          </section>
+        </div>
+      </section>
+
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="contact__inner">
           <h2 class="contact__title" id="contact-title">お問い合わせ（Contact）</h2>
@@ -427,5 +555,6 @@
         </div>
       </section>
     </main>
+    <script src="./estimate-tool.js" defer></script>
   </body>
 </html>
