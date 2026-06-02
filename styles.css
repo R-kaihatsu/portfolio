@@ -814,7 +814,7 @@ h3,
 }
 
 .works {
-  padding: clamp(5rem, 8vw, 6.5rem) clamp(1.5rem, 5vw, 3rem) var(--section-rhythm);
+  padding: clamp(5rem, 8vw, 6.5rem) clamp(1.5rem, 5vw, 3rem) clamp(4rem, 7vw, 5.5rem);
   color: #333333;
   background: var(--color-paper);
 }
