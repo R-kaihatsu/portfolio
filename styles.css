@@ -1400,6 +1400,29 @@ h3,
   gap: 18px;
 }
 
+.contact__platform-card {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1rem, 3vw, 1.25rem);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 1rem 2.4rem rgba(0, 0, 0, 0.14);
+}
+
+.contact__platform-note {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.86rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.contact__platform-card .contact__button {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
 .contact__field {
   display: grid;
   gap: 0.5rem;
@@ -1503,7 +1526,7 @@ h3,
 .site-footer__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
   width: min(100%, 1100px);
   margin: 0 auto;
