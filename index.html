@@ -22,7 +22,8 @@
           <a class="site-header__link" href="#about">私の強み</a>
           <a class="site-header__link" href="#works">制作実績</a>
           <a class="site-header__link" href="#diagnosis">改善診断</a>
-          <a class="site-header__link" href="#estimate">見積もり</a>
+          <a class="site-header__link" href="#price">料金</a>
+          <a class="site-header__link" href="#estimate">自動見積もり</a>
           <a class="site-header__link" href="#contact">お問い合わせ</a>
         </nav>
       </header>
@@ -56,11 +57,9 @@
             </div>
             <a
               class="hero__button"
-              href="https://coconala.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
             >
-              ココナラで相談・依頼する
+              無料で相談する
             </a>
           </div>
 
@@ -353,14 +352,179 @@
                 新しく作り直すか迷っている段階でも大丈夫です。まずは現在のホームページを確認し、改善できるポイントを分かりやすくお伝えします。
               </p>
             </div>
-            <a
-              class="diagnosis__button"
-              href="https://coconala.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ココナラで相談する
-            </a>
+            <div class="diagnosis__actions">
+              <a class="diagnosis__button" href="#contact">無料で相談する</a>
+              <a
+                class="diagnosis__button diagnosis__button--secondary"
+                href="https://coconala.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ココナラで依頼する
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="price" aria-labelledby="price-title">
+        <div class="services__inner">
+          <h2 class="services__title" id="price-title">
+            Web制作料金・保守プラン（Price）
+          </h2>
+
+          <div class="services__block">
+            <h3 class="services__heading">新規Web制作プラン</h3>
+            <div class="services__grid services__grid--initial">
+              <article class="service-card service-card--featured">
+                <div class="service-card__header">
+                  <p class="service-card__badge">人気No.1・おすすめ</p>
+                  <h4 class="service-card__title">保守セットプラン</h4>
+                </div>
+                <p class="service-card__price">
+                  初期制作費: <span>58,000円</span>（税別）
+                </p>
+                <p class="service-card__text">
+                  制作後のサーバー管理やトラブル対応まで、継続して相談できるプランです。Webに詳しくない個人店様にも安心してご利用いただけます。
+                </p>
+              </article>
+
+              <article class="service-card">
+                <div class="service-card__header">
+                  <p class="service-card__badge service-card__badge--muted">買い切り</p>
+                  <h4 class="service-card__title">制作のみプラン</h4>
+                </div>
+                <p class="service-card__price">
+                  初期制作費: <span>120,000円</span>（税別）
+                </p>
+                <p class="service-card__text">
+                  お客様ご自身のサーバーにWebサイトを構築し、納品後は自社で管理する買い切り型のプランです。
+                </p>
+              </article>
+            </div>
+
+            <details class="services-accordion services-accordion--wide">
+              <summary class="services-accordion__summary">
+                基本パッケージの内容を詳しく見る
+              </summary>
+              <div class="services-accordion__content">
+                <ul class="services-detail__list">
+                  <li>
+                    <span class="services-detail__mark services-detail__mark--check" aria-hidden="true"></span>
+                    ページ数: 5ページまで（トップ、事業内容など）
+                  </li>
+                  <li>
+                    <span class="services-detail__mark services-detail__mark--check" aria-hidden="true"></span>
+                    デザイン: ユーザーを迷わせない「直感的なUI」構築
+                  </li>
+                  <li>
+                    <span class="services-detail__mark services-detail__mark--check" aria-hidden="true"></span>
+                    機能: 基本的なお問い合わせフォーム設置
+                  </li>
+                  <li>
+                    <span class="services-detail__mark services-detail__mark--check" aria-hidden="true"></span>
+                    SEO対策: 検索エンジン向け初期設定（内部SEO）
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <div class="services__block">
+            <h3 class="services__heading">保守・運用プラン</h3>
+            <div class="services__grid services__grid--monthly">
+              <article class="service-card">
+                <div class="service-card__header">
+                  <p class="service-card__badge service-card__badge--muted">梅</p>
+                  <h4 class="service-card__title">ライトプラン</h4>
+                </div>
+                <p class="service-card__price">
+                  月額: <span>6,980円</span>（税込）
+                </p>
+                <p class="service-card__text">
+                  「とりあえずサイトを安全に維持したい」という方向けの現状維持プランです。
+                </p>
+              </article>
+
+              <article class="service-card service-card--featured">
+                <div class="service-card__header">
+                  <p class="service-card__badge">竹</p>
+                  <h4 class="service-card__title">スタンダードプラン</h4>
+                </div>
+                <p class="service-card__price">
+                  月額: <span>9,800円</span>（税込）
+                </p>
+                <p class="service-card__text">
+                  季節ごとのお知らせや画像更新を行い、お店の動きが伝わる状態を保ちたい方向けです。
+                </p>
+              </article>
+
+              <article class="service-card">
+                <div class="service-card__header">
+                  <p class="service-card__badge service-card__badge--muted">松</p>
+                  <h4 class="service-card__title">プレミアムプラン</h4>
+                </div>
+                <p class="service-card__price">
+                  月額: <span>14,800円</span>（税込）
+                </p>
+                <p class="service-card__text">
+                  Webのことをまとめて任せたい方向けに、更新相談や軽微な修正まで手厚く対応します。
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="services__details">
+            <details class="services-accordion">
+              <summary class="services-accordion__summary">
+                追加オプションを詳しく見る
+              </summary>
+              <div class="services-accordion__content">
+                <p class="services-detail__lead">
+                  基本パッケージを超えるご要望も、内容を伺ったうえで柔軟にお見積りします。
+                </p>
+                <ul class="services-detail__list">
+                  <li>
+                    <span class="services-detail__mark services-detail__mark--check" aria-hidden="true"></span>
+                    ページの追加: 6ページ目以降（＋10,000円 / 1P）
+                  </li>
+                  <li>
+                    <span class="services-detail__mark services-detail__mark--check" aria-hidden="true"></span>
+                    高度な機能: EC機能の導入（＋50,000円〜）/ 予約システム（＋30,000円〜）
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="services-accordion services-accordion--excluded">
+              <summary class="services-accordion__summary">
+                お受けしていない業務について
+              </summary>
+              <div class="services-accordion__content">
+                <p class="services-detail__lead">
+                  「直感的なUI構築」と「安定した保守」に特化するため、以下は承っておりません。
+                </p>
+                <ul class="services-detail__list">
+                  <li>
+                    <span class="services-detail__mark services-detail__mark--x" aria-hidden="true"></span>
+                    ブログ記事などの継続的な執筆代行
+                  </li>
+                  <li>
+                    <span class="services-detail__mark services-detail__mark--x" aria-hidden="true"></span>
+                    SNSの運用代行・Web広告の運用管理
+                  </li>
+                  <li>
+                    <span class="services-detail__mark services-detail__mark--x" aria-hidden="true"></span>
+                    写真の高度な合成や大幅なレタッチ（※Web用の調整は対応可）
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <div class="services__cta">
+            <p>新しくホームページを作りたい方は、自動見積もりで概算を確認できます。</p>
+            <a class="services__button" href="#estimate">自動見積もりへ進む</a>
           </div>
         </div>
       </section>
@@ -489,14 +653,17 @@
             <p class="estimate-result__platform-note">
               ※お客様と安心・安全なお取引を行うため、ご契約および決済はすべて仲介プラットフォーム（ココナラ等）を経由して承っております。当サイトでの直接の金銭のやり取りは発生いたしませんのでご安心ください。
             </p>
-            <a
-              class="estimate-result__cta"
-              href="https://coconala.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ココナラで相談・依頼する
-            </a>
+            <div class="estimate-result__actions">
+              <a class="estimate-result__cta" href="#contact">この条件で無料相談する</a>
+              <a
+                class="estimate-result__cta estimate-result__cta--secondary"
+                href="https://coconala.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ココナラで依頼する
+              </a>
+            </div>
           </section>
         </div>
       </section>
@@ -505,8 +672,39 @@
         <div class="contact__inner">
           <h2 class="contact__title" id="contact-title">お問い合わせ（Contact）</h2>
           <p class="contact__lead">
-            内容がまだ固まっていなくても大丈夫です。Web制作に関するご相談やご依頼は、安心してやり取りできる外部プラットフォームから承っております。
+            内容がまだ固まっていなくても大丈夫です。無料相談は下記フォームから、正式なご依頼・ご購入はココナラから承っております。
           </p>
+
+          <form class="contact__form" action="" method="post">
+            <div class="contact__field">
+              <label class="contact__label" for="name">お名前</label>
+              <input class="contact__input" id="name" name="name" type="text" />
+            </div>
+
+            <div class="contact__field">
+              <label class="contact__label" for="email">メールアドレス</label>
+              <input class="contact__input" id="email" name="email" type="email" />
+            </div>
+
+            <div class="contact__field">
+              <label class="contact__label" for="subject">お問い合わせの種類</label>
+              <select class="contact__select" id="subject" name="subject" required>
+                <option value="" disabled selected>お問い合わせ内容を選択してください</option>
+                <option value="Web制作のご依頼・お見積り">Web制作のご依頼・お見積り</option>
+                <option value="ホームページ改善診断の相談">ホームページ改善診断の相談</option>
+                <option value="保守管理・運用のご相談">保守管理・運用のご相談</option>
+                <option value="既存サイトのリニューアル">既存サイトのリニューアル</option>
+                <option value="まずは話を聞いてみたい／その他">まずは話を聞いてみたい／その他</option>
+              </select>
+            </div>
+
+            <div class="contact__field">
+              <label class="contact__label" for="message">ご相談内容</label>
+              <textarea class="contact__textarea" id="message" name="message" rows="4"></textarea>
+            </div>
+
+            <button class="contact__button" type="submit">無料で相談する</button>
+          </form>
 
           <div class="contact__platform-card">
             <p class="contact__platform-note">
@@ -518,7 +716,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              ココナラで相談・依頼する
+              ココナラで依頼する
             </a>
           </div>
         </div>

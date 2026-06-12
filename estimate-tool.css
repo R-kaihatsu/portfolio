@@ -373,8 +373,27 @@
   line-height: 1.75;
 }
 
+.estimate-result__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
 .estimate-result__cta {
-  width: 100%;
+  flex: 1 1 15rem;
+  margin-top: 0;
+}
+
+.estimate-result__cta--secondary {
+  color: var(--quote-white);
+  border-color: rgba(245, 197, 104, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.estimate-result__cta--secondary:hover {
+  color: var(--quote-navy);
 }
 
 @keyframes estimateStepIn {
@@ -438,5 +457,14 @@
 
   .estimate-result__row strong {
     white-space: normal;
+  }
+
+  .estimate-result__actions {
+    flex-direction: column;
+  }
+
+  .estimate-result__cta {
+    flex-basis: auto;
+    width: 100%;
   }
 }
