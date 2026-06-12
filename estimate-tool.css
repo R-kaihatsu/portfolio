@@ -5,6 +5,7 @@
 .estimate-tool-page {
   margin: 0;
   font-family: "Noto Sans JP", "Yu Gothic", Meiryo, system-ui, sans-serif;
+  font-size: clamp(16px, 1.28vw, 18px);
   background: #0b132b;
 }
 
@@ -18,6 +19,7 @@
   min-height: 100vh;
   padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 4vw, 2.5rem);
   color: var(--quote-white);
+  font-size: clamp(16px, 1.28vw, 18px);
   background:
     radial-gradient(circle at 18% 12%, rgba(245, 197, 104, 0.16), transparent 28%),
     linear-gradient(160deg, #0b132b, #111c3b 62%, #0b132b);
@@ -31,7 +33,7 @@
 .estimate-tool__eyebrow {
   margin: 0 0 0.75rem;
   color: var(--quote-gold);
-  font-size: 0.78rem;
+  font-size: 0.86rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -39,16 +41,16 @@
 
 .estimate-tool__title {
   margin: 0;
-  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-size: clamp(2.15rem, 5vw, 3.6rem);
   font-weight: 800;
   line-height: 1.25;
 }
 
 .estimate-tool__lead {
-  max-width: 620px;
+  max-width: 760px;
   margin: 1rem 0 1.6rem;
   color: var(--quote-muted);
-  font-size: clamp(0.98rem, 1.5vw, 1.08rem);
+  font-size: clamp(1.05rem, 1.45vw, 1.18rem);
   font-weight: 500;
   line-height: 1.8;
 }
@@ -84,7 +86,7 @@
   align-items: center;
   gap: 0.8rem;
   margin: 0 0 1rem;
-  font-size: clamp(1.25rem, 3vw, 1.8rem);
+  font-size: clamp(1.35rem, 3vw, 1.95rem);
   font-weight: 800;
   line-height: 1.45;
 }
@@ -98,14 +100,14 @@
   aspect-ratio: 1;
   border-radius: 50%;
   color: var(--quote-navy);
-  font-size: 0.9rem;
+  font-size: 1rem;
   background: var(--quote-gold);
 }
 
 .estimate-step__note {
   margin: -0.2rem 0 1rem;
   color: var(--quote-muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -144,20 +146,20 @@
 }
 
 .estimate-card strong {
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-size: clamp(1.15rem, 2vw, 1.38rem);
   font-weight: 800;
   line-height: 1.5;
 }
 
 .estimate-card small {
   color: var(--quote-muted);
-  font-size: 0.9rem;
+  font-size: 0.98rem;
   line-height: 1.65;
 }
 
 .estimate-card span:last-child {
   color: var(--quote-gold);
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   font-weight: 800;
 }
 
@@ -166,7 +168,7 @@
   padding: 0.3rem 0.6rem;
   border-radius: 999px;
   color: var(--quote-navy);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 800;
   line-height: 1.2;
   background: var(--quote-gold);
@@ -232,6 +234,7 @@
   border-radius: 0.3rem;
   color: var(--quote-navy);
   font: inherit;
+  font-size: 1rem;
   font-weight: 800;
   line-height: 1.4;
   text-decoration: none;
@@ -273,7 +276,7 @@
 
 .estimate-result__title {
   margin: 0 0 1rem;
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
   font-weight: 800;
 }
 
@@ -292,6 +295,7 @@
   border-radius: 0.55rem;
   color: var(--quote-white);
   background: rgba(255, 255, 255, 0.08);
+  font-size: 1rem;
 }
 
 .estimate-result__row strong {
@@ -345,7 +349,7 @@
   display: block;
   margin: 0.2rem 0 0.6rem;
   color: var(--quote-gold);
-  font-size: clamp(2rem, 7vw, 3.4rem);
+  font-size: clamp(2.2rem, 7vw, 3.7rem);
   font-weight: 800;
   line-height: 1.15;
 }
@@ -357,7 +361,7 @@
 .estimate-result__notes {
   margin-top: 1rem;
   color: rgba(255, 255, 255, 0.64);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   line-height: 1.75;
 }
 
@@ -368,7 +372,7 @@
 .estimate-result__platform-note {
   margin: 1rem 0 0;
   color: rgba(255, 255, 255, 0.66);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 500;
   line-height: 1.75;
 }
