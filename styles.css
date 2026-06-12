@@ -566,7 +566,7 @@ h3,
   flex-wrap: wrap;
   gap: 0.7rem clamp(0.8rem, 1.25vw, 1.15rem);
   color: var(--color-muted);
-  font-size: clamp(0.78rem, 0.82vw, 0.95rem);
+  font-size: clamp(0.95rem, 1.05vw, 1.05rem);
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.04em;
@@ -762,7 +762,7 @@ h3,
 }
 
 .about {
-  padding: clamp(5rem, 8vw, 6.75rem) clamp(1.5rem, 5vw, 3rem) clamp(5.5rem, 9vw, 7rem);
+  padding: clamp(3.5rem, 5.5vw, 4.75rem) clamp(1.5rem, 5vw, 3rem) clamp(4rem, 6vw, 5.25rem);
   color: #333333;
   background: var(--color-white);
 }
@@ -778,7 +778,7 @@ h3,
   justify-content: center;
   width: 3.6rem;
   aspect-ratio: 1;
-  margin-bottom: 1.3rem;
+  margin-bottom: 1rem;
   border: 1px solid rgba(10, 17, 40, 0.1);
   border-radius: 50%;
   color: var(--color-navy);
@@ -797,7 +797,7 @@ h3,
 }
 
 .about__title {
-  margin: 0 0 clamp(1.2rem, 3vw, 1.75rem);
+  margin: 0 0 clamp(1rem, 2.4vw, 1.45rem);
   color: var(--color-navy);
   font-size: clamp(2.15rem, 4.3vw, 3.6rem);
   font-weight: 800;
@@ -808,11 +808,11 @@ h3,
 .about__body {
   font-size: clamp(1.05rem, 1.35vw, 1.2rem);
   font-weight: 400;
-  line-height: 1.85;
+  line-height: 1.78;
 }
 
 .about__body p {
-  margin: 0 0 1.45rem;
+  margin: 0 0 1.15rem;
 }
 
 .about__body p:last-child {
@@ -820,7 +820,7 @@ h3,
 }
 
 .about__promise {
-  margin-top: clamp(2.1rem, 4vw, 2.8rem);
+  margin-top: clamp(1.55rem, 3vw, 2.1rem);
 }
 
 .about__promise-title {
@@ -844,7 +844,7 @@ h3,
 
 .about__promise-list li {
   min-height: 100%;
-  padding: clamp(1.2rem, 2.2vw, 1.55rem);
+  padding: clamp(1.1rem, 1.9vw, 1.4rem);
   border: 1px solid rgba(10, 17, 40, 0.1);
   border-radius: 0.5rem;
   background: rgba(10, 17, 40, 0.035);
@@ -854,7 +854,7 @@ h3,
   display: block;
   margin-bottom: 0.45rem;
   color: var(--color-navy);
-  font-size: clamp(1.05rem, 1.28vw, 1.18rem);
+  font-size: clamp(1.08rem, 1.3vw, 1.22rem);
   font-weight: 800;
   line-height: 1.55;
 }
@@ -862,7 +862,7 @@ h3,
 .about__promise-list span {
   display: block;
   color: rgba(51, 51, 51, 0.82);
-  font-size: clamp(1rem, 1.15vw, 1.08rem);
+  font-size: clamp(1.05rem, 1.18vw, 1.12rem);
   line-height: 1.8;
 }
 
@@ -1378,6 +1378,58 @@ h3,
   padding: clamp(4rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem) clamp(6rem, 9vw, 7.5rem);
   color: #333333;
   background: #f3f4f6;
+}
+
+.pricing {
+  display: block;
+  padding-top: clamp(4.5rem, 7vw, 6rem);
+  padding-bottom: clamp(5rem, 8vw, 7rem);
+}
+
+.pricing__eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--color-accent);
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pricing__title {
+  margin-bottom: 0.85rem;
+}
+
+.pricing__lead {
+  max-width: 900px;
+  margin: 0 0 clamp(2rem, 4vw, 3rem);
+  color: rgba(51, 51, 51, 0.78);
+  font-size: clamp(1.05rem, 1.35vw, 1.18rem);
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.pricing__block,
+.services__block {
+  scroll-margin-top: var(--header-height);
+}
+
+.pricing__block + .services__block,
+.services__block + .pricing__block,
+.pricing__block + .pricing__block {
+  margin-top: clamp(2.4rem, 5vw, 3.6rem);
+}
+
+.pricing .diagnosis {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(10, 17, 40, 0.07);
+  border-radius: 8px;
+  background: var(--color-white);
+  box-shadow: 0 0.65rem 1.5rem rgba(10, 17, 40, 0.06);
+}
+
+.pricing .diagnosis__inner {
+  width: 100%;
 }
 
 .services__inner {
@@ -1993,7 +2045,7 @@ h3,
     gap: 16px;
     overflow-x: auto;
     width: 100%;
-    font-size: 0.92rem;
+    font-size: 1rem;
     white-space: nowrap;
     scrollbar-width: none;
     -ms-overflow-style: none;

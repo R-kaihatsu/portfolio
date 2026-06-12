@@ -18,17 +18,15 @@
       <header class="site-header">
         <a class="site-header__logo" href="#" aria-label="ホームへ戻る">菊中R Web Design</a>
         <nav class="site-header__nav" aria-label="主要ナビゲーション">
+          <a class="site-header__link" href="#home">ホーム</a>
           <a class="site-header__link" href="#about">私の強み</a>
           <a class="site-header__link" href="#works">制作実績</a>
-          <a class="site-header__link" href="#diagnosis">改善診断</a>
-          <a class="site-header__link" href="#web-production">新規Web制作</a>
-          <a class="site-header__link" href="#maintenance">保守・更新</a>
-          <a class="site-header__link" href="#estimate">自動見積もり</a>
+          <a class="site-header__link" href="#price">料金プラン</a>
           <a class="site-header__link" href="#contact">お問い合わせ</a>
         </nav>
       </header>
 
-      <section class="hero" aria-label="Web制作ポートフォリオのファーストビュー">
+      <section class="hero" id="home" aria-label="Web制作ポートフォリオのファーストビュー">
         <section class="hero__panel hero__panel--primary">
           <div class="hero__ink-edge" aria-hidden="true"></div>
 
@@ -253,8 +251,16 @@
         </div>
       </section>
 
-      <section class="diagnosis" id="diagnosis" aria-labelledby="diagnosis-title">
-        <div class="diagnosis__inner">
+      <section class="services pricing" id="price" aria-labelledby="price-title">
+        <div class="services__inner pricing__inner">
+          <p class="pricing__eyebrow">Plans</p>
+          <h2 class="services__title pricing__title" id="price-title">料金プラン</h2>
+          <p class="pricing__lead">
+            既存サイトを見直したい方には改善診断を、新しくホームページを作りたい方には新規Web制作プランと自動見積もりを、公開後も任せたい方には保守・更新サポートをご用意しています。
+          </p>
+
+          <div class="pricing__block diagnosis" id="diagnosis" aria-labelledby="diagnosis-title">
+            <div class="diagnosis__inner">
           <p class="diagnosis__eyebrow">Website Check</p>
           <h2 class="diagnosis__title" id="diagnosis-title">ホームページ改善診断</h2>
 
@@ -360,14 +366,8 @@
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="services" id="price" aria-labelledby="price-title">
-        <div class="services__inner">
-          <h2 class="services__title" id="price-title">
-            新規Web制作・保守料金（Price）
-          </h2>
+            </div>
+          </div>
 
           <div class="services__block" id="web-production">
             <h3 class="services__heading">新規Web制作プラン</h3>
@@ -522,10 +522,9 @@
             <p>新しくホームページを作りたい方は、自動見積もりで概算を確認できます。</p>
             <a class="services__button" href="#estimate">自動見積もりへ進む</a>
           </div>
-        </div>
-      </section>
 
-      <section class="estimate-tool" id="estimate" data-estimate-tool aria-labelledby="estimate-title">
+          <div class="pricing__block pricing__block--estimate">
+            <section class="estimate-tool" id="estimate" data-estimate-tool aria-labelledby="estimate-title">
         <div class="estimate-tool__inner">
           <p class="estimate-tool__eyebrow">Quick Estimate</p>
           <h2 class="estimate-tool__title" id="estimate-title">新規Web制作 自動見積もり</h2>
@@ -661,6 +660,9 @@
               </a>
             </div>
           </section>
+        </div>
+            </section>
+          </div>
         </div>
       </section>
 
