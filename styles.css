@@ -71,8 +71,7 @@ h3,
 .service-card__badge,
 .service-card__price,
 .services-accordion__summary,
-.contact__button,
-.tab-estimate__button {
+.contact__button, {
   font-family: var(--font-display);
 }
 
@@ -1588,150 +1587,6 @@ h3,
   box-shadow: 0 1rem 2.4rem rgba(10, 17, 40, 0.08);
 }
 
-.pricing-tabs {
-  margin: 0 0 clamp(1.5rem, 3vw, 2rem);
-  padding: clamp(1.1rem, 2.6vw, 1.5rem);
-  border: 1px solid rgba(10, 17, 40, 0.07);
-  border-radius: 8px;
-  background: #f9fafb;
-}
-
-.pricing-tabs__header {
-  max-width: 840px;
-  margin-bottom: clamp(1rem, 2vw, 1.25rem);
-}
-
-.pricing-tabs__eyebrow {
-  margin: 0 0 0.45rem;
-  color: var(--color-accent);
-  font-family: var(--font-display);
-  font-size: clamp(0.86rem, 1vw, 0.96rem);
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.pricing-tabs__title {
-  margin: 0 0 0.45rem;
-  color: var(--color-navy);
-  font-size: clamp(1.5rem, 2.7vw, 2.05rem);
-  font-weight: 800;
-  line-height: 1.35;
-  letter-spacing: 0.03em;
-}
-
-.pricing-tabs__lead {
-  margin: 0;
-  color: rgba(51, 51, 51, 0.76);
-  font-size: clamp(1.02rem, 1.2vw, 1.1rem);
-  font-weight: 500;
-  line-height: 1.78;
-}
-
-.pricing-tabs__list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(0.75rem, 1.5vw, 1rem);
-}
-
-.pricing-tab {
-  display: grid;
-  gap: 0.25rem;
-  align-content: center;
-  min-height: 4.45rem;
-  padding: 0.9rem 1rem;
-  border: 1px solid rgba(10, 17, 40, 0.09);
-  border-radius: 8px;
-  color: var(--color-navy);
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
-  background: var(--color-white);
-  box-shadow: 0 0.55rem 1.25rem rgba(10, 17, 40, 0.05);
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.pricing-tab span {
-  font-family: var(--font-display);
-  font-size: clamp(1.05rem, 1.25vw, 1.16rem);
-  font-weight: 800;
-  line-height: 1.35;
-}
-
-.pricing-tab small {
-  color: rgba(51, 51, 51, 0.68);
-  font-size: clamp(0.92rem, 1vw, 0.98rem);
-  font-weight: 700;
-  line-height: 1.45;
-}
-
-.pricing-tab:hover {
-  border-color: rgba(244, 200, 106, 0.75);
-  box-shadow: 0 0.8rem 1.7rem rgba(10, 17, 40, 0.08);
-  transform: translateY(-2px);
-}
-
-.pricing-tab.is-active,
-.pricing-tab[aria-selected="true"] {
-  color: var(--color-white);
-  border-color: var(--color-navy);
-  background: var(--color-navy);
-  box-shadow: 0 0.95rem 2rem rgba(10, 17, 40, 0.14);
-}
-
-.pricing-tab.is-active small,
-.pricing-tab[aria-selected="true"] small {
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.pricing-tab-panel[hidden] {
-  display: none !important;
-}
-
-.pricing-tab-panel.is-active {
-  animation: pricingPaneIn 0.24s ease both;
-}
-
-@keyframes pricingPaneIn {
-  from {
-    opacity: 0;
-    transform: translateY(0.45rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.pricing .pricing-tab-panel {
-  margin-top: 0;
-}
-
-.pricing .diagnosis,
-.pricing .services__block.pricing-tab-panel {
-  padding: clamp(1.25rem, 3vw, 1.75rem);
-  border: 1px solid rgba(10, 17, 40, 0.07);
-  border-radius: 8px;
-  background: #f9fafb;
-  box-shadow: 0 0.65rem 1.5rem rgba(10, 17, 40, 0.06);
-}
-
-.pricing .services__details.pricing-tab-panel {
-  margin-top: 1rem;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-
 .plan-finder {
   margin: 0 0 clamp(2.7rem, 5vw, 4rem);
   padding: clamp(1.25rem, 3vw, 1.7rem);
@@ -2361,97 +2216,234 @@ h3,
   transform: translateY(-2px);
 }
 
-.pricing .pricing-tab-panel {
-  margin-top: 0;
+.pricing__block--estimate {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  border-top: 1px solid rgba(10, 17, 40, 0.08);
 }
 
-.tab-estimate {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.72fr);
-  gap: clamp(1rem, 2.5vw, 1.5rem);
-  align-items: center;
-  margin-top: clamp(1.3rem, 3vw, 1.9rem);
-  padding: clamp(1.15rem, 2.6vw, 1.55rem);
+/* Simplified pricing flow */
+.pricing__inner {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.pricing .plan-finder,
+.pricing-plan-block,
+.pricing-cta {
+  scroll-margin-top: calc(var(--header-height) + 18px);
+}
+
+.pricing .plan-finder {
+  margin: 0 0 clamp(1.5rem, 3vw, 2rem);
+  background: var(--color-white);
+}
+
+.pricing-guide {
+  margin-bottom: 0;
+}
+
+.pricing-plan-block,
+.pricing-cta {
+  margin-top: clamp(1.5rem, 3.2vw, 2.3rem);
+  padding: clamp(1.35rem, 3.5vw, 2.25rem);
   border: 1px solid rgba(10, 17, 40, 0.07);
   border-radius: 8px;
   color: #333333;
   background: var(--color-white);
-  box-shadow: 0 0.65rem 1.5rem rgba(10, 17, 40, 0.06);
+  box-shadow: 0 1rem 2.4rem rgba(10, 17, 40, 0.08);
 }
 
-.tab-estimate__eyebrow {
-  margin: 0 0 0.45rem;
+.pricing-plan-block__header {
+  max-width: 900px;
+  margin-bottom: clamp(1.15rem, 2.4vw, 1.65rem);
+}
+
+.pricing-plan-block__eyebrow,
+.pricing-cta__eyebrow {
+  margin: 0 0 0.5rem;
   color: var(--color-accent);
   font-family: var(--font-display);
-  font-size: clamp(0.84rem, 1vw, 0.94rem);
+  font-size: clamp(0.86rem, 1vw, 0.96rem);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.tab-estimate__title {
-  margin: 0 0 0.5rem;
+.pricing-plan-block__title,
+.pricing-cta__title {
+  margin: 0 0 0.65rem;
   color: var(--color-navy);
-  font-size: clamp(1.28rem, 1.85vw, 1.55rem);
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
   font-weight: 800;
-  line-height: 1.45;
+  line-height: 1.35;
   letter-spacing: 0.03em;
 }
 
-.tab-estimate__text {
+.pricing-plan-block__lead,
+.pricing-cta__text {
   margin: 0;
   color: rgba(51, 51, 51, 0.76);
-  font-size: clamp(1rem, 1.16vw, 1.08rem);
+  font-size: clamp(1.04rem, 1.28vw, 1.15rem);
   font-weight: 500;
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
-.tab-estimate__list {
-  display: grid;
-  gap: 0.6rem;
+.services__grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pricing-plan-block .service-card {
+  background: #ffffff;
+}
+
+.pricing-plan-block .service-card__price {
+  display: block;
+}
+
+.pricing-plan-block .service-card__price span {
+  display: inline-block;
+}
+
+.pricing-estimate {
+  overflow: hidden;
+}
+
+.pricing-estimate__tool {
   margin: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.pricing .pricing-estimate .estimate-tool {
+  min-height: auto;
   padding: 0;
-  list-style: none;
+  color: #333333;
+  background: transparent;
+  box-shadow: none;
 }
 
-.tab-estimate__list li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  padding: 0.72rem 0.85rem;
-  border: 1px solid rgba(10, 17, 40, 0.07);
-  border-radius: 0.35rem;
-  background: #f9fafb;
+.pricing .pricing-estimate .estimate-tool__inner {
+  width: 100%;
 }
 
-.tab-estimate__list span {
-  color: rgba(51, 51, 51, 0.78);
-  font-size: clamp(0.98rem, 1.08vw, 1.05rem);
-  font-weight: 700;
-  line-height: 1.45;
+.pricing .pricing-estimate .estimate-tool__eyebrow,
+.pricing .pricing-estimate .estimate-tool__title,
+.pricing .pricing-estimate .estimate-tool__lead {
+  display: none;
 }
 
-.tab-estimate__list strong {
+.pricing .pricing-estimate .estimate-tool__progress {
+  margin-bottom: clamp(1.25rem, 3vw, 1.8rem);
+  background: rgba(10, 17, 40, 0.1);
+}
+
+.pricing .pricing-estimate .estimate-step__title {
   color: var(--color-navy);
-  font-family: var(--font-display);
-  font-size: clamp(1.08rem, 1.35vw, 1.22rem);
-  font-weight: 800;
-  line-height: 1.25;
-  white-space: nowrap;
 }
 
-.tab-estimate__button {
+.pricing .pricing-estimate .estimate-step__note,
+.pricing .pricing-estimate .estimate-card small,
+.pricing .pricing-estimate .page-counter p {
+  color: rgba(51, 51, 51, 0.72);
+}
+
+.pricing .pricing-estimate .estimate-card {
+  border-color: rgba(10, 17, 40, 0.08);
+  color: #333333;
+  background: #ffffff;
+  box-shadow: 0 0.8rem 1.8rem rgba(10, 17, 40, 0.07);
+}
+
+.pricing .pricing-estimate .estimate-card:hover,
+.pricing .pricing-estimate .estimate-card.is-selected {
+  border-color: rgba(244, 200, 106, 0.78);
+  background: linear-gradient(135deg, rgba(244, 200, 106, 0.12), transparent 48%), #ffffff;
+  box-shadow: 0 1rem 2.2rem rgba(10, 17, 40, 0.1);
+}
+
+.pricing .pricing-estimate .estimate-card__tag--muted {
+  color: rgba(10, 17, 40, 0.72);
+  background: #eef0f4;
+}
+
+.pricing .pricing-estimate .page-counter,
+.pricing .pricing-estimate .estimate-result {
+  border-color: rgba(10, 17, 40, 0.08);
+  background: #f9fafb;
+  box-shadow: 0 0.8rem 1.8rem rgba(10, 17, 40, 0.07);
+}
+
+.pricing .pricing-estimate .page-counter__control {
+  border-color: rgba(10, 17, 40, 0.12);
+  background: #ffffff;
+}
+
+.pricing .pricing-estimate .page-counter__control button {
+  color: var(--color-navy);
+}
+
+.pricing .pricing-estimate .page-counter__control strong,
+.pricing .pricing-estimate .estimate-result__row strong,
+.pricing .pricing-estimate .estimate-result__total strong {
+  color: var(--color-navy);
+}
+
+.pricing .pricing-estimate .estimate-result__title,
+.pricing .pricing-estimate .estimate-result__maintenance {
+  color: var(--color-navy) !important;
+}
+
+.pricing .pricing-estimate .estimate-result__row {
+  color: #333333;
+  background: #ffffff;
+}
+
+.pricing .pricing-estimate .estimate-result__total {
+  border-color: rgba(244, 200, 106, 0.36);
+  background: linear-gradient(135deg, rgba(244, 200, 106, 0.16), transparent 52%), #ffffff;
+}
+
+.pricing .pricing-estimate .estimate-result__total p,
+.pricing .pricing-estimate .estimate-result__notes,
+.pricing .pricing-estimate .estimate-result__platform-note {
+  color: rgba(51, 51, 51, 0.66);
+}
+
+.pricing .pricing-estimate .estimate-result__cta--secondary {
+  color: var(--color-navy);
+  border-color: rgba(10, 17, 40, 0.14);
+  background: #ffffff;
+}
+
+.pricing-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  align-items: center;
+  background: linear-gradient(135deg, rgba(244, 200, 106, 0.12), transparent 48%), var(--color-white);
+}
+
+.pricing-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: flex-end;
+}
+
+.pricing-cta__button {
   display: inline-flex;
-  grid-column: 1 / -1;
   align-items: center;
   justify-content: center;
-  min-height: 3.25rem;
-  padding: 0.85rem 1.15rem;
+  min-height: 3.35rem;
+  padding: 0.9rem 1.2rem;
   border: 1px solid var(--color-accent);
   border-radius: 0.25rem;
   color: var(--color-navy);
+  font-family: var(--font-display);
   font-size: clamp(1rem, 1.08vw, 1.08rem);
   font-weight: 800;
   line-height: 1.4;
@@ -2466,21 +2458,53 @@ h3,
     transform 0.3s ease;
 }
 
-.tab-estimate__button:hover {
+.pricing-cta__button:hover {
   background: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
   box-shadow: 0 0.95rem 1.9rem rgba(10, 17, 40, 0.14);
   transform: translateY(-2px);
 }
 
-.pricing-inline-estimate .estimate-tool {
-  margin: 0;
+.pricing-cta__button--secondary {
+  color: var(--color-navy);
+  border-color: rgba(10, 17, 40, 0.14);
+  background: #ffffff;
+  box-shadow: none;
 }
-.pricing__block--estimate {
-  margin-top: clamp(2rem, 4vw, 3rem);
-  padding-top: clamp(1.5rem, 3vw, 2.25rem);
-  border-top: 1px solid rgba(10, 17, 40, 0.08);
+
+@media (max-width: 980px) {
+  .services__grid--three,
+  .pricing-guide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pricing-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-cta__actions {
+    justify-content: flex-start;
+  }
 }
+
+@media (max-width: 768px) {
+  .services__grid--three,
+  .pricing-guide {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-plan-block,
+  .pricing-cta,
+  .pricing .plan-finder {
+    padding: 1.1rem;
+  }
+
+  .pricing-cta__actions,
+  .pricing-cta__button {
+    width: 100%;
+  }
+}
+
 
 .contact {
   display: flex;
@@ -2855,7 +2879,6 @@ h3,
   .services__grid--monthly,
   .works__grid,
   .pricing-guide,
-  .pricing-tabs__list,
   .diagnosis__plans,
   .diagnosis__checklist,
   .diagnosis__support-list,
@@ -2872,9 +2895,7 @@ h3,
   }
 
   .plan-finder,
-  .pricing-tabs,
-  .improvement-slider,
-  .tab-estimate {
+  .improvement-slider {
     padding: 1.1rem;
   }
 
@@ -2882,12 +2903,7 @@ h3,
     padding: 1.1rem;
   }
 
-  .pricing-tab {
-    min-height: 4rem;
-    text-align: left;
-  }
-
-  .improvement-slider__stage {
+.improvement-slider__stage {
     grid-template-columns: 1fr;
   }
 
@@ -2909,8 +2925,7 @@ h3,
   }
 
   .diagnosis__button,
-  .plan-card__button,
-  .tab-estimate__button {
+  .plan-card__button__button {
     width: 100%;
     min-height: 48px;
   }
@@ -2936,8 +2951,7 @@ h3,
 
   .service-card__badge,
   .service-card__price,
-  .service-card__text,
-  .tab-estimate__text,
+  .service-card__text__text,
   .services-detail__lead,
   .services-detail__list li {
     font-size: 1rem;
@@ -2948,16 +2962,7 @@ h3,
     font-size: 1rem;
   }
 
-  .tab-estimate {
-    grid-template-columns: 1fr;
-  }
-
-  .tab-estimate__list li {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .services__cta {
+.services__cta {
     align-items: stretch;
     flex-direction: column;
   }
