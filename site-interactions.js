@@ -41,6 +41,68 @@
     });
   });
 
+  const pricingTabs = [...document.querySelectorAll('[data-pricing-tab]')];
+  const pricingPanels = [...document.querySelectorAll('[data-pricing-panel]')];
+
+  if (pricingTabs.length && pricingPanels.length) {
+    const activatePricingTab = (key) => {
+      pricingTabs.forEach((tab) => {
+        const isActive = tab.dataset.pricingTab === key;
+        tab.classList.toggle('is-active', isActive);
+        tab.setAttribute('aria-selected', String(isActive));
+        tab.tabIndex = isActive ? 0 : -1;
+      });
+
+      pricingPanels.forEach((panel) => {
+        const isActive = panel.dataset.pricingPanel === key;
+        panel.hidden = !isActive;
+        panel.classList.toggle('is-active', isActive);
+      });
+    };
+
+    const hashToTab = {
+      '#diagnosis': 'diagnosis',
+      '#web-production': 'web-production',
+      '#maintenance': 'maintenance',
+    };
+
+    pricingTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        activatePricingTab(tab.dataset.pricingTab);
+      });
+
+      tab.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
+          return;
+        }
+
+        event.preventDefault();
+        const lastIndex = pricingTabs.length - 1;
+        let nextIndex = index;
+
+        if (event.key === 'ArrowRight') nextIndex = index === lastIndex ? 0 : index + 1;
+        if (event.key === 'ArrowLeft') nextIndex = index === 0 ? lastIndex : index - 1;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = lastIndex;
+
+        pricingTabs[nextIndex].focus();
+        activatePricingTab(pricingTabs[nextIndex].dataset.pricingTab);
+      });
+    });
+
+    if (hashToTab[window.location.hash]) {
+      activatePricingTab(hashToTab[window.location.hash]);
+    } else {
+      const activeTab = pricingTabs.find((tab) => tab.classList.contains('is-active')) || pricingTabs[0];
+      activatePricingTab(activeTab.dataset.pricingTab);
+    }
+
+    window.addEventListener('hashchange', () => {
+      if (hashToTab[window.location.hash]) {
+        activatePricingTab(hashToTab[window.location.hash]);
+      }
+    });
+  }
   document.querySelectorAll('[data-improvement-slider]').forEach((slider) => {
     const range = slider.querySelector('[data-improvement-range]');
 

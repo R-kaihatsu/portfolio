@@ -256,199 +256,236 @@
           <p class="pricing__eyebrow">Plans</p>
           <h2 class="services__title pricing__title" id="price-title">料金プラン</h2>
           <p class="pricing__lead">
-            既存サイトを見直したい方には改善診断を、新しくホームページを作りたい方には新規Web制作プランと自動見積もりを、公開後も任せたい方には保守・更新サポートをご用意しています。
+            目的に合わせて、改善診断・新規Web制作・保守更新からお選びいただけます。
           </p>
 
-          <section class="plan-finder" aria-labelledby="plan-finder-title">
-            <div class="plan-finder__header">
-              <p class="plan-finder__eyebrow">Plan Finder</p>
-              <h3 class="plan-finder__title" id="plan-finder-title">あなたに合うプラン診断</h3>
-              <p class="plan-finder__lead">
-                お店の状況に近いカードを選ぶと、該当プランまで移動して内容を確認できます。
+          <section class="pricing-tabs" data-pricing-tabs aria-labelledby="pricing-tabs-title">
+            <div class="pricing-tabs__header">
+              <p class="pricing-tabs__eyebrow">Choose Your Plan</p>
+              <h3 class="pricing-tabs__title" id="pricing-tabs-title">目的に近いプランを選んでください</h3>
+              <p class="pricing-tabs__lead">
+                タブを切り替えると、選んだプランの料金カードだけを確認できます。迷った時は、まず近い目的から選んでみてください。
               </p>
             </div>
 
-            <div class="pricing-guide" aria-label="目的別のおすすめ導線">
-              <a class="pricing-guide__card" href="#diagnosis" data-plan-jump="#diagnosis">
-                <span class="pricing-guide__tag">すでにホームページがある</span>
-                <strong>ホームページ改善診断へ</strong>
-                <p>予約や問い合わせにつながりにくい原因を、スマホ表示や導線から分かりやすく整理します。</p>
-              </a>
-              <a class="pricing-guide__card" href="#web-production" data-plan-jump="#web-production">
-                <span class="pricing-guide__tag">新しくホームページを作りたい</span>
-                <strong>新規Web制作プランへ</strong>
-                <p>保守セットと買い切り制作から、お店の運用方法に合う形を選べます。</p>
-              </a>
-              <a class="pricing-guide__card" href="#maintenance" data-plan-jump="#maintenance">
-                <span class="pricing-guide__tag">公開後も任せたい</span>
-                <strong>保守・更新サポートへ</strong>
-                <p>更新、軽微な修正、トラブル対応まで継続して相談できます。</p>
-              </a>
+            <div class="pricing-tabs__list" role="tablist" aria-label="料金プランの種類">
+              <button
+                class="pricing-tab is-active"
+                id="pricing-tab-diagnosis"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="diagnosis"
+                data-pricing-tab="diagnosis"
+              >
+                <span>ホームページ改善診断</span>
+                <small>既存サイトを見直したい方</small>
+              </button>
+              <button
+                class="pricing-tab"
+                id="pricing-tab-web-production"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="web-production"
+                data-pricing-tab="web-production"
+              >
+                <span>新規Web制作</span>
+                <small>新しく作りたい方</small>
+              </button>
+              <button
+                class="pricing-tab"
+                id="pricing-tab-maintenance"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="maintenance"
+                data-pricing-tab="maintenance"
+              >
+                <span>保守・更新</span>
+                <small>公開後も任せたい方</small>
+              </button>
             </div>
           </section>
 
-          <div class="pricing__block diagnosis" id="diagnosis" aria-labelledby="diagnosis-title">
+          <div class="pricing__block diagnosis pricing-tab-panel is-active" id="diagnosis" role="tabpanel" aria-labelledby="pricing-tab-diagnosis" data-pricing-panel="diagnosis">
             <div class="diagnosis__inner">
-          <p class="diagnosis__eyebrow">Website Check</p>
-          <h2 class="diagnosis__title" id="diagnosis-title">ホームページ改善診断</h2>
+              <p class="diagnosis__eyebrow">Website Check</p>
+              <h2 class="diagnosis__title" id="diagnosis-title">ホームページ改善診断</h2>
 
-          <div class="diagnosis__intro">
-            <p>
-              今あるホームページを確認し、予約・問い合わせにつながりやすくするための改善点を分かりやすくお伝えします。
-            </p>
-          </div>
+              <div class="diagnosis__intro">
+                <p>
+                  今あるホームページを確認し、予約・問い合わせにつながりやすくするための改善点を分かりやすくお伝えします。
+                </p>
+              </div>
 
-          <div class="diagnosis__panel">
-            <h3 class="diagnosis__heading">診断で見るポイント</h3>
-            <ul class="diagnosis__checklist">
-              <li>スマホで見やすいか</li>
-              <li>お店の魅力がすぐ伝わるか</li>
-              <li>予約・問い合わせボタンが分かりやすいか</li>
-              <li>営業時間・場所・メニューが探しやすいか</li>
-              <li>SNSやGoogleマップへの導線があるか</li>
-              <li>初めて見るお客様が不安なく予約できるか</li>
-              <li>文章や写真が古い印象になっていないか</li>
-            </ul>
-          </div>
-
-          <div class="improvement-slider" data-improvement-slider style="--compare-position: 52%;" aria-labelledby="improvement-slider-title">
-            <div class="improvement-slider__header">
-              <p class="improvement-slider__eyebrow">Before / After</p>
-              <h3 class="improvement-slider__title" id="improvement-slider-title">導線を整えると、予約まで迷いにくくなります</h3>
-              <p class="improvement-slider__lead">
-                改善診断では、見つけにくい予約ボタンや情報の並びを確認し、初めて来たお客様が安心して問い合わせできる状態へ整えます。
-              </p>
-            </div>
-
-            <div class="improvement-slider__stage" aria-live="polite">
-              <article class="improvement-slider__panel improvement-slider__panel--before">
-                <span class="improvement-slider__label">改善前</span>
-                <ul>
-                  <li>予約ボタンが見つけにくい</li>
-                  <li>営業時間や場所が探しにくい</li>
-                  <li>スマホで文字が小さい</li>
-                  <li>お店の魅力が伝わりにくい</li>
+              <div class="diagnosis__panel">
+                <h3 class="diagnosis__heading">診断で見るポイント</h3>
+                <ul class="diagnosis__checklist">
+                  <li>スマホで見やすいか</li>
+                  <li>お店の魅力がすぐ伝わるか</li>
+                  <li>予約・問い合わせボタンが分かりやすいか</li>
+                  <li>営業時間・場所・メニューが探しやすいか</li>
+                  <li>SNSやGoogleマップへの導線があるか</li>
+                  <li>初めて見るお客様が不安なく予約できるか</li>
+                  <li>文章や写真が古い印象になっていないか</li>
                 </ul>
-              </article>
+              </div>
 
-              <article class="improvement-slider__panel improvement-slider__panel--after">
-                <span class="improvement-slider__label">改善後</span>
-                <ul>
-                  <li>予約ボタンがすぐ押せる</li>
-                  <li>営業時間・場所・メニューが分かりやすい</li>
-                  <li>スマホでも読みやすい</li>
-                  <li>初めて見る人でも安心して予約できる</li>
+              <div class="improvement-slider" data-improvement-slider style="--compare-position: 52%;" aria-labelledby="improvement-slider-title">
+                <div class="improvement-slider__header">
+                  <p class="improvement-slider__eyebrow">Before / After</p>
+                  <h3 class="improvement-slider__title" id="improvement-slider-title">導線を整えると、予約まで迷いにくくなります</h3>
+                  <p class="improvement-slider__lead">
+                    改善診断では、見つけにくい予約ボタンや情報の並びを確認し、初めて来たお客様が安心して問い合わせできる状態へ整えます。
+                  </p>
+                </div>
+
+                <div class="improvement-slider__stage" aria-live="polite">
+                  <article class="improvement-slider__panel improvement-slider__panel--before">
+                    <span class="improvement-slider__label">改善前</span>
+                    <ul>
+                      <li>予約ボタンが見つけにくい</li>
+                      <li>営業時間や場所が探しにくい</li>
+                      <li>スマホで文字が小さい</li>
+                      <li>お店の魅力が伝わりにくい</li>
+                    </ul>
+                  </article>
+
+                  <article class="improvement-slider__panel improvement-slider__panel--after">
+                    <span class="improvement-slider__label">改善後</span>
+                    <ul>
+                      <li>予約ボタンがすぐ押せる</li>
+                      <li>営業時間・場所・メニューが分かりやすい</li>
+                      <li>スマホでも読みやすい</li>
+                      <li>初めて見る人でも安心して予約できる</li>
+                    </ul>
+                  </article>
+
+                  <span class="improvement-slider__divider" aria-hidden="true"></span>
+                </div>
+
+                <div class="improvement-slider__control">
+                  <span>改善前</span>
+                  <input
+                    class="improvement-slider__range"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="52"
+                    aria-label="改善前と改善後の比較位置"
+                    data-improvement-range
+                  />
+                  <span>改善後</span>
+                </div>
+              </div>
+
+              <div class="diagnosis__plans" aria-label="ホームページ改善診断の料金プラン">
+                <article class="diagnosis-plan">
+                  <div class="diagnosis-plan__header">
+                    <h3 class="diagnosis-plan__title">無料チェック</h3>
+                    <p class="diagnosis-plan__price">0円</p>
+                  </div>
+                  <p class="diagnosis-plan__text">
+                    トップページを中心に、まず直すと効果が出やすい箇所を簡易的に確認します。
+                  </p>
+                  <ul class="diagnosis-plan__list">
+                    <li>トップページを簡易チェック</li>
+                    <li>改善ポイント3つ</li>
+                    <li>初回相談向け</li>
+                  </ul>
+                  <a class="plan-card__button" href="#contact">このプランを相談する</a>
+                </article>
+
+                <article class="diagnosis-plan diagnosis-plan--featured">
+                  <p class="diagnosis-plan__badge">おすすめ</p>
+                  <div class="diagnosis-plan__header">
+                    <h3 class="diagnosis-plan__title">改善診断</h3>
+                    <p class="diagnosis-plan__price">5,000円</p>
+                  </div>
+                  <p class="diagnosis-plan__text">
+                    トップページと予約・問い合わせまでの流れを確認し、改善ポイントをまとめてお伝えします。「何を直せばよいか知りたい」方向けです。
+                  </p>
+                  <ul class="diagnosis-plan__list">
+                    <li>トップページ確認</li>
+                    <li>予約・問い合わせ導線の確認</li>
+                    <li>スマホ表示の確認</li>
+                    <li>改善ポイント整理</li>
+                  </ul>
+                  <a class="plan-card__button" href="#contact">このプランを相談する</a>
+                </article>
+
+                <article class="diagnosis-plan">
+                  <div class="diagnosis-plan__header">
+                    <h3 class="diagnosis-plan__title">改善提案レポート</h3>
+                    <p class="diagnosis-plan__price">10,000円</p>
+                  </div>
+                  <p class="diagnosis-plan__text">
+                    サイト全体を確認し、優先順位つきで改善案をまとめます。修正作業の相談も可能です。
+                  </p>
+                  <ul class="diagnosis-plan__list">
+                    <li>サイト全体チェック</li>
+                    <li>文章・導線・情報設計の確認</li>
+                    <li>優先順位つき改善案</li>
+                    <li>修正作業の相談可</li>
+                  </ul>
+                  <a class="plan-card__button" href="#contact">このプランを相談する</a>
+                </article>
+              </div>
+
+              <div class="diagnosis__support">
+                <p class="diagnosis__support-lead">
+                  診断だけで終わりではなく、ご希望があれば以下のような修正も対応できます。
+                </p>
+                <ul class="diagnosis__support-list">
+                  <li>予約ボタン・問い合わせ導線の改善</li>
+                  <li>文章の修正</li>
+                  <li>写真やメニュー情報の差し替え</li>
+                  <li>スマホ表示の調整</li>
+                  <li>お知らせ・ブログ更新</li>
+                  <li>保守管理への切り替え相談</li>
                 </ul>
-              </article>
-
-              <span class="improvement-slider__divider" aria-hidden="true"></span>
-            </div>
-
-            <div class="improvement-slider__control">
-              <span>改善前</span>
-              <input
-                class="improvement-slider__range"
-                type="range"
-                min="0"
-                max="100"
-                value="52"
-                aria-label="改善前と改善後の比較位置"
-                data-improvement-range
-              />
-              <span>改善後</span>
-            </div>
-          </div>
-
-          <div class="diagnosis__plans" aria-label="ホームページ改善診断の料金プラン">
-            <article class="diagnosis-plan">
-              <div class="diagnosis-plan__header">
-                <h3 class="diagnosis-plan__title">無料チェック</h3>
-                <p class="diagnosis-plan__price">0円</p>
               </div>
-              <p class="diagnosis-plan__text">
-                トップページを中心に、まず直すと効果が出やすい箇所を簡易的に確認します。
-              </p>
-              <ul class="diagnosis-plan__list">
-                <li>トップページを簡易チェック</li>
-                <li>改善ポイント3つ</li>
-                <li>初回相談向け</li>
-              </ul>
-              <a class="plan-card__button" href="#contact">このプランを相談する</a>
-            </article>
 
-            <article class="diagnosis-plan diagnosis-plan--featured">
-              <p class="diagnosis-plan__badge">おすすめ</p>
-              <div class="diagnosis-plan__header">
-                <h3 class="diagnosis-plan__title">改善診断</h3>
-                <p class="diagnosis-plan__price">5,000円</p>
+              <div class="tab-estimate tab-estimate--diagnosis">
+                <div>
+                  <p class="tab-estimate__eyebrow">Simple Estimate</p>
+                  <h3 class="tab-estimate__title">診断後の修正相談の目安</h3>
+                  <p class="tab-estimate__text">
+                    まずは診断で「どこを直すと予約や問い合わせにつながりやすいか」を整理します。修正作業が必要な場合は、内容を確認したうえで無理のない範囲をご提案します。
+                  </p>
+                </div>
+                <ul class="tab-estimate__list">
+                  <li><span>無料チェック</span><strong>0円</strong></li>
+                  <li><span>改善診断</span><strong>5,000円</strong></li>
+                  <li><span>改善提案レポート</span><strong>10,000円</strong></li>
+                </ul>
+                <a class="tab-estimate__button" href="#contact">まずは改善診断を相談する</a>
               </div>
-              <p class="diagnosis-plan__text">
-                トップページと予約・問い合わせまでの流れを確認し、改善ポイントをまとめてお伝えします。「何を直せばよいか知りたい」方向けです。
-              </p>
-              <ul class="diagnosis-plan__list">
-                <li>トップページ確認</li>
-                <li>予約・問い合わせ導線の確認</li>
-                <li>スマホ表示の確認</li>
-                <li>改善ポイント整理</li>
-              </ul>
-              <a class="plan-card__button" href="#contact">このプランを相談する</a>
-            </article>
 
-            <article class="diagnosis-plan">
-              <div class="diagnosis-plan__header">
-                <h3 class="diagnosis-plan__title">改善提案レポート</h3>
-                <p class="diagnosis-plan__price">10,000円</p>
+              <div class="diagnosis__cta">
+                <div>
+                  <h3 class="diagnosis__cta-title">今のホームページをチェックしてほしい方へ</h3>
+                  <p class="diagnosis__cta-text">
+                    新しく作り直すか迷っている段階でも大丈夫です。まずは現在のホームページを確認し、改善できるポイントを分かりやすくお伝えします。
+                  </p>
+                </div>
+                <div class="diagnosis__actions">
+                  <a class="diagnosis__button" href="#contact">無料で相談する</a>
+                  <a
+                    class="diagnosis__button diagnosis__button--secondary"
+                    href="https://coconala.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ココナラのプロフィールを見る
+                  </a>
+                </div>
               </div>
-              <p class="diagnosis-plan__text">
-                サイト全体を確認し、優先順位つきで改善案をまとめます。修正作業の相談も可能です。
-              </p>
-              <ul class="diagnosis-plan__list">
-                <li>サイト全体チェック</li>
-                <li>文章・導線・情報設計の確認</li>
-                <li>優先順位つき改善案</li>
-                <li>修正作業の相談可</li>
-              </ul>
-              <a class="plan-card__button" href="#contact">このプランを相談する</a>
-            </article>
-          </div>
-
-          <div class="diagnosis__support">
-            <p class="diagnosis__support-lead">
-              診断だけで終わりではなく、ご希望があれば以下のような修正も対応できます。
-            </p>
-            <ul class="diagnosis__support-list">
-              <li>予約ボタン・問い合わせ導線の改善</li>
-              <li>文章の修正</li>
-              <li>写真やメニュー情報の差し替え</li>
-              <li>スマホ表示の調整</li>
-              <li>お知らせ・ブログ更新</li>
-              <li>保守管理への切り替え相談</li>
-            </ul>
-          </div>
-
-          <div class="diagnosis__cta">
-            <div>
-              <h3 class="diagnosis__cta-title">今のホームページをチェックしてほしい方へ</h3>
-              <p class="diagnosis__cta-text">
-                新しく作り直すか迷っている段階でも大丈夫です。まずは現在のホームページを確認し、改善できるポイントを分かりやすくお伝えします。
-              </p>
-            </div>
-            <div class="diagnosis__actions">
-              <a class="diagnosis__button" href="#contact">無料で相談する</a>
-              <a
-                class="diagnosis__button diagnosis__button--secondary"
-                href="https://coconala.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ココナラのプロフィールを見る
-              </a>
-            </div>
-          </div>
             </div>
           </div>
 
-          <div class="services__block" id="web-production">
+          <div class="services__block pricing-tab-panel" id="web-production" role="tabpanel" aria-labelledby="pricing-tab-web-production" data-pricing-panel="web-production" hidden>
             <h3 class="services__heading">新規Web制作プラン</h3>
             <p class="services__lead">
               新しくホームページを作りたい方向けの制作プランです。公開後も任せたい方は保守セット、納品後はご自身で管理したい方は買い切り制作をお選びいただけます。
@@ -518,9 +555,198 @@
                 </ul>
               </div>
             </details>
+
+            <div class="services__details">
+              <details class="services-accordion">
+                <summary class="services-accordion__summary">
+                  追加オプションを詳しく見る
+                </summary>
+                <div class="services-accordion__content">
+                  <p class="services-detail__lead">
+                    基本パッケージを超えるご要望も、内容を伺ったうえで柔軟にお見積りします。
+                  </p>
+                  <ul class="services-detail__list">
+                    <li>
+                      <span class="services-detail__mark services-detail__mark--check" aria-hidden="true"></span>
+                      ページの追加: 6ページ目以降（＋10,000円 / 1P）
+                    </li>
+                    <li>
+                      <span class="services-detail__mark services-detail__mark--check" aria-hidden="true"></span>
+                      高度な機能: EC機能の導入（＋50,000円〜）/ 予約システム（＋30,000円〜）
+                    </li>
+                  </ul>
+                </div>
+              </details>
+
+              <details class="services-accordion services-accordion--excluded">
+                <summary class="services-accordion__summary">
+                  お受けしていない業務について
+                </summary>
+                <div class="services-accordion__content">
+                  <p class="services-detail__lead">
+                    「直感的なUI構築」と「安定した保守」に特化するため、以下は承っておりません。
+                  </p>
+                  <ul class="services-detail__list">
+                    <li>
+                      <span class="services-detail__mark services-detail__mark--x" aria-hidden="true"></span>
+                      ブログ記事などの継続的な執筆代行
+                    </li>
+                    <li>
+                      <span class="services-detail__mark services-detail__mark--x" aria-hidden="true"></span>
+                      SNSの運用代行・Web広告の運用管理
+                    </li>
+                    <li>
+                      <span class="services-detail__mark services-detail__mark--x" aria-hidden="true"></span>
+                      写真の高度な合成や大幅なレタッチ（※Web用の調整は対応可）
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+
+            <div class="pricing__block--estimate pricing-inline-estimate">
+              <section class="estimate-tool" id="estimate" data-estimate-tool aria-labelledby="estimate-title">
+                <div class="estimate-tool__inner">
+                  <p class="estimate-tool__eyebrow">Quick Estimate</p>
+                  <h2 class="estimate-tool__title" id="estimate-title">新規Web制作 自動見積もり</h2>
+                  <p class="estimate-tool__lead">
+                    こちらは新しくホームページを制作する方向けの概算見積もりです。既存サイトの改善や修正をご希望の方は、ホームページ改善診断またはお問い合わせからご相談ください。
+                  </p>
+
+                  <div class="estimate-tool__progress" aria-hidden="true">
+                    <span data-progress></span>
+                  </div>
+
+                  <div class="estimate-step is-active" data-step="1">
+                    <h3 class="estimate-step__title">
+                      <span>Q1</span>
+                      ご希望の基本プランはどちらですか？
+                    </h3>
+                    <div class="estimate-options" role="group" aria-label="基本プラン">
+                      <button class="estimate-card" type="button" data-plan="maintenance">
+                        <span class="estimate-card__tag">おすすめ</span>
+                        <strong>保守セットプラン</strong>
+                        <small>制作後のサーバー管理やトラブル対応もお任せ</small>
+                        <span>初期費用 58,000円 / 月額 6,970円</span>
+                      </button>
+                      <button class="estimate-card" type="button" data-plan="once">
+                        <span class="estimate-card__tag estimate-card__tag--muted">買い切り</span>
+                        <strong>制作のみプラン</strong>
+                        <small>自社でサーバーを管理する買い切り型</small>
+                        <span>初期費用 120,000円 / 月額 0円</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="estimate-step" data-step="2">
+                    <h3 class="estimate-step__title">
+                      <span>Q2</span>
+                      必要な追加ページ数は？
+                    </h3>
+                    <p class="estimate-step__note">トップページ以外の追加ページ数を選んでください。</p>
+                    <div class="estimate-options" role="group" aria-label="追加ページ">
+                      <button class="estimate-card" type="button" data-pages="none">
+                        <strong>追加なし</strong>
+                        <small>基本パッケージの1ページにまとめる</small>
+                        <span>追加費用 0円</span>
+                      </button>
+                      <button class="estimate-card" type="button" data-pages="multiple">
+                        <strong>追加あり</strong>
+                        <small>複数ページで構成する</small>
+                        <span>1ページごとに +10,000円</span>
+                      </button>
+                    </div>
+
+                    <div class="page-counter" data-page-counter hidden>
+                      <p>追加ページ数</p>
+                      <div class="page-counter__control">
+                        <button type="button" data-page-dec aria-label="追加ページ数を減らす">-</button>
+                        <strong data-page-count>1</strong>
+                        <button type="button" data-page-inc aria-label="追加ページ数を増やす">+</button>
+                      </div>
+                      <button class="estimate-tool__next" type="button" data-page-next>
+                        このページ数で進む
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="estimate-step" data-step="3">
+                    <h3 class="estimate-step__title">
+                      <span>Q3</span>
+                      ホームページに使う写真や文章のご用意は？
+                    </h3>
+                    <div class="estimate-options" role="group" aria-label="素材の準備">
+                      <button class="estimate-card" type="button" data-material="self">
+                        <strong>すべて自分たちで用意する</strong>
+                        <small>写真・文章・ロゴなどをご支給いただく場合</small>
+                        <span>追加費用 0円</span>
+                      </button>
+                      <button class="estimate-card" type="button" data-material="support">
+                        <strong>写真選定や文章作成をおまかせしたい</strong>
+                        <small>掲載内容の整理から一緒に進めたい場合</small>
+                        <span>追加費用 +20,000円</span>
+                      </button>
+                    </div>
+                    <button class="estimate-tool__result-button" type="button" data-show-result disabled>
+                      見積もり結果を見る
+                    </button>
+                  </div>
+
+                  <section class="estimate-result" data-result hidden aria-live="polite">
+                    <h3 class="estimate-result__title">見積もり結果</h3>
+                    <div class="estimate-result__breakdown">
+                      <div class="estimate-result__row">
+                        <span>初期費用ベース</span>
+                        <strong data-result-base>0円（税別）</strong>
+                      </div>
+                      <div class="estimate-result__row">
+                        <span>追加ページ費</span>
+                        <strong data-result-pages>0円（税別）</strong>
+                      </div>
+                      <div class="estimate-result__row">
+                        <span>素材準備費</span>
+                        <strong data-result-material>0円（税別）</strong>
+                      </div>
+                      <div class="estimate-result__row">
+                        <span>保守費用</span>
+                        <strong data-result-monthly>0円（税別）</strong>
+                      </div>
+                    </div>
+
+                    <div class="estimate-result__total">
+                      <p>初期費用 総額</p>
+                      <strong data-result-total>0円（税別）</strong>
+                      <p class="estimate-result__maintenance" data-result-maintenance>
+                        保守費用 0円（税別）
+                      </p>
+                    </div>
+
+                    <div class="estimate-result__notes">
+                      <p>※上記は概算目安となります。1ページあたりのボリューム（目安：A4用紙1.5〜2枚分）やご要望の機能により変動する場合がございます。</p>
+                      <p>※お問い合わせフォームの設置をご希望の場合は、別途+20,000円（税別）となります。</p>
+                    </div>
+
+                    <p class="estimate-result__platform-note">
+                      ※お客様と安心・安全なお取引を行うため、ご契約および決済はすべて仲介プラットフォーム（ココナラ等）を経由して承っております。当サイトでの直接の金銭のやり取りは発生いたしませんのでご安心ください。
+                    </p>
+                    <div class="estimate-result__actions">
+                      <a class="estimate-result__cta" href="#contact">この条件で無料相談する</a>
+                      <a
+                        class="estimate-result__cta estimate-result__cta--secondary"
+                        href="https://coconala.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        ココナラで実績・評価を見る
+                      </a>
+                    </div>
+                  </section>
+                </div>
+              </section>
+            </div>
           </div>
 
-          <div class="services__block" id="maintenance">
+          <div class="services__block pricing-tab-panel" id="maintenance" role="tabpanel" aria-labelledby="pricing-tab-maintenance" data-pricing-panel="maintenance" hidden>
             <h3 class="services__heading">保守・更新サポート</h3>
             <p class="services__lead">
               公開後の更新・修正・管理を継続して任せたい方向けの月額サポートです。お店の状況に合わせて、必要な範囲だけ選べます。
@@ -583,200 +809,22 @@
                 <a class="plan-card__button" href="#contact">このプランを相談する</a>
               </article>
             </div>
-          </div>
 
-          <div class="services__details">
-            <details class="services-accordion">
-              <summary class="services-accordion__summary">
-                追加オプションを詳しく見る
-              </summary>
-              <div class="services-accordion__content">
-                <p class="services-detail__lead">
-                  基本パッケージを超えるご要望も、内容を伺ったうえで柔軟にお見積りします。
+            <div class="tab-estimate tab-estimate--maintenance">
+              <div>
+                <p class="tab-estimate__eyebrow">Monthly Guide</p>
+                <h3 class="tab-estimate__title">月額サポートの目安</h3>
+                <p class="tab-estimate__text">
+                  更新頻度や任せたい範囲に合わせて、月額6,980円から14,800円までの3段階で選べます。迷う場合は、お店の更新頻度を伺って一緒に整理します。
                 </p>
-                <ul class="services-detail__list">
-                  <li>
-                    <span class="services-detail__mark services-detail__mark--check" aria-hidden="true"></span>
-                    ページの追加: 6ページ目以降（＋10,000円 / 1P）
-                  </li>
-                  <li>
-                    <span class="services-detail__mark services-detail__mark--check" aria-hidden="true"></span>
-                    高度な機能: EC機能の導入（＋50,000円〜）/ 予約システム（＋30,000円〜）
-                  </li>
-                </ul>
               </div>
-            </details>
-
-            <details class="services-accordion services-accordion--excluded">
-              <summary class="services-accordion__summary">
-                お受けしていない業務について
-              </summary>
-              <div class="services-accordion__content">
-                <p class="services-detail__lead">
-                  「直感的なUI構築」と「安定した保守」に特化するため、以下は承っておりません。
-                </p>
-                <ul class="services-detail__list">
-                  <li>
-                    <span class="services-detail__mark services-detail__mark--x" aria-hidden="true"></span>
-                    ブログ記事などの継続的な執筆代行
-                  </li>
-                  <li>
-                    <span class="services-detail__mark services-detail__mark--x" aria-hidden="true"></span>
-                    SNSの運用代行・Web広告の運用管理
-                  </li>
-                  <li>
-                    <span class="services-detail__mark services-detail__mark--x" aria-hidden="true"></span>
-                    写真の高度な合成や大幅なレタッチ（※Web用の調整は対応可）
-                  </li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="services__cta">
-            <p>新しくホームページを作りたい方は、自動見積もりで概算を確認できます。既存サイトの改善は、上の改善診断からご相談ください。</p>
-            <a class="services__button" href="#estimate">自動見積もりへ進む</a>
-          </div>
-
-          <div class="pricing__block pricing__block--estimate">
-            <section class="estimate-tool" id="estimate" data-estimate-tool aria-labelledby="estimate-title">
-        <div class="estimate-tool__inner">
-          <p class="estimate-tool__eyebrow">Quick Estimate</p>
-          <h2 class="estimate-tool__title" id="estimate-title">新規Web制作 自動見積もり</h2>
-          <p class="estimate-tool__lead">
-            こちらは新しくホームページを制作する方向けの概算見積もりです。既存サイトの改善や修正をご希望の方は、ホームページ改善診断またはお問い合わせからご相談ください。
-          </p>
-
-          <div class="estimate-tool__progress" aria-hidden="true">
-            <span data-progress></span>
-          </div>
-
-          <div class="estimate-step is-active" data-step="1">
-            <h3 class="estimate-step__title">
-              <span>Q1</span>
-              ご希望の基本プランはどちらですか？
-            </h3>
-            <div class="estimate-options" role="group" aria-label="基本プラン">
-              <button class="estimate-card" type="button" data-plan="maintenance">
-                <span class="estimate-card__tag">おすすめ</span>
-                <strong>保守セットプラン</strong>
-                <small>制作後のサーバー管理やトラブル対応もお任せ</small>
-                <span>初期費用 58,000円 / 月額 6,970円</span>
-              </button>
-              <button class="estimate-card" type="button" data-plan="once">
-                <span class="estimate-card__tag estimate-card__tag--muted">買い切り</span>
-                <strong>制作のみプラン</strong>
-                <small>自社でサーバーを管理する買い切り型</small>
-                <span>初期費用 120,000円 / 月額 0円</span>
-              </button>
+              <ul class="tab-estimate__list">
+                <li><span>安全維持中心</span><strong>6,980円/月</strong></li>
+                <li><span>更新も相談</span><strong>9,800円/月</strong></li>
+                <li><span>まとめて依頼</span><strong>14,800円/月</strong></li>
+              </ul>
+              <a class="tab-estimate__button" href="#contact">保守・更新について相談する</a>
             </div>
-          </div>
-
-          <div class="estimate-step" data-step="2">
-            <h3 class="estimate-step__title">
-              <span>Q2</span>
-              必要な追加ページ数は？
-            </h3>
-            <p class="estimate-step__note">トップページ以外の追加ページ数を選んでください。</p>
-            <div class="estimate-options" role="group" aria-label="追加ページ">
-              <button class="estimate-card" type="button" data-pages="none">
-                <strong>追加なし</strong>
-                <small>基本パッケージの1ページにまとめる</small>
-                <span>追加費用 0円</span>
-              </button>
-              <button class="estimate-card" type="button" data-pages="multiple">
-                <strong>追加あり</strong>
-                <small>複数ページで構成する</small>
-                <span>1ページごとに +10,000円</span>
-              </button>
-            </div>
-
-            <div class="page-counter" data-page-counter hidden>
-              <p>追加ページ数</p>
-              <div class="page-counter__control">
-                <button type="button" data-page-dec aria-label="追加ページ数を減らす">-</button>
-                <strong data-page-count>1</strong>
-                <button type="button" data-page-inc aria-label="追加ページ数を増やす">+</button>
-              </div>
-              <button class="estimate-tool__next" type="button" data-page-next>
-                このページ数で進む
-              </button>
-            </div>
-          </div>
-
-          <div class="estimate-step" data-step="3">
-            <h3 class="estimate-step__title">
-              <span>Q3</span>
-              ホームページに使う写真や文章のご用意は？
-            </h3>
-            <div class="estimate-options" role="group" aria-label="素材の準備">
-              <button class="estimate-card" type="button" data-material="self">
-                <strong>すべて自分たちで用意する</strong>
-                <small>写真・文章・ロゴなどをご支給いただく場合</small>
-                <span>追加費用 0円</span>
-              </button>
-              <button class="estimate-card" type="button" data-material="support">
-                <strong>写真選定や文章作成をおまかせしたい</strong>
-                <small>掲載内容の整理から一緒に進めたい場合</small>
-                <span>追加費用 +20,000円</span>
-              </button>
-            </div>
-            <button class="estimate-tool__result-button" type="button" data-show-result disabled>
-              見積もり結果を見る
-            </button>
-          </div>
-
-          <section class="estimate-result" data-result hidden aria-live="polite">
-            <h3 class="estimate-result__title">見積もり結果</h3>
-            <div class="estimate-result__breakdown">
-              <div class="estimate-result__row">
-                <span>初期費用ベース</span>
-                <strong data-result-base>0円（税別）</strong>
-              </div>
-              <div class="estimate-result__row">
-                <span>追加ページ費</span>
-                <strong data-result-pages>0円（税別）</strong>
-              </div>
-              <div class="estimate-result__row">
-                <span>素材準備費</span>
-                <strong data-result-material>0円（税別）</strong>
-              </div>
-              <div class="estimate-result__row">
-                <span>保守費用</span>
-                <strong data-result-monthly>0円（税別）</strong>
-              </div>
-            </div>
-
-            <div class="estimate-result__total">
-              <p>初期費用 総額</p>
-              <strong data-result-total>0円（税別）</strong>
-              <p class="estimate-result__maintenance" data-result-maintenance>
-                保守費用 0円（税別）
-              </p>
-            </div>
-
-            <div class="estimate-result__notes">
-              <p>※上記は概算目安となります。1ページあたりのボリューム（目安：A4用紙1.5〜2枚分）やご要望の機能により変動する場合がございます。</p>
-              <p>※お問い合わせフォームの設置をご希望の場合は、別途+20,000円（税別）となります。</p>
-            </div>
-
-            <p class="estimate-result__platform-note">
-              ※お客様と安心・安全なお取引を行うため、ご契約および決済はすべて仲介プラットフォーム（ココナラ等）を経由して承っております。当サイトでの直接の金銭のやり取りは発生いたしませんのでご安心ください。
-            </p>
-            <div class="estimate-result__actions">
-              <a class="estimate-result__cta" href="#contact">この条件で無料相談する</a>
-              <a
-                class="estimate-result__cta estimate-result__cta--secondary"
-                href="https://coconala.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ココナラで実績・評価を見る
-              </a>
-            </div>
-          </section>
-        </div>
-            </section>
           </div>
         </div>
       </section>
