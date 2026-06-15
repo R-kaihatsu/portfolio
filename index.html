@@ -259,33 +259,33 @@
             既存サイトを見直したい方には改善診断を、新しくホームページを作りたい方には新規Web制作プランと自動見積もりを、公開後も任せたい方には保守・更新サポートをご用意しています。
           </p>
 
-          <div class="pricing-guide" aria-label="目的別のおすすめ導線">
-            <a class="pricing-guide__card" href="#diagnosis">
-              <span class="pricing-guide__tag">既存サイトがある方</span>
-              <strong>ホームページ改善診断</strong>
-              <p>予約や問い合わせにつながりにくい原因を、分かりやすく整理します。</p>
-            </a>
-            <a class="pricing-guide__card" href="#web-production">
-              <span class="pricing-guide__tag">新しく作りたい方</span>
-              <strong>新規Web制作プラン</strong>
-              <p>保守セットと買い切り制作から、運用方法に合わせて選べます。</p>
-            </a>
-            <a class="pricing-guide__card" href="#maintenance">
-              <span class="pricing-guide__tag">公開後も任せたい方</span>
-              <strong>保守・更新サポート</strong>
-              <p>更新、軽微な修正、トラブル対応まで継続して相談できます。</p>
-            </a>
-            <a class="pricing-guide__card" href="#estimate">
-              <span class="pricing-guide__tag">概算を知りたい方</span>
-              <strong>新規Web制作 自動見積もり</strong>
-              <p>新しく制作する場合の初期費用と月額費用をざっくり確認できます。</p>
-            </a>
-            <a class="pricing-guide__card pricing-guide__card--contact" href="#contact">
-              <span class="pricing-guide__tag">まず相談したい方</span>
-              <strong>お問い合わせ / ココナラ</strong>
-              <p>内容が固まっていない段階でも、フォームから気軽に相談できます。</p>
-            </a>
-          </div>
+          <section class="plan-finder" aria-labelledby="plan-finder-title">
+            <div class="plan-finder__header">
+              <p class="plan-finder__eyebrow">Plan Finder</p>
+              <h3 class="plan-finder__title" id="plan-finder-title">あなたに合うプラン診断</h3>
+              <p class="plan-finder__lead">
+                お店の状況に近いカードを選ぶと、該当プランまで移動して内容を確認できます。
+              </p>
+            </div>
+
+            <div class="pricing-guide" aria-label="目的別のおすすめ導線">
+              <a class="pricing-guide__card" href="#diagnosis" data-plan-jump="#diagnosis">
+                <span class="pricing-guide__tag">すでにホームページがある</span>
+                <strong>ホームページ改善診断へ</strong>
+                <p>予約や問い合わせにつながりにくい原因を、スマホ表示や導線から分かりやすく整理します。</p>
+              </a>
+              <a class="pricing-guide__card" href="#web-production" data-plan-jump="#web-production">
+                <span class="pricing-guide__tag">新しくホームページを作りたい</span>
+                <strong>新規Web制作プランへ</strong>
+                <p>保守セットと買い切り制作から、お店の運用方法に合う形を選べます。</p>
+              </a>
+              <a class="pricing-guide__card" href="#maintenance" data-plan-jump="#maintenance">
+                <span class="pricing-guide__tag">公開後も任せたい</span>
+                <strong>保守・更新サポートへ</strong>
+                <p>更新、軽微な修正、トラブル対応まで継続して相談できます。</p>
+              </a>
+            </div>
+          </section>
 
           <div class="pricing__block diagnosis" id="diagnosis" aria-labelledby="diagnosis-title">
             <div class="diagnosis__inner">
@@ -311,6 +311,54 @@
             </ul>
           </div>
 
+          <div class="improvement-slider" data-improvement-slider style="--compare-position: 52%;" aria-labelledby="improvement-slider-title">
+            <div class="improvement-slider__header">
+              <p class="improvement-slider__eyebrow">Before / After</p>
+              <h3 class="improvement-slider__title" id="improvement-slider-title">導線を整えると、予約まで迷いにくくなります</h3>
+              <p class="improvement-slider__lead">
+                改善診断では、見つけにくい予約ボタンや情報の並びを確認し、初めて来たお客様が安心して問い合わせできる状態へ整えます。
+              </p>
+            </div>
+
+            <div class="improvement-slider__stage" aria-live="polite">
+              <article class="improvement-slider__panel improvement-slider__panel--before">
+                <span class="improvement-slider__label">改善前</span>
+                <ul>
+                  <li>予約ボタンが見つけにくい</li>
+                  <li>営業時間や場所が探しにくい</li>
+                  <li>スマホで文字が小さい</li>
+                  <li>お店の魅力が伝わりにくい</li>
+                </ul>
+              </article>
+
+              <article class="improvement-slider__panel improvement-slider__panel--after">
+                <span class="improvement-slider__label">改善後</span>
+                <ul>
+                  <li>予約ボタンがすぐ押せる</li>
+                  <li>営業時間・場所・メニューが分かりやすい</li>
+                  <li>スマホでも読みやすい</li>
+                  <li>初めて見る人でも安心して予約できる</li>
+                </ul>
+              </article>
+
+              <span class="improvement-slider__divider" aria-hidden="true"></span>
+            </div>
+
+            <div class="improvement-slider__control">
+              <span>改善前</span>
+              <input
+                class="improvement-slider__range"
+                type="range"
+                min="0"
+                max="100"
+                value="52"
+                aria-label="改善前と改善後の比較位置"
+                data-improvement-range
+              />
+              <span>改善後</span>
+            </div>
+          </div>
+
           <div class="diagnosis__plans" aria-label="ホームページ改善診断の料金プラン">
             <article class="diagnosis-plan">
               <div class="diagnosis-plan__header">
@@ -325,6 +373,7 @@
                 <li>改善ポイント3つ</li>
                 <li>初回相談向け</li>
               </ul>
+              <a class="plan-card__button" href="#contact">このプランを相談する</a>
             </article>
 
             <article class="diagnosis-plan diagnosis-plan--featured">
@@ -342,6 +391,7 @@
                 <li>スマホ表示の確認</li>
                 <li>改善ポイント整理</li>
               </ul>
+              <a class="plan-card__button" href="#contact">このプランを相談する</a>
             </article>
 
             <article class="diagnosis-plan">
@@ -358,6 +408,7 @@
                 <li>優先順位つき改善案</li>
                 <li>修正作業の相談可</li>
               </ul>
+              <a class="plan-card__button" href="#contact">このプランを相談する</a>
             </article>
           </div>
 
@@ -414,6 +465,12 @@
                 <p class="service-card__text">
                   制作後のサーバー管理やトラブル対応まで、継続して相談できるプランです。Webに詳しくない個人店様にも安心してご利用いただけます。
                 </p>
+                <ul class="service-card__list">
+                  <li>制作後のサーバー管理</li>
+                  <li>トラブル時の相談対応</li>
+                  <li>保守プランへのスムーズな接続</li>
+                </ul>
+                <a class="plan-card__button" href="#contact">このプランを相談する</a>
               </article>
 
               <article class="service-card">
@@ -427,6 +484,12 @@
                 <p class="service-card__text">
                   お客様ご自身のサーバーにWebサイトを構築し、納品後は自社で管理する買い切り型のプランです。
                 </p>
+                <ul class="service-card__list">
+                  <li>お客様サーバーへの構築</li>
+                  <li>納品後は自社管理</li>
+                  <li>必要な時だけ相談可能</li>
+                </ul>
+                <a class="plan-card__button" href="#contact">このプランを相談する</a>
               </article>
             </div>
 
@@ -474,6 +537,12 @@
                 <p class="service-card__text">
                   「とりあえずサイトを安全に維持したい」という方向けの現状維持プランです。
                 </p>
+                <ul class="service-card__list">
+                  <li>サイトの安全維持</li>
+                  <li>軽微な状態確認</li>
+                  <li>現状維持を重視</li>
+                </ul>
+                <a class="plan-card__button" href="#contact">このプランを相談する</a>
               </article>
 
               <article class="service-card service-card--featured">
@@ -487,6 +556,12 @@
                 <p class="service-card__text">
                   季節ごとのお知らせや画像更新を行い、お店の動きが伝わる状態を保ちたい方向けです。
                 </p>
+                <ul class="service-card__list">
+                  <li>お知らせ更新</li>
+                  <li>画像やメニュー情報の差し替え</li>
+                  <li>季節ごとの小さな改善</li>
+                </ul>
+                <a class="plan-card__button" href="#contact">このプランを相談する</a>
               </article>
 
               <article class="service-card">
@@ -500,6 +575,12 @@
                 <p class="service-card__text">
                   Webのことをまとめて任せたい方向けに、更新相談や軽微な修正まで手厚く対応します。
                 </p>
+                <ul class="service-card__list">
+                  <li>更新内容の相談</li>
+                  <li>軽微な修正対応</li>
+                  <li>Webまわりをまとめて相談</li>
+                </ul>
+                <a class="plan-card__button" href="#contact">このプランを相談する</a>
               </article>
             </div>
           </div>
@@ -761,6 +842,7 @@
       </div>
     </footer>
 
+    <script src="./site-interactions.js" defer></script>
     <script src="./estimate-tool.js" defer></script>
   </body>
 </html>
