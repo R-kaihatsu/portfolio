@@ -70,7 +70,7 @@ h3,
 .service-card__badge,
 .service-card__price,
 .services-accordion__summary,
-.contact__button, {
+.contact__button {
   font-family: var(--font-display);
 }
 
@@ -3071,5 +3071,527 @@ h3,
     animation: none;
     outline: 2px solid rgba(244, 200, 106, 0.62);
     box-shadow: 0 0 0 0.35rem rgba(244, 200, 106, 0.16);
+  }
+}
+/* Sales site redesign: hero, about, and pricing tabs */
+.hero {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.hero__panel--primary {
+  padding-right: clamp(2rem, 4vw, 4rem);
+}
+
+.hero__panel--canvas {
+  padding-right: clamp(1.5rem, 4vw, 3.4rem);
+}
+
+.hero__panel--canvas::before {
+  inset: calc(var(--header-height) + 0.8rem) clamp(0.85rem, 2.6vw, 2.2rem) 2rem clamp(-4.4rem, -4vw, -2.6rem);
+  border-radius: 56px;
+  background:
+    radial-gradient(circle at 72% 14%, rgba(244, 200, 106, 0.28), transparent 16rem),
+    radial-gradient(circle at 18% 82%, rgba(10, 17, 40, 0.09), transparent 16rem),
+    linear-gradient(145deg, #fffdf8 0%, #ffffff 48%, #f3f5f8 100%);
+  box-shadow:
+    0 2rem 4.8rem rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.hero-visuals {
+  width: min(100%, 46rem);
+  height: min(76vh, 45rem);
+  min-height: 38rem;
+}
+
+.hero-visuals__mockup,
+.hero-visuals__seo,
+.hero-visuals__booking,
+.hero-visuals__flow {
+  position: absolute;
+  opacity: 1;
+  transform-style: preserve-3d;
+}
+
+.hero-mockup {
+  top: 16%;
+  left: 14%;
+  width: 78%;
+  box-shadow:
+    0 2.4rem 5.6rem rgba(10, 17, 40, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.82);
+}
+
+.hero-seo-card {
+  top: 9%;
+  left: 0;
+  width: min(44%, 18rem);
+}
+
+.hero-booking-card {
+  right: 0;
+  bottom: 9%;
+  width: min(48%, 19rem);
+}
+
+.hero-flow-card {
+  left: 8%;
+  bottom: 5%;
+  z-index: 13;
+  width: min(52%, 20rem);
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(10, 17, 40, 0.08);
+  border-radius: 1rem;
+  color: var(--color-navy);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 1.4rem 3.2rem rgba(10, 17, 40, 0.16);
+  backdrop-filter: blur(18px);
+  animation: heroFloatHp 7s ease-in-out 0.7s infinite;
+}
+
+.hero-flow-card span {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: rgba(10, 17, 40, 0.56);
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.11em;
+}
+
+.hero-flow-card strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(0.92rem, 1.08vw, 1.05rem);
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.about {
+  align-items: flex-start;
+  min-height: calc(100dvh - var(--header-height));
+  scroll-margin-top: calc(var(--header-height) + 10px);
+  padding: clamp(2.5rem, 4.2vw, 3.8rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  grid-template-rows: auto auto 1fr;
+  column-gap: clamp(2rem, 5vw, 5rem);
+  row-gap: 0;
+  width: min(100%, 1180px);
+}
+
+.about__icon {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.about__title {
+  grid-column: 1;
+  grid-row: 2;
+  margin-bottom: clamp(1rem, 2vw, 1.4rem);
+}
+
+.about__body {
+  display: contents;
+}
+
+.about__lead {
+  grid-column: 1;
+  grid-row: 3;
+  max-width: 34rem;
+  font-size: clamp(1.12rem, 1.45vw, 1.28rem);
+}
+
+.about__promise {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  align-self: start;
+  margin-top: 0;
+}
+
+.about__promise-title {
+  margin-bottom: clamp(0.85rem, 1.4vw, 1rem);
+}
+
+.about__promise-list {
+  grid-template-columns: 1fr;
+  gap: clamp(0.85rem, 1.4vw, 1.05rem);
+}
+
+.about__promise-list li {
+  padding: clamp(1.05rem, 1.7vw, 1.35rem);
+}
+
+.about__promise-list strong {
+  font-size: clamp(1.18rem, 1.55vw, 1.38rem);
+}
+
+.about__promise-list span {
+  font-size: clamp(1rem, 1.12vw, 1.08rem);
+}
+
+.pricing__inner {
+  padding: clamp(1.25rem, 3.5vw, 2.25rem);
+  border: 1px solid rgba(10, 17, 40, 0.07);
+  border-radius: 12px;
+  background: var(--color-white);
+  box-shadow: 0 1.2rem 2.8rem rgba(10, 17, 40, 0.09);
+}
+
+.pricing__lead {
+  margin-bottom: clamp(1.35rem, 2.6vw, 2rem);
+}
+
+.pricing-tabs__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: clamp(1.25rem, 2.8vw, 1.9rem);
+  padding: 0.45rem;
+  border: 1px solid rgba(10, 17, 40, 0.08);
+  border-radius: 999px;
+  background: #f3f4f6;
+}
+
+.pricing-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: rgba(10, 17, 40, 0.72);
+  font-family: var(--font-display);
+  font-size: clamp(0.96rem, 1.05vw, 1.06rem);
+  font-weight: 800;
+  line-height: 1.35;
+  cursor: pointer;
+  background: transparent;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.pricing-tab:hover,
+.pricing-tab:focus-visible {
+  color: var(--color-navy);
+  border-color: rgba(244, 200, 106, 0.5);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.pricing-tab.is-active {
+  color: var(--color-navy);
+  border-color: rgba(244, 200, 106, 0.72);
+  background: var(--color-white);
+  box-shadow: 0 0.75rem 1.6rem rgba(10, 17, 40, 0.09);
+}
+
+.pricing-tabs__body {
+  position: relative;
+}
+
+.pricing-tab-panel[hidden],
+.estimate-mode-panel[hidden] {
+  display: none !important;
+}
+
+.pricing-tab-panel.is-active {
+  animation: pricingPanelIn 0.28s ease both;
+}
+
+@keyframes pricingPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pricing-tab-panel .pricing-plan-block {
+  margin-top: 0;
+}
+
+.pricing-plan-block {
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.pricing-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.35rem);
+}
+
+.pricing-card-grid .service-card {
+  border-radius: 12px;
+}
+
+.estimate-mode {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: clamp(1.2rem, 2.4vw, 1.75rem);
+}
+
+.estimate-mode__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.35rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(10, 17, 40, 0.1);
+  border-radius: 0.45rem;
+  color: var(--color-navy);
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.1vw, 1.08rem);
+  font-weight: 800;
+  cursor: pointer;
+  background: #ffffff;
+  box-shadow: 0 0.55rem 1.2rem rgba(10, 17, 40, 0.06);
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.estimate-mode__button:hover,
+.estimate-mode__button.is-active {
+  border-color: rgba(244, 200, 106, 0.78);
+  background: linear-gradient(135deg, rgba(244, 200, 106, 0.16), transparent 52%), #ffffff;
+  box-shadow: 0 0.9rem 1.8rem rgba(10, 17, 40, 0.1);
+  transform: translateY(-1px);
+}
+
+.diagnosis-estimator {
+  display: grid;
+  gap: clamp(1rem, 2.2vw, 1.5rem);
+}
+
+.diagnosis-estimator__header {
+  max-width: 880px;
+}
+
+.diagnosis-estimator__title {
+  margin: 0 0 0.55rem;
+  color: var(--color-navy);
+  font-size: clamp(1.55rem, 2.5vw, 2rem);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.diagnosis-estimator__lead {
+  margin: 0;
+  color: rgba(51, 51, 51, 0.76);
+  font-size: clamp(1.04rem, 1.2vw, 1.12rem);
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+.diagnosis-estimator__questions {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.35rem);
+}
+
+.diagnosis-estimator__question {
+  padding: clamp(1rem, 2.2vw, 1.25rem);
+  border: 1px solid rgba(10, 17, 40, 0.08);
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+.diagnosis-estimator__question h5 {
+  margin: 0 0 0.8rem;
+  color: var(--color-navy);
+  font-size: clamp(1.08rem, 1.4vw, 1.25rem);
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.diagnosis-estimator__options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.diagnosis-estimator__options--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.diagnosis-estimator .estimate-card {
+  min-height: 8.4rem;
+}
+
+.diagnosis-estimator__checks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.diagnosis-estimator__checks label {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 3rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(10, 17, 40, 0.08);
+  border-radius: 0.5rem;
+  color: rgba(51, 51, 51, 0.82);
+  font-weight: 700;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.diagnosis-estimator__checks input {
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: var(--color-accent);
+}
+
+.diagnosis-estimator__result.estimate-result {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 980px) {
+  .about__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about__body {
+    display: block;
+  }
+
+  .about__icon,
+  .about__title,
+  .about__lead,
+  .about__promise {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .about__lead {
+    max-width: 100%;
+  }
+
+  .about__promise {
+    margin-top: clamp(1.4rem, 3vw, 2rem);
+  }
+
+  .pricing-tabs__list,
+  .pricing-card-grid,
+  .diagnosis-estimator__options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__panel--canvas {
+    min-height: clamp(32rem, 88vw, 42rem);
+    padding-bottom: 3rem;
+  }
+
+  .hero-visuals {
+    height: clamp(30rem, 88vw, 37rem);
+  }
+
+  .hero-mockup {
+    top: 14%;
+    left: 7%;
+    width: 88%;
+  }
+
+  .hero-seo-card {
+    top: 4%;
+    left: 3%;
+    width: min(62%, 15.5rem);
+  }
+
+  .hero-booking-card {
+    right: 3%;
+    bottom: 7%;
+    width: min(64%, 16.5rem);
+  }
+
+  .hero-flow-card {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    min-height: auto;
+    scroll-margin-top: calc(var(--header-height) + 10px);
+    padding-top: 2.6rem;
+    padding-bottom: 3rem;
+  }
+
+  .about__inner {
+    display: grid;
+  }
+
+  .about__body {
+    display: block;
+  }
+
+  .about__promise-list,
+  .pricing-tabs__list,
+  .pricing-card-grid,
+  .estimate-mode,
+  .diagnosis-estimator__options,
+  .diagnosis-estimator__options--two,
+  .diagnosis-estimator__checks {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing__inner {
+    padding: 1rem;
+  }
+
+  .pricing-tabs__list {
+    border-radius: 14px;
+  }
+
+  .pricing-tab {
+    min-height: 3.1rem;
+  }
+
+  .pricing-plan-block {
+    padding: 1.05rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero__panel--canvas {
+    min-height: 31rem;
+  }
+
+  .hero-mockup {
+    top: 17%;
+    left: 4%;
+    width: 92%;
+  }
+
+  .hero-seo-card {
+    width: min(70%, 14rem);
+  }
+
+  .hero-booking-card {
+    width: min(74%, 15.5rem);
   }
 }
