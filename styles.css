@@ -13,7 +13,6 @@
     "Hiragino Kaku Gothic ProN", Meiryo, system-ui, sans-serif;
   --page-padding: clamp(1.5rem, 4vw, 4.5rem);
   --section-rhythm: clamp(7rem, 12vw, 9rem);
-  --ink-edge-mask: url("data:image/svg+xml,%3Csvg width='180' height='900' viewBox='0 0 180 900' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M0 0H78C104 23 70 43 101 72C124 94 95 121 132 154C156 176 123 205 160 236C181 254 138 292 170 318C195 338 145 375 164 403C187 437 118 467 146 498C174 530 115 553 139 590C164 628 93 646 122 688C146 724 77 740 104 777C126 807 65 833 92 862C105 876 92 891 80 900H0V0Z'/%3E%3Ccircle cx='123' cy='94' r='10' fill='black'/%3E%3Ccircle cx='148' cy='210' r='7' fill='black'/%3E%3Ccircle cx='116' cy='304' r='14' fill='black'/%3E%3Ccircle cx='166' cy='454' r='8' fill='black'/%3E%3Ccircle cx='112' cy='624' r='11' fill='black'/%3E%3Ccircle cx='145' cy='747' r='6' fill='black'/%3E%3Ccircle cx='116' cy='832' r='9' fill='black'/%3E%3C/svg%3E");
 }
 
 * {
@@ -83,16 +82,19 @@ h3,
 .hero {
   position: relative;
   isolation: isolate;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background: var(--color-white);
+  background:
+    radial-gradient(circle at 86% 16%, rgba(244, 200, 106, 0.16), transparent 27rem),
+    radial-gradient(circle at 14% 82%, rgba(255, 255, 255, 0.08), transparent 22rem),
+    linear-gradient(135deg, #0a1128 0%, #0d1835 54%, #0a1128 100%);
 }
 
 .hero__panel {
   position: relative;
-  flex: 0 0 50%;
   min-height: 100vh;
 }
 
@@ -103,75 +105,44 @@ h3,
   justify-content: space-between;
   isolation: isolate;
   overflow: visible;
-  padding: calc(var(--header-height) + 1.5rem) var(--page-padding) 2rem;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 34%),
-    var(--color-navy);
+  padding: calc(var(--header-height) + 1.5rem) clamp(1.5rem, 5vw, 5rem) 2rem var(--page-padding);
+  background: transparent;
 }
 
 .hero__panel--canvas {
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
   isolation: isolate;
-  overflow: hidden;
-  padding: calc(var(--header-height) + 2rem) clamp(2rem, 5vw, 4.5rem) 3rem;
-  background:
-    radial-gradient(circle at 72% 24%, rgba(244, 200, 106, 0.18), transparent 26%),
-    radial-gradient(circle at 34% 72%, rgba(10, 17, 40, 0.08), transparent 28%),
-    var(--color-white);
+  overflow: visible;
+  padding: calc(var(--header-height) + 2rem) clamp(1.5rem, 5vw, 4rem) 3rem clamp(1rem, 3vw, 2.5rem);
+  background: transparent;
 }
 
-.hero__panel--primary::after {
+.hero__panel--canvas::before {
   position: absolute;
-  top: 0;
-  right: -5.9rem;
-  z-index: 2;
-  width: 11.75rem;
-  height: 100%;
+  inset: calc(var(--header-height) + 1.1rem) clamp(1.1rem, 3vw, 2.8rem) 2.4rem clamp(-5.5rem, -6vw, -3rem);
+  z-index: 0;
   content: "";
-  pointer-events: none;
-  background: var(--color-navy);
-  filter: drop-shadow(1.4rem 0 2rem rgba(10, 17, 40, 0.1));
-  -webkit-mask-image: var(--ink-edge-mask);
-  mask-image: var(--ink-edge-mask);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  -webkit-mask-position: center;
-  mask-position: center;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 48px;
+  background:
+    radial-gradient(circle at 72% 18%, rgba(244, 200, 106, 0.24), transparent 18rem),
+    radial-gradient(circle at 18% 82%, rgba(10, 17, 40, 0.07), transparent 16rem),
+    linear-gradient(145deg, #fffdf8 0%, #ffffff 48%, #f2f5f8 100%);
+  box-shadow:
+    0 2.5rem 5.5rem rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-.hero__ink-edge {
-  position: absolute;
-  display: none;
-  top: 0;
-  right: -6.25rem;
-  z-index: 1;
-  width: 11.25rem;
-  height: 100%;
-  pointer-events: none;
-  background: var(--color-navy);
-  -webkit-mask-image: var(--ink-edge-mask);
-  mask-image: var(--ink-edge-mask);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  -webkit-mask-position: center;
-  mask-position: center;
-}
 
 .hero-visuals {
   position: relative;
-  z-index: 10;
-  width: 100%;
-  max-width: 39rem;
-  height: 100%;
-  max-height: 42rem;
-  min-height: 34rem;
+  z-index: 2;
+  width: min(100%, 43rem);
+  height: min(72vh, 43rem);
+  min-height: 36rem;
   opacity: 1;
   pointer-events: none;
 }
@@ -179,13 +150,11 @@ h3,
 .hero-visuals::before {
   position: absolute;
   z-index: 0;
-  inset: 13% 4% 10% 8%;
+  inset: 14% 8% 12% 6%;
   content: "";
-  border-radius: 50%;
-  background:
-    radial-gradient(circle, rgba(244, 200, 106, 0.32), transparent 62%),
-    rgba(10, 17, 40, 0.04);
-  filter: blur(4px);
+  border-radius: 42% 58% 48% 52%;
+  background: radial-gradient(circle, rgba(244, 200, 106, 0.18), transparent 66%);
+  filter: blur(10px);
 }
 
 .hero-visuals__mockup,
@@ -198,10 +167,10 @@ h3,
 }
 
 .hero-mockup {
-  top: 21%;
-  left: 12%;
+  top: 22%;
+  left: 18%;
   z-index: 12;
-  width: 74%;
+  width: 72%;
   padding: 0.8rem;
   border: 1px solid rgba(10, 17, 40, 0.08);
   border-radius: 1.35rem;
@@ -331,8 +300,8 @@ h3,
 }
 
 .hero-seo-card {
-  top: 11%;
-  left: 3%;
+  top: 13%;
+  left: 2%;
   z-index: 13;
   width: min(46%, 17.5rem);
   padding: 0.9rem;
@@ -410,8 +379,8 @@ h3,
 }
 
 .hero-booking-card {
-  right: 4%;
-  bottom: 12%;
+  right: 2%;
+  bottom: 13%;
   z-index: 14;
   width: min(50%, 18.5rem);
   padding: 1rem;
@@ -2709,9 +2678,12 @@ h3,
 
 @media (max-width: 900px) {
   .hero {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
     min-height: 100svh;
-    background: var(--color-navy);
+    background:
+      radial-gradient(circle at 78% 34%, rgba(244, 200, 106, 0.14), transparent 18rem),
+      linear-gradient(160deg, #0a1128 0%, #0d1835 62%, #0a1128 100%);
   }
 
   .hero__panel {
@@ -2719,29 +2691,45 @@ h3,
   }
 
   .hero__panel--primary {
-    min-height: 100svh;
-    padding: calc(var(--header-height) + 1.5rem) clamp(1.25rem, 6vw, 2rem) 1.75rem;
+    min-height: auto;
+    padding: calc(var(--header-height) + 1.5rem) clamp(1.25rem, 6vw, 2rem) 1.25rem;
   }
 
-  .hero__panel--primary::after {
-    display: none;
-  }
 
   .hero__panel--canvas {
-    display: none;
+    display: flex;
+    min-height: clamp(31rem, 82vw, 42rem);
+    overflow: visible;
+    padding: 0 18px 3.5rem;
   }
 
-  .hero__ink-edge {
-    display: block;
-    top: auto;
-    right: auto;
-    bottom: -3.25rem;
-    left: 0;
-    width: 100%;
-    height: 7rem;
-    transform: rotate(90deg) scaleX(1.8);
-    transform-origin: center;
-    opacity: 0.72;
+  .hero__panel--canvas::before {
+    inset: 0 18px 2rem;
+    border-radius: 32px;
+  }
+
+  .hero-visuals {
+    width: min(100%, 34rem);
+    height: clamp(29rem, 86vw, 36rem);
+    min-height: 0;
+  }
+
+  .hero-mockup {
+    top: 18%;
+    left: 10%;
+    width: 82%;
+  }
+
+  .hero-seo-card {
+    top: 5%;
+    left: 4%;
+    width: min(58%, 15rem);
+  }
+
+  .hero-booking-card {
+    right: 3%;
+    bottom: 8%;
+    width: min(62%, 16.5rem);
   }
 
   .site-header {
@@ -2760,7 +2748,7 @@ h3,
   }
 
   .hero__content {
-    padding-block: clamp(4.5rem, 12vh, 7rem);
+    padding-block: clamp(4.5rem, 12vh, 7rem) 2rem;
   }
 
   .hero__title {
@@ -2776,7 +2764,6 @@ h3,
   .hero__lead span {
     display: block;
   }
-
   .services__grid--monthly {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3026,6 +3013,37 @@ h3,
 
   .hero__button {
     width: 100%;
+  }
+  .hero__panel--canvas {
+    min-height: 30rem;
+    padding-inline: 14px;
+  }
+
+  .hero__panel--canvas::before {
+    inset: 0 14px 1.6rem;
+    border-radius: 28px;
+  }
+
+  .hero-visuals {
+    height: 28rem;
+  }
+
+  .hero-mockup {
+    top: 20%;
+    left: 5%;
+    width: 90%;
+  }
+
+  .hero-seo-card {
+    top: 4%;
+    left: 2%;
+    width: min(68%, 14rem);
+  }
+
+  .hero-booking-card {
+    right: 1%;
+    bottom: 6%;
+    width: min(72%, 15.5rem);
   }
 
   .services__grid--initial,
