@@ -4250,3 +4250,859 @@ h3,
     font-size: clamp(1.22rem, 5vw, 1.45rem);
   }
 }
+/* Human warmth redesign: softer surfaces, clearer flow */
+:root {
+  --color-warm-paper: #fff9ee;
+  --color-soft-paper: #f8f5ee;
+  --shadow-soft: 0 1.25rem 3rem rgba(10, 17, 40, 0.09);
+  --shadow-float: 0 1.8rem 4.5rem rgba(10, 17, 40, 0.16);
+}
+
+.hero {
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  background:
+    radial-gradient(ellipse at 74% 30%, rgba(255, 250, 240, 0.34), transparent 34rem),
+    radial-gradient(circle at 90% 76%, rgba(244, 200, 106, 0.17), transparent 26rem),
+    radial-gradient(circle at 18% 88%, rgba(255, 255, 255, 0.08), transparent 24rem),
+    linear-gradient(122deg, #0a1128 0%, #0d1835 43%, #172443 66%, #eee8dc 100%);
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  background:
+    radial-gradient(ellipse at 58% 48%, rgba(255, 249, 235, 0.18), transparent 33rem),
+    linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.04) 48%, rgba(255, 249, 236, 0.18) 100%);
+  pointer-events: none;
+}
+
+.hero__panel {
+  z-index: 1;
+}
+
+.hero__panel--primary {
+  padding-right: clamp(1.5rem, 4vw, 4rem);
+}
+
+.hero__panel--canvas {
+  padding-left: clamp(0.5rem, 2vw, 2rem);
+}
+
+.hero__panel--canvas::before {
+  inset: calc(var(--header-height) + 1.4rem) clamp(-5rem, -5vw, -2rem) 3rem clamp(-9rem, -9vw, -5rem);
+  border: 0;
+  border-radius: 46% 54% 42% 58% / 42% 36% 64% 58%;
+  background:
+    radial-gradient(circle at 72% 20%, rgba(255, 255, 255, 0.9), transparent 16rem),
+    radial-gradient(circle at 25% 74%, rgba(244, 200, 106, 0.24), transparent 19rem),
+    linear-gradient(145deg, rgba(255, 251, 242, 0.76), rgba(245, 247, 250, 0.4));
+  box-shadow:
+    0 2.4rem 5.5rem rgba(10, 17, 40, 0.13),
+    0 0 7rem rgba(255, 249, 236, 0.24);
+  filter: blur(6px);
+  opacity: 0.92;
+}
+
+.hero__panel--canvas::after {
+  inset: 15% 0 9% auto;
+  width: min(52vw, 38rem);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 48% 46%, rgba(255, 255, 255, 0.46), transparent 48%),
+    radial-gradient(circle at 60% 68%, rgba(244, 200, 106, 0.18), transparent 58%);
+  filter: blur(42px);
+}
+
+.hero-visuals {
+  width: min(100%, 49rem);
+  height: min(76vh, 47rem);
+  min-height: 38rem;
+  transform: translateX(clamp(-1.8rem, -2vw, -0.5rem));
+}
+
+.hero-visuals::before {
+  inset: 6% 0 2% 4%;
+  border-radius: 44% 56% 54% 46%;
+  background:
+    radial-gradient(circle at 66% 24%, rgba(255, 255, 255, 0.3), transparent 50%),
+    radial-gradient(circle at 34% 76%, rgba(244, 200, 106, 0.24), transparent 60%);
+  filter: blur(22px);
+}
+
+.hero-mockup {
+  top: 15%;
+  left: 13%;
+  width: 80%;
+  border: 0;
+  border-radius: 1.65rem;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow:
+    0 2.4rem 5.4rem rgba(10, 17, 40, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.68);
+}
+
+.hero-mockup__screen {
+  background:
+    linear-gradient(135deg, rgba(10, 17, 40, 0.72), rgba(10, 17, 40, 0.16)),
+    linear-gradient(160deg, #fff7e7, #ffffff 52%, #ecf1f6);
+}
+
+.hero-seo-card {
+  top: 8%;
+  left: -1%;
+  width: min(45%, 18rem);
+  border: 0;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 1.6rem 3.8rem rgba(10, 17, 40, 0.16);
+}
+
+.hero-booking-card {
+  right: 0;
+  bottom: 9%;
+  width: min(49%, 19rem);
+  border: 0;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 1.8rem 4rem rgba(10, 17, 40, 0.2);
+}
+
+.hero-flow-card {
+  left: 5%;
+  bottom: 6%;
+  border: 0;
+  border-radius: 1.15rem;
+  background:
+    linear-gradient(135deg, rgba(244, 200, 106, 0.2), rgba(255, 255, 255, 0.58)),
+    rgba(255, 255, 255, 0.76);
+  box-shadow: 0 1.25rem 3rem rgba(10, 17, 40, 0.14);
+}
+
+.creator-card {
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.11);
+}
+
+.hero__button,
+.plan-card__button,
+.pricing .pricing-estimate .estimate-tool__result-button,
+.pricing .pricing-estimate .estimate-tool__next,
+.pricing .pricing-estimate .estimate-result__cta {
+  border-radius: 999px;
+}
+
+.about {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: calc(100dvh - var(--header-height));
+  scroll-margin-top: calc(var(--header-height) + 12px);
+  overflow: hidden;
+  padding: clamp(2.8rem, 4.6vw, 4.7rem) clamp(1.5rem, 5vw, 4.8rem);
+  color: #333333;
+  background:
+    radial-gradient(circle at 9% 18%, rgba(244, 200, 106, 0.16), transparent 20rem),
+    radial-gradient(circle at 94% 86%, rgba(10, 17, 40, 0.05), transparent 26rem),
+    linear-gradient(180deg, #fff9ed 0%, #ffffff 48%, #f8fafb 100%);
+}
+
+.about::before {
+  top: clamp(2.2rem, 5vw, 4.5rem);
+  left: clamp(1rem, 5vw, 4rem);
+  width: clamp(10rem, 22vw, 18rem);
+  height: clamp(10rem, 22vw, 18rem);
+  border-radius: 46% 54% 60% 40%;
+  background: rgba(244, 200, 106, 0.13);
+  filter: blur(28px);
+}
+
+.about::after {
+  position: absolute;
+  right: clamp(-7rem, -7vw, -3rem);
+  bottom: clamp(1rem, 5vw, 4rem);
+  width: clamp(13rem, 26vw, 24rem);
+  height: clamp(13rem, 26vw, 24rem);
+  content: "";
+  border-radius: 54% 46% 42% 58%;
+  background: rgba(10, 17, 40, 0.04);
+  filter: blur(34px);
+  pointer-events: none;
+}
+
+.about__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "icon promise"
+    "title promise"
+    "lead promise"
+    "policy promise"
+    "cta promise";
+  align-items: stretch;
+  width: min(100%, 1240px);
+  min-height: clamp(36rem, calc(100dvh - var(--header-height) - clamp(5.8rem, 9vw, 8.8rem)), 50rem);
+  gap: clamp(0.8rem, 1.4vw, 1.15rem) clamp(2.5rem, 5.6vw, 6rem);
+  margin: auto;
+}
+
+.about__body {
+  display: contents;
+}
+
+.about__icon {
+  grid-area: icon;
+  width: clamp(4.2rem, 5.6vw, 5.4rem);
+  height: clamp(4.2rem, 5.6vw, 5.4rem);
+  margin: 0;
+  border: 0;
+  background:
+    linear-gradient(135deg, rgba(244, 200, 106, 0.28), transparent 58%),
+    rgba(255, 255, 255, 0.68);
+  box-shadow: 0 1.05rem 2.7rem rgba(10, 17, 40, 0.08);
+}
+
+.about__title {
+  grid-area: title;
+  max-width: 10em;
+  margin: clamp(0.7rem, 1.2vw, 1rem) 0 0;
+  color: var(--color-navy);
+  font-size: clamp(3.6rem, 6.2vw, 5.75rem);
+  line-height: 1.04;
+  letter-spacing: 0.035em;
+}
+
+.about__lead {
+  grid-area: lead;
+  max-width: 39.5rem;
+  margin: clamp(1rem, 1.8vw, 1.45rem) 0 0;
+  color: rgba(22, 29, 53, 0.9);
+  font-size: clamp(1.18rem, 1.5vw, 1.42rem);
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+.about__policy {
+  grid-area: policy;
+  max-width: 39.5rem;
+  margin: clamp(1rem, 2vw, 1.6rem) 0 0;
+  color: rgba(37, 38, 44, 0.76);
+  font-size: clamp(1.04rem, 1.18vw, 1.16rem);
+  line-height: 1.86;
+}
+
+.about__small-cta {
+  grid-area: cta;
+  align-self: end;
+  display: grid;
+  gap: 0.82rem;
+  max-width: 39.5rem;
+  margin: clamp(1.05rem, 2.1vw, 1.7rem) 0 0;
+  padding: 0.25rem 0 0.25rem clamp(1rem, 1.8vw, 1.35rem);
+  border-left: 3px solid rgba(244, 200, 106, 0.88);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.about__small-cta span {
+  color: rgba(10, 17, 40, 0.74);
+  font-size: clamp(1rem, 1.08vw, 1.1rem);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.about__small-cta a {
+  width: fit-content;
+  min-height: 2.9rem;
+  box-shadow: 0 0.8rem 1.7rem rgba(10, 17, 40, 0.1);
+}
+
+.about__promise {
+  grid-area: promise;
+  align-self: stretch;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100%;
+  margin: 0;
+}
+
+.about__promise-title {
+  margin: 0 0 clamp(1rem, 1.8vw, 1.55rem);
+  padding: 0;
+  border: 0;
+  color: rgba(10, 17, 40, 0.82);
+  font-size: clamp(1.35rem, 1.9vw, 1.74rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.about__promise-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, minmax(9.4rem, 1fr));
+  gap: clamp(1rem, 1.7vw, 1.4rem);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.about__promise-list li {
+  display: grid;
+  align-content: center;
+  min-height: 0;
+  padding: clamp(1.28rem, 2.1vw, 1.85rem);
+  border: 0;
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 238, 0.66)),
+    rgba(244, 200, 106, 0.08);
+  box-shadow:
+    0 1.15rem 2.7rem rgba(10, 17, 40, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.78);
+}
+
+.about__promise-list li:nth-child(1) {
+  transform: translateX(-0.45rem);
+}
+
+.about__promise-list li:nth-child(2) {
+  transform: translateX(0.2rem);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(247, 248, 251, 0.72)),
+    rgba(10, 17, 40, 0.035);
+}
+
+.about__promise-list li:nth-child(3) {
+  transform: translateX(0.62rem);
+}
+
+.about__promise-list strong {
+  margin-bottom: 0.6rem;
+  color: var(--color-navy);
+  font-size: clamp(1.22rem, 1.65vw, 1.56rem);
+  line-height: 1.45;
+}
+
+.about__promise-list span {
+  color: rgba(37, 38, 44, 0.78);
+  font-size: clamp(1.02rem, 1.14vw, 1.13rem);
+  line-height: 1.8;
+}
+
+.pricing {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(5rem, 8vw, 7.2rem) var(--page-padding);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(244, 200, 106, 0.14), transparent 22rem),
+    radial-gradient(circle at 92% 78%, rgba(10, 17, 40, 0.045), transparent 28rem),
+    linear-gradient(180deg, #f8fafb 0%, #fff7ea 48%, #f7f8fb 100%);
+}
+
+.pricing::before {
+  position: absolute;
+  top: clamp(5rem, 8vw, 8rem);
+  right: clamp(-8rem, -8vw, -3rem);
+  width: clamp(16rem, 28vw, 28rem);
+  height: clamp(16rem, 28vw, 28rem);
+  content: "";
+  border-radius: 47% 53% 42% 58%;
+  background: rgba(255, 255, 255, 0.52);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.pricing__inner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1180px);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.pricing__eyebrow {
+  color: rgba(10, 17, 40, 0.56);
+}
+
+.pricing__title {
+  margin-bottom: 0.7rem;
+  font-size: clamp(2.7rem, 5vw, 4.1rem);
+}
+
+.pricing__lead {
+  max-width: 760px;
+  margin-bottom: clamp(1.6rem, 3.4vw, 2.4rem);
+  color: rgba(37, 38, 44, 0.74);
+}
+
+.pricing-tabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  max-width: 100%;
+  gap: 0.55rem;
+  margin-bottom: clamp(1.8rem, 3.6vw, 2.7rem);
+  padding: 0.38rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow:
+    0 0.9rem 2.2rem rgba(10, 17, 40, 0.065),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+.pricing-tab {
+  min-height: 3.15rem;
+  padding: 0.72rem 1.1rem;
+  border: 0;
+  border-radius: 999px;
+  color: rgba(10, 17, 40, 0.64);
+  background: transparent;
+  box-shadow: none;
+}
+
+.pricing-tab:hover,
+.pricing-tab:focus-visible {
+  color: var(--color-navy);
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.pricing-tab.is-active {
+  color: var(--color-navy);
+  border-color: transparent;
+  background:
+    linear-gradient(135deg, rgba(244, 200, 106, 0.22), transparent 58%),
+    rgba(255, 255, 255, 0.92);
+  box-shadow: 0 0.75rem 1.55rem rgba(10, 17, 40, 0.08);
+}
+
+.pricing-tabs__body,
+.pricing-tab-panel,
+.pricing-plan-block {
+  background: transparent;
+}
+
+.pricing-plan-block {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.pricing-plan-block__header {
+  max-width: 820px;
+  margin-bottom: clamp(1.2rem, 2.8vw, 2rem);
+}
+
+.pricing-plan-block__eyebrow {
+  color: rgba(10, 17, 40, 0.56);
+}
+
+.pricing-plan-block__title {
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+}
+
+.pricing-plan-block__lead {
+  color: rgba(37, 38, 44, 0.74);
+  font-size: clamp(1.06rem, 1.22vw, 1.16rem);
+}
+
+.pricing-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(1.2rem, 2.4vw, 1.75rem);
+}
+
+.pricing-card-grid .service-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.45rem, 2.5vw, 1.95rem);
+  border: 0;
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 238, 0.68)),
+    rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 1.15rem 2.8rem rgba(10, 17, 40, 0.085),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.68);
+}
+
+.pricing-card-grid .service-card::before {
+  position: absolute;
+  top: -4rem;
+  right: -4rem;
+  width: 9rem;
+  height: 9rem;
+  content: "";
+  border-radius: 50%;
+  background: rgba(244, 200, 106, 0.12);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+@media (min-width: 981px) {
+  .pricing-card-grid .service-card:nth-child(2) {
+    transform: translateY(-0.42rem);
+  }
+
+  .pricing-card-grid .service-card:nth-child(3) {
+    transform: translateY(0.3rem);
+  }
+}
+
+.pricing-card-grid .service-card--featured {
+  background:
+    linear-gradient(135deg, rgba(244, 200, 106, 0.2), transparent 52%),
+    rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 1.4rem 3.2rem rgba(10, 17, 40, 0.11),
+    inset 0 0 0 1px rgba(244, 200, 106, 0.3);
+}
+
+.service-card__badge {
+  color: var(--color-navy);
+  background: rgba(244, 200, 106, 0.86);
+}
+
+.service-card__badge--muted {
+  background: rgba(10, 17, 40, 0.075);
+}
+
+.service-card__price {
+  color: rgba(37, 38, 44, 0.78);
+}
+
+.service-card__price span {
+  color: var(--color-navy);
+  font-size: clamp(2.2rem, 3.1vw, 2.75rem);
+}
+
+.service-card__text,
+.service-card__list li {
+  color: rgba(37, 38, 44, 0.78);
+}
+
+.plan-card__button {
+  border: 0;
+  box-shadow: 0 0.9rem 1.9rem rgba(10, 17, 40, 0.1);
+}
+
+.estimate-mode {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  max-width: 100%;
+  gap: 0.65rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2.2rem);
+  padding: 0.35rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow:
+    0 0.75rem 1.9rem rgba(10, 17, 40, 0.06),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+}
+
+.estimate-mode__button {
+  min-height: 3.05rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.estimate-mode__button:hover,
+.estimate-mode__button.is-active {
+  border-color: transparent;
+  background:
+    linear-gradient(135deg, rgba(244, 200, 106, 0.22), transparent 55%),
+    rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0.7rem 1.5rem rgba(10, 17, 40, 0.08);
+}
+
+.diagnosis-estimator {
+  gap: clamp(1.2rem, 2.4vw, 1.7rem);
+}
+
+.diagnosis-estimator__question {
+  padding: clamp(1.15rem, 2.2vw, 1.45rem);
+  border: 0;
+  border-radius: 1.15rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 250, 238, 0.56)),
+    rgba(255, 255, 255, 0.66);
+  box-shadow:
+    0 0.9rem 2.1rem rgba(10, 17, 40, 0.06),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.66);
+}
+
+.diagnosis-estimator .estimate-card,
+.pricing .pricing-estimate .estimate-tool .estimate-card,
+.pricing .pricing-estimate .page-counter,
+.pricing .pricing-estimate .estimate-result {
+  border: 0;
+  border-radius: 1rem;
+  color: var(--color-navy);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(249, 250, 251, 0.66)),
+    rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 0.9rem 2.1rem rgba(10, 17, 40, 0.07),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.66);
+}
+
+.diagnosis-estimator .estimate-card small,
+.pricing .pricing-estimate .estimate-tool .estimate-card small,
+.pricing .pricing-estimate .estimate-step__note {
+  color: rgba(37, 38, 44, 0.68);
+}
+
+.diagnosis-estimator .estimate-card span,
+.pricing .pricing-estimate .estimate-tool .estimate-card span:last-child,
+.pricing .pricing-estimate .page-counter__control strong,
+.pricing .pricing-estimate .estimate-result__row strong,
+.pricing .pricing-estimate .estimate-result__total strong {
+  color: var(--color-navy);
+}
+
+.diagnosis-estimator .estimate-card:hover,
+.diagnosis-estimator .estimate-card.is-selected,
+.pricing .pricing-estimate .estimate-tool .estimate-card:hover,
+.pricing .pricing-estimate .estimate-tool .estimate-card.is-selected {
+  background:
+    linear-gradient(135deg, rgba(244, 200, 106, 0.2), transparent 54%),
+    rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 1.1rem 2.4rem rgba(10, 17, 40, 0.095),
+    inset 0 0 0 1px rgba(244, 200, 106, 0.28);
+}
+
+.diagnosis-estimator__checks label {
+  border: 0;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(10, 17, 40, 0.055);
+}
+
+.pricing .pricing-estimate .estimate-tool {
+  --quote-navy: var(--color-navy);
+  --quote-navy-soft: #f8fafb;
+  --quote-gold: var(--color-accent);
+  --quote-gold-hover: var(--color-accent-hover);
+  --quote-white: var(--color-navy);
+  --quote-muted: rgba(37, 38, 44, 0.72);
+  min-height: auto;
+  padding: 0;
+  color: var(--color-navy);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.pricing .pricing-estimate .estimate-tool__inner {
+  width: 100%;
+}
+
+.pricing .pricing-estimate .estimate-tool__eyebrow {
+  color: rgba(10, 17, 40, 0.56);
+}
+
+.pricing .pricing-estimate .estimate-tool__title {
+  color: var(--color-navy);
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+}
+
+.pricing .pricing-estimate .estimate-tool__lead {
+  color: rgba(37, 38, 44, 0.74);
+}
+
+.pricing .pricing-estimate .estimate-tool__progress {
+  background: rgba(10, 17, 40, 0.08);
+}
+
+.pricing .pricing-estimate .page-counter__control {
+  border: 0;
+  background: rgba(10, 17, 40, 0.06);
+}
+
+.pricing .pricing-estimate .page-counter__control button {
+  color: var(--color-navy);
+}
+
+.pricing .pricing-estimate .estimate-result__row {
+  color: rgba(37, 38, 44, 0.82);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.pricing .pricing-estimate .estimate-result__total {
+  border: 0;
+  background:
+    linear-gradient(135deg, rgba(244, 200, 106, 0.2), transparent 58%),
+    rgba(255, 255, 255, 0.78);
+}
+
+.pricing .pricing-estimate .estimate-result__maintenance,
+.pricing .pricing-estimate .estimate-result__total p,
+.pricing .pricing-estimate .estimate-result__notes {
+  color: rgba(37, 38, 44, 0.72) !important;
+}
+
+@media (max-width: 1100px) {
+  .pricing-card-grid,
+  .diagnosis-estimator__options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    background:
+      radial-gradient(ellipse at 76% 60%, rgba(255, 249, 236, 0.22), transparent 26rem),
+      linear-gradient(160deg, #0a1128 0%, #0d1835 55%, #162543 100%);
+  }
+
+  .hero__panel {
+    min-height: auto;
+  }
+
+  .hero__panel--primary {
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: 1.5rem;
+  }
+
+  .hero__panel--canvas {
+    min-height: clamp(31rem, 92vw, 43rem);
+    padding: 1rem 1.25rem 3rem;
+  }
+
+  .hero__panel--canvas::before {
+    inset: 0 -16% 2rem 8%;
+    border-radius: 38% 62% 46% 54%;
+    filter: blur(8px);
+  }
+
+  .hero-visuals {
+    width: min(100%, 42rem);
+    height: clamp(30rem, 88vw, 41rem);
+    min-height: 0;
+    transform: none;
+  }
+
+  .about__inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "icon"
+      "title"
+      "lead"
+      "policy"
+      "cta"
+      "promise";
+    min-height: auto;
+  }
+
+  .about__promise {
+    margin-top: clamp(1.8rem, 6vw, 2.6rem);
+  }
+
+  .about__promise-list {
+    grid-template-rows: auto;
+    height: auto;
+  }
+
+  .about__promise-list li,
+  .about__promise-list li:nth-child(1),
+  .about__promise-list li:nth-child(2),
+  .about__promise-list li:nth-child(3),
+  .pricing-card-grid .service-card,
+  .pricing-card-grid .service-card:nth-child(2),
+  .pricing-card-grid .service-card:nth-child(3) {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    white-space: normal;
+  }
+
+  .hero-mockup {
+    top: 12%;
+    left: 10%;
+    width: 82%;
+  }
+
+  .hero-seo-card {
+    top: 4%;
+    left: 0;
+    width: min(58%, 16rem);
+  }
+
+  .hero-booking-card {
+    right: 0;
+    bottom: 11%;
+    width: min(62%, 17rem);
+  }
+
+  .hero-flow-card {
+    left: 3%;
+    bottom: 4%;
+    width: min(58%, 16rem);
+  }
+
+  .about {
+    min-height: calc(100dvh - var(--header-height));
+    padding: clamp(2.6rem, 8vw, 3.5rem) 1.25rem clamp(3.2rem, 9vw, 4rem);
+  }
+
+  .about__title {
+    font-size: clamp(2.85rem, 11vw, 4rem);
+  }
+
+  .about__small-cta a {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .pricing {
+    padding: clamp(4rem, 12vw, 5rem) 1.25rem;
+  }
+
+  .pricing-tabs__list,
+  .estimate-mode {
+    display: grid;
+    width: 100%;
+    border-radius: 1.2rem;
+  }
+
+  .pricing-tab,
+  .estimate-mode__button {
+    min-height: 44px;
+  }
+
+  .pricing-card-grid,
+  .diagnosis-estimator__options,
+  .diagnosis-estimator__options--two,
+  .diagnosis-estimator__checks,
+  .estimate-options {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card__price span {
+    font-size: clamp(2rem, 12vw, 2.65rem);
+  }
+}
