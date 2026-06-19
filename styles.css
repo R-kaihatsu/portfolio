@@ -1206,50 +1206,6 @@ p {
   line-height: 1.7;
 }
 
-.contact-guide {
-  padding: clamp(3.5rem, 6vw, 5rem) 0;
-}
-
-.contact-guide__inner {
-  width: min(calc(100% - 2.5rem), var(--container));
-  margin: 0 auto;
-  padding-top: clamp(2rem, 4vw, 3rem);
-  display: grid;
-  grid-template-columns: minmax(160px, 0.35fr) minmax(0, 1.65fr);
-  align-items: center;
-  gap: clamp(3rem, 7vw, 6rem);
-  border-top: 1px solid var(--color-line-strong);
-}
-
-.contact-guide h2 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3vw, 2.35rem);
-}
-
-.contact-guide__steps {
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(1rem, 3vw, 2.5rem);
-  list-style: none;
-}
-
-.contact-guide__steps li {
-  color: var(--color-ink);
-  font-family: var(--font-display);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.contact-guide__steps span {
-  margin-bottom: 0.75rem;
-  display: block;
-  color: var(--color-accent-dark);
-  font: 600 0.66rem/1 var(--font-en);
-  letter-spacing: 0.12em;
-}
-
 .contact {
   padding: var(--section-space) 0;
   color: #fff;
@@ -1574,12 +1530,6 @@ p {
     min-height: 0;
   }
 
-  .contact-guide__inner {
-    grid-template-columns: 1fr;
-    align-items: start;
-    gap: 2rem;
-  }
-
   .contact__inner {
     grid-template-columns: 1fr;
   }
@@ -1642,7 +1592,6 @@ p {
 
   .hero__inner,
   .section__inner,
-  .contact-guide__inner,
   .contact__inner,
   .site-footer__inner {
     width: min(calc(100% - 1.5rem), var(--container));
@@ -1792,22 +1741,6 @@ p {
 
   .option-groups details {
     padding: 1rem;
-  }
-
-  .contact-guide__steps {
-    grid-template-columns: 1fr;
-    gap: 0.9rem;
-  }
-
-  .contact-guide__steps li {
-    display: grid;
-    grid-template-columns: 3rem 1fr;
-    align-items: baseline;
-    gap: 0.5rem;
-  }
-
-  .contact-guide__steps span {
-    margin: 0;
   }
 
   .contact__inner {
