@@ -32,9 +32,9 @@
         </a>
 
         <nav class="site-nav" aria-label="主要ナビゲーション">
-          <a href="#about">制作について</a>
           <a href="#works">制作実績</a>
           <a href="#price">料金</a>
+          <a href="#about">制作者</a>
         </nav>
 
         <a class="button button--small" href="#contact">無料で相談する</a>
@@ -98,43 +98,16 @@
         </div>
       </section>
 
-      <section class="section" id="about" aria-labelledby="about-title">
-        <div class="section__inner">
-          <div class="about-layout">
-            <div class="about-intro">
-              <h2 id="about-title">制作について</h2>
-              <p>お店のことを聞いて、必要なページと情報を整理してから作ります。</p>
-              <p class="about-signature">菊中 R <span>Web制作者</span></p>
-            </div>
-
-            <div class="strength-grid">
-              <article class="strength-card">
-                <span class="strength-card__number">01</span>
-                <h3>話を聞く</h3>
-                <p>お店のことと、サイトで伝えたいことを確認します。</p>
-              </article>
-
-              <article class="strength-card">
-                <span class="strength-card__number">02</span>
-                <h3>内容を整理する</h3>
-                <p>必要なページと、載せる情報を整理します。</p>
-              </article>
-
-              <article class="strength-card">
-                <span class="strength-card__number">03</span>
-                <h3>公開後の更新</h3>
-                <p>写真やメニューの変更にも対応します。</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="section section--works" id="works" aria-labelledby="works-title">
         <div class="section__inner">
           <div class="section-heading">
-            <h2 id="works-title">制作実績</h2>
-            <p>店舗・小規模事業者向けの制作サンプルです。</p>
+            <div>
+              <h2 id="works-title">制作実績</h2>
+            </div>
+            <div class="section-heading__side">
+              <p>店舗・小規模事業者向けの制作サンプルです。</p>
+              <a class="text-link" href="#contact">制作について相談する <span aria-hidden="true">→</span></a>
+            </div>
           </div>
 
           <div class="works-grid">
@@ -214,39 +187,13 @@
               </div>
             </article>
 
-            <article class="work-card">
-              <a class="work-card__preview work-preview work-preview--lp" href="./lp-template.html" aria-label="サービス紹介LPの制作サンプルを見る">
-                <span class="work-preview__label">サービス紹介</span>
-                <div class="mini-browser">
-                  <div class="mini-browser__bar"><i></i><i></i><i></i></div>
-                  <div class="mini-page mini-page--lp">
-                    <div class="mini-page__nav"><b>Folio App</b><span>Features　Price</span></div>
-                    <div class="mini-page__hero">
-                      <small>WORK, SIMPLIFIED</small>
-                      <strong>毎日の仕事を、<br />もっとシンプルに。</strong>
-                      <em>Start free</em>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div class="work-card__body">
-                <p class="work-card__category">サービス紹介・LP</p>
-                <h3>サービス紹介ページ</h3>
-                <p class="work-card__memo">
-                  特徴と料金をまとめ、申し込みボタンを配置。
-                </p>
-                <a class="text-link" href="./lp-template.html">サイトを見る <span aria-hidden="true">→</span></a>
-              </div>
-            </article>
           </div>
 
-          <aside class="tech-demo">
-            <div>
-              <h3>技術デモ</h3>
-              <p>CSSアニメーションのサンプルです。</p>
-            </div>
-            <a class="button button--outline" href="./pythagora.html">技術デモを見る</a>
-          </aside>
+          <div class="works-links">
+            <span>その他のサンプル</span>
+            <a href="./lp-template.html">サービス紹介ページ</a>
+            <a href="./pythagora.html">技術デモ</a>
+          </div>
         </div>
       </section>
 
@@ -406,6 +353,17 @@
         </div>
       </section>
 
+      <section class="profile-band" id="about" aria-labelledby="about-title">
+        <div class="profile-band__inner">
+          <div>
+            <h2 id="about-title">制作者</h2>
+            <p class="about-signature">菊中 R <span>Web制作者</span></p>
+          </div>
+          <p>お店の話を聞いて、ページ構成と掲載内容を整理します。公開後の更新にも対応します。</p>
+          <a class="text-link" href="#contact">相談する <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="contact__inner">
           <div class="contact__content">
@@ -502,9 +460,9 @@
           </span>
         </a>
         <div class="site-footer__links">
-          <a href="#about">制作について</a>
           <a href="#works">制作実績</a>
           <a href="#price">料金</a>
+          <a href="#about">制作者</a>
           <a href="#contact">お問い合わせ</a>
           <a href="./tokushoho.html">特定商取引法に基づく表記</a>
         </div>
