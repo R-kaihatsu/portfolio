@@ -16,7 +16,7 @@
   --radius-sm: 3px;
   --radius-md: 7px;
   --radius-lg: 12px;
-  --container: 1120px;
+  --container: 1240px;
   --section-space: clamp(4.75rem, 7vw, 7rem);
   --font-jp: "Noto Sans JP", sans-serif;
   --font-display: "Shippori Mincho", serif;
@@ -169,7 +169,7 @@ p {
 }
 
 .site-header__inner {
-  width: min(calc(100% - 2.5rem), var(--container));
+  width: min(calc(100% - clamp(2.5rem, 6vw, 6rem)), var(--container));
   min-height: 76px;
   margin: 0 auto;
   display: flex;
@@ -330,27 +330,13 @@ p {
   display: flex;
   align-items: center;
   background:
-    radial-gradient(ellipse at 78% 35%, rgba(166, 122, 59, 0.1), transparent 25rem),
+    radial-gradient(ellipse at 78% 35%, rgba(166, 122, 59, 0.07), transparent 25rem),
     linear-gradient(112deg, rgba(255, 255, 255, 0.5), transparent 62%);
-}
-
-.hero::before {
-  position: absolute;
-  top: 11%;
-  right: 8%;
-  width: 29vw;
-  height: 29vw;
-  max-width: 520px;
-  max-height: 520px;
-  border: 1px solid rgba(127, 92, 45, 0.16);
-  border-radius: 47% 53% 45% 55%;
-  content: "";
-  pointer-events: none;
 }
 
 .hero__inner {
   position: relative;
-  width: min(calc(100% - 2.5rem), var(--container));
+  width: min(calc(100% - clamp(2.5rem, 6vw, 6rem)), var(--container));
   margin: 0 auto;
   padding: clamp(3.5rem, 5vw, 5.25rem) 0;
   display: grid;
@@ -390,16 +376,11 @@ p {
   gap: 1.75rem;
 }
 
-.hero__scope {
-  margin: 0;
-  color: var(--color-muted);
-  font-size: 0.82rem;
-  letter-spacing: 0.025em;
-}
-
 .hero-preview {
   position: relative;
   z-index: 1;
+  width: min(100%, 590px);
+  justify-self: end;
 }
 
 .browser-frame {
@@ -556,7 +537,7 @@ p {
 }
 
 .section__inner {
-  width: min(calc(100% - 2.5rem), var(--container));
+  width: min(calc(100% - clamp(2.5rem, 6vw, 6rem)), var(--container));
   margin: 0 auto;
 }
 
@@ -625,7 +606,7 @@ p {
 
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: clamp(1.75rem, 3vw, 2.75rem);
 }
 
@@ -639,12 +620,6 @@ p {
   box-shadow: none;
 }
 
-.work-card--wide {
-  grid-column: 1 / -1;
-  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.6fr);
-  grid-template-rows: 1fr;
-}
-
 .work-card__preview {
   display: block;
 }
@@ -656,7 +631,7 @@ p {
   overflow: hidden;
 }
 
-.work-card:not(.work-card--wide) .work-preview {
+.work-card .work-preview {
   min-height: 320px;
 }
 
@@ -817,10 +792,6 @@ p {
   padding: clamp(1.6rem, 3vw, 2.5rem);
   display: flex;
   flex-direction: column;
-}
-
-.work-card--wide .work-card__body {
-  justify-content: center;
 }
 
 .work-card__category {
@@ -1109,7 +1080,7 @@ p {
 }
 
 .profile-band__inner {
-  width: min(calc(100% - 2.5rem), var(--container));
+  width: min(calc(100% - clamp(2.5rem, 6vw, 6rem)), var(--container));
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(180px, 0.45fr) minmax(360px, 1fr) auto;
@@ -1139,7 +1110,7 @@ p {
 }
 
 .contact__inner {
-  width: min(calc(100% - 2.5rem), var(--container));
+  width: min(calc(100% - clamp(2.5rem, 6vw, 6rem)), var(--container));
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 0.78fr) minmax(480px, 1fr);
@@ -1317,7 +1288,7 @@ p {
 }
 
 .site-footer__inner {
-  width: min(calc(100% - 2.5rem), var(--container));
+  width: min(calc(100% - clamp(2.5rem, 6vw, 6rem)), var(--container));
   min-height: 150px;
   margin: 0 auto;
   display: grid;
@@ -1393,16 +1364,6 @@ p {
 
   .works-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .work-card--wide {
-    grid-column: 1 / -1;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-  }
-
-  .work-card--wide .work-preview {
-    min-height: 340px;
   }
 
   .price-grid {
@@ -1513,10 +1474,6 @@ p {
     gap: 3rem;
   }
 
-  .hero::before {
-    display: none;
-  }
-
   .hero__lead {
     line-height: 1.85;
   }
@@ -1570,13 +1527,7 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .work-card--wide {
-    grid-column: auto;
-  }
-
-  .work-preview,
-  .work-card:not(.work-card--wide) .work-preview,
-  .work-card--wide .work-preview {
+  .work-card .work-preview {
     min-height: 260px;
   }
 
