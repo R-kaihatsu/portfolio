@@ -6,23 +6,23 @@
     purposes: {
       new: {
         label: "新しくサイトを作りたい",
-        shortLabel: "Web制作について相談",
-        note: "お店や事業のサイトを新しく用意したい",
+        shortLabel: "Web制作",
+        note: "新規サイト制作",
       },
       fix: {
         label: "今のサイトを直したい",
-        shortLabel: "既存サイトの修正について相談",
-        note: "一部修正、見直し、リニューアル",
+        shortLabel: "既存サイトの修正",
+        note: "修正・リニューアル",
       },
       maintenance: {
         label: "公開後の保守を頼みたい",
-        shortLabel: "保守サポートについて相談",
-        note: "更新や状態確認を継続して頼みたい",
+        shortLabel: "保守",
+        note: "更新・状態確認",
       },
       unsure: {
         label: "まだ決まっていない",
-        shortLabel: "まずは無料相談",
-        note: "何から頼めばいいか一緒に整理したい",
+        shortLabel: "無料相談",
+        note: "依頼内容が未定",
       },
     },
     pageRanges: {
@@ -31,7 +31,7 @@
       many: { label: "6ページ以上", note: "内容が多いサイト" },
     },
     featureBundles: {
-      none: { label: "特になし", note: "まずは基本構成で" },
+      none: { label: "特になし", note: "追加機能なし" },
       contact: { label: "フォーム・地図", note: "問い合わせや来店案内" },
       booking: { label: "予約機能", note: "外部予約サービスを含む" },
       ec: { label: "販売機能", note: "商品・サービスを販売" },
@@ -120,18 +120,18 @@
 
   const getResultMessage = () => {
     if (!state.purpose) {
-      return "左から、今の状況にいちばん近いものを選んでください。";
+      return "相談内容を選んでください。";
     }
     if (state.purpose === "unsure") {
-      return "サイトが必要かどうか、というところからお話しできます。";
+      return "内容を確認して、必要な作業を整理します。";
     }
     if (state.purpose === "maintenance") {
-      return "現在のサイトと更新したい内容を確認して、合う保守範囲をご案内します。";
+      return "現在のサイトと更新内容を確認します。";
     }
     if (state.purpose === "fix") {
-      return "直したい箇所を見てから、作り直さずに済む方法も含めて確認します。";
+      return "修正箇所を確認して、費用を案内します。";
     }
-    return "ページ数や機能は目安です。必要ないものを外しながら一緒に決められます。";
+    return "ページ数と機能を確認して、正式な見積もりを案内します。";
   };
 
   const renderFollowups = () => {
@@ -162,7 +162,7 @@
 
   const createInquirySummary = () => {
     if (!state.purpose) {
-      return "まだ内容が決まっていないため、まずは相談したいです。";
+      return "依頼内容が決まっていないため、相談したいです。";
     }
 
     const lines = [
@@ -212,16 +212,16 @@
     const message = document.querySelector("[data-inquiry-message]");
 
     const inquiryValues = {
-      new: "Web制作のご相談",
-      fix: "既存サイトの改善",
-      maintenance: "保守サポートのご相談",
-      unsure: "無料相談・簡易チェック",
+      new: "Web制作",
+      fix: "既存サイトの修正",
+      maintenance: "保守",
+      unsure: "無料相談",
     };
 
     if (inquirySelect) {
       inquirySelect.value = state.purpose
         ? inquiryValues[state.purpose]
-        : "無料相談・簡易チェック";
+        : "無料相談";
     }
     if (message) message.value = createInquirySummary();
 

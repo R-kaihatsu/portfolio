@@ -115,10 +115,6 @@ h1 > span {
   display: block;
 }
 
-.heading-line {
-  display: block;
-}
-
 h2 {
   margin-bottom: 1rem;
   font-family: var(--font-display);
@@ -325,14 +321,6 @@ p {
 
 .text-link:hover span {
   transform: translateX(4px);
-}
-
-.eyebrow {
-  margin-bottom: 1rem;
-  color: var(--color-accent-dark);
-  font: 600 0.72rem/1.2 var(--font-en);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 .hero {
@@ -607,7 +595,7 @@ p {
   top: 120px;
 }
 
-.about-intro > p:not(.eyebrow, .about-signature) {
+.about-intro > p:not(.about-signature) {
   max-width: 360px;
   margin: 1.25rem 0 0;
   color: var(--color-muted);
@@ -984,11 +972,6 @@ p {
   font-size: 0.78rem;
 }
 
-.tech-demo .eyebrow {
-  margin-bottom: 0.45rem;
-  font-size: 0.58rem;
-}
-
 .tech-demo .button {
   min-height: 42px;
   padding: 0.65rem 1rem;
@@ -1004,44 +987,35 @@ p {
 
 .price-grid--simple {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, 2.5vw, 1.75rem);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .price-card {
   position: relative;
-  padding: clamp(2rem, 3.5vw, 3rem);
+  padding: clamp(1.75rem, 3vw, 2.5rem) 0 0;
   display: flex;
   flex-direction: column;
-  background: var(--color-surface);
-  border: 1px solid var(--color-line);
-  border-radius: 2px;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--color-line-strong);
+  border-radius: 0;
   box-shadow: none;
 }
 
 .price-card--featured {
   border-top: 3px solid var(--color-accent-dark);
-  border-color: rgba(169, 131, 61, 0.65);
-  box-shadow: 6px 7px 0 rgba(166, 122, 59, 0.1);
-  transform: translateY(-0.75rem);
+  box-shadow: none;
+  transform: none;
 }
 
 .price-card--consult {
   background: transparent;
-  border-color: var(--color-line-strong);
-}
-
-.price-card__tag {
-  margin-bottom: 1.1rem;
-  color: var(--color-accent-dark);
-  font: 600 0.65rem/1.2 var(--font-en);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .price-card h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   font-family: var(--font-display);
-  font-size: 1.32rem;
+  font-size: 1.45rem;
 }
 
 .price-card__price {
@@ -1073,21 +1047,14 @@ p {
 
 .price-card__description {
   min-height: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: var(--color-text);
-  font-size: 0.94rem;
-  line-height: 1.9;
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
 .price-card .button {
   margin-top: auto;
-}
-
-.price-card__included {
-  margin: 0 0 2rem;
-  color: var(--color-muted);
-  font-size: 0.88rem;
-  line-height: 1.75;
 }
 
 .quick-estimate {
@@ -1126,7 +1093,6 @@ p {
 .option-details {
   margin-top: clamp(3rem, 6vw, 5rem);
   border-top: 1px solid var(--color-line-strong);
-  border-bottom: 1px solid var(--color-line-strong);
 }
 
 .rough-estimate-disclosure > summary,
@@ -1149,16 +1115,6 @@ p {
 .option-details > summary::-webkit-details-marker,
 .option-groups details > summary::-webkit-details-marker {
   display: none;
-}
-
-.rough-estimate-disclosure > summary small,
-.option-details > summary small {
-  margin-bottom: 0.3rem;
-  display: block;
-  color: var(--color-accent-dark);
-  font: 600 0.58rem/1.2 var(--font-en);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .rough-estimate-disclosure > summary svg,
@@ -1250,76 +1206,48 @@ p {
   line-height: 1.7;
 }
 
-.section--flow {
-  padding-top: clamp(4.5rem, 6vw, 6rem);
-  background: transparent;
+.contact-guide {
+  padding: clamp(3.5rem, 6vw, 5rem) 0;
 }
 
-.section--flow .section__inner {
+.contact-guide__inner {
+  width: min(calc(100% - 2.5rem), var(--container));
+  margin: 0 auto;
+  padding-top: clamp(2rem, 4vw, 3rem);
   display: grid;
-  grid-template-columns: minmax(340px, 0.8fr) minmax(0, 1.2fr);
-  align-items: start;
-  gap: clamp(3rem, 6vw, 5rem);
+  grid-template-columns: minmax(160px, 0.35fr) minmax(0, 1.65fr);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 6rem);
+  border-top: 1px solid var(--color-line-strong);
 }
 
-.section--flow .section-heading {
-  position: sticky;
-  top: 120px;
-  margin-bottom: 0;
+.contact-guide h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
 }
 
-.section--flow h2 {
-  font-size: clamp(2rem, 3vw, 2.5rem);
-}
-
-.flow-list {
+.contact-guide__steps {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--color-line-strong);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 2.5rem);
   list-style: none;
 }
 
-.flow-list li {
-  padding: 2rem clamp(1.25rem, 2.5vw, 2rem) 0;
+.contact-guide__steps li {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.flow-list li:nth-child(even) {
-  padding-top: 3.5rem;
-}
-
-.flow-list li + li {
-  border-left: 1px solid var(--color-line);
-}
-
-.flow-list li:nth-child(3) {
-  border-left: 0;
-}
-
-.flow-list li:nth-child(n + 3) {
-  border-top: 1px solid var(--color-line);
-}
-
-.flow-list > li > span {
-  margin-bottom: 2rem;
+.contact-guide__steps span {
+  margin-bottom: 0.75rem;
   display: block;
   color: var(--color-accent-dark);
-  font: 600 0.72rem/1 var(--font-en);
+  font: 600 0.66rem/1 var(--font-en);
   letter-spacing: 0.12em;
-}
-
-.flow-list h3 {
-  margin-bottom: 0.7rem;
-  font-family: var(--font-display);
-  font-size: 1.08rem;
-}
-
-.flow-list p {
-  margin-bottom: 0;
-  color: var(--color-muted);
-  font-size: 0.82rem;
-  line-height: 1.8;
 }
 
 .contact {
@@ -1344,11 +1272,7 @@ p {
   color: #fff;
 }
 
-.contact .eyebrow {
-  color: #d8bd82;
-}
-
-.contact__content > p:not(.eyebrow) {
+.contact__content > p {
   max-width: 520px;
   color: #c8cfda;
 }
@@ -1513,35 +1437,6 @@ p {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.consultation-note {
-  padding: clamp(4.5rem, 8vw, 7rem) 0;
-}
-
-.consultation-note__inner {
-  width: min(calc(100% - 2.5rem), var(--container));
-  margin: 0 auto;
-  padding: clamp(2rem, 5vw, 4rem) 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.65fr);
-  align-items: end;
-  gap: clamp(3rem, 8vw, 7rem);
-  border-top: 1px solid var(--color-line-strong);
-  border-bottom: 1px solid var(--color-line-strong);
-}
-
-.consultation-note h2 {
-  max-width: 720px;
-  margin: 0;
-  font-size: clamp(1.75rem, 3.2vw, 2.7rem);
-}
-
-.consultation-note__body > p {
-  margin-bottom: 1.5rem;
-  color: var(--color-muted);
-  font-size: 0.9rem;
-  line-height: 1.95;
-}
-
 .site-footer__inner {
   width: min(calc(100% - 2.5rem), var(--container));
   min-height: 150px;
@@ -1679,13 +1574,10 @@ p {
     min-height: 0;
   }
 
-  .section--flow .section__inner {
+  .contact-guide__inner {
     grid-template-columns: 1fr;
-    gap: 2.75rem;
-  }
-
-  .section--flow .section-heading {
-    position: static;
+    align-items: start;
+    gap: 2rem;
   }
 
   .contact__inner {
@@ -1694,11 +1586,6 @@ p {
 
   .contact__content {
     max-width: 700px;
-  }
-
-  .consultation-note__inner {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 
   .site-footer__inner {
@@ -1755,7 +1642,7 @@ p {
 
   .hero__inner,
   .section__inner,
-  .consultation-note__inner,
+  .contact-guide__inner,
   .contact__inner,
   .site-footer__inner {
     width: min(calc(100% - 1.5rem), var(--container));
@@ -1877,7 +1764,7 @@ p {
   }
 
   .price-card {
-    padding: 1.5rem;
+    padding: 1.5rem 0 0;
   }
 
   .price-grid {
@@ -1907,39 +1794,24 @@ p {
     padding: 1rem;
   }
 
-  .flow-list {
+  .contact-guide__steps {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 0.9rem;
   }
 
-  .flow-list li {
-    padding: 1.5rem 0;
+  .contact-guide__steps li {
     display: grid;
     grid-template-columns: 3rem 1fr;
-    gap: 1rem;
-    border-bottom: 1px solid var(--color-line);
+    align-items: baseline;
+    gap: 0.5rem;
   }
 
-  .flow-list li + li,
-  .flow-list li:nth-child(3) {
-    border-left: 0;
-  }
-
-  .flow-list li:nth-child(even) {
-    padding-top: 1.5rem;
-  }
-
-  .flow-list > li > span {
+  .contact-guide__steps span {
     margin: 0;
-    padding-top: 0.3rem;
   }
 
   .contact__inner {
     gap: 2.5rem;
-  }
-
-  .consultation-note {
-    padding: 4rem 0;
   }
 
   .contact-form {
