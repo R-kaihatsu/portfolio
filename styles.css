@@ -376,6 +376,10 @@ p {
   gap: 1.75rem;
 }
 
+.hero-services {
+  display: none;
+}
+
 .hero-preview {
   position: relative;
   z-index: 1;
@@ -817,6 +821,100 @@ p {
 .work-card__body .text-link {
   align-self: flex-start;
   margin-top: auto;
+}
+
+@media (min-width: 981px) {
+  :root {
+    --section-space: clamp(4rem, 5vw, 5.5rem);
+  }
+
+  .hero {
+    min-height: 610px;
+  }
+
+  .hero__inner {
+    padding-top: clamp(2.75rem, 4vw, 3.75rem);
+    padding-bottom: clamp(2.75rem, 4vw, 3.75rem);
+  }
+
+  .hero__actions {
+    margin-bottom: 1.75rem;
+  }
+
+  .hero__actions .button {
+    min-width: 188px;
+    min-height: 56px;
+    box-shadow: 5px 6px 0 rgba(166, 122, 59, 0.18);
+  }
+
+  .hero-services {
+    max-width: 520px;
+    margin: 0;
+    padding: 1rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--color-line-strong);
+    list-style: none;
+  }
+
+  .hero-services li {
+    color: var(--color-text);
+    font-size: clamp(0.76rem, 0.8vw, 0.86rem);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .hero-services li:first-child {
+    text-align: left;
+  }
+
+  .hero-services li:last-child {
+    text-align: right;
+  }
+
+  .section--works {
+    padding-top: clamp(3.75rem, 4.5vw, 4.75rem);
+  }
+
+  .section-heading {
+    margin-bottom: clamp(2.25rem, 3vw, 3.25rem);
+  }
+
+  .work-card {
+    grid-template-areas:
+      "body"
+      "preview";
+    grid-template-rows: minmax(230px, auto) 300px;
+  }
+
+  .work-card__body {
+    grid-area: body;
+    min-height: 230px;
+    padding: clamp(1.6rem, 2.2vw, 2rem);
+  }
+
+  .work-card__preview {
+    grid-area: preview;
+  }
+
+  .work-card .work-preview {
+    min-height: 300px;
+  }
+
+  .work-card h3 {
+    min-height: 3em;
+    margin-bottom: 0.85rem;
+    font-size: clamp(1.15rem, 1.5vw, 1.4rem);
+  }
+
+  .work-card__memo {
+    margin-bottom: 1.2rem;
+  }
+
+  #price {
+    padding-top: clamp(3.75rem, 4.5vw, 4.75rem);
+    padding-bottom: clamp(3.75rem, 4.5vw, 4.75rem);
+  }
 }
 
 .work-card__memo strong {
