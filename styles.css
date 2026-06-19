@@ -1136,9 +1136,23 @@ p {
   line-height: 1.7;
 }
 
+.work-card__memo {
+  margin-bottom: 1.6rem;
+  padding-top: 1rem;
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-line);
+  font-size: 0.84rem;
+  line-height: 1.85;
+}
+
+.work-card__memo strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
 .tech-demo {
   margin-top: clamp(2.5rem, 5vw, 4rem);
-  padding: clamp(1.5rem, 3vw, 2.25rem);
+  padding: 1.4rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1149,13 +1163,25 @@ p {
 
 .tech-demo h3 {
   margin-bottom: 0.45rem;
+  font-size: 1.02rem;
 }
 
 .tech-demo p:last-child {
   max-width: 700px;
   margin-bottom: 0;
   color: var(--color-muted);
-  font-size: 0.88rem;
+  font-size: 0.78rem;
+}
+
+.tech-demo .eyebrow {
+  margin-bottom: 0.45rem;
+  font-size: 0.58rem;
+}
+
+.tech-demo .button {
+  min-height: 42px;
+  padding: 0.65rem 1rem;
+  font-size: 0.76rem;
 }
 
 .pricing-nav {
@@ -1248,9 +1274,14 @@ p {
   gap: 1.25rem;
 }
 
+.price-grid--simple {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+}
+
 .price-card {
   position: relative;
-  padding: clamp(1.75rem, 3vw, 2.5rem);
+  padding: clamp(2rem, 3.5vw, 3rem);
   display: flex;
   flex-direction: column;
   background: var(--color-surface);
@@ -1263,6 +1294,11 @@ p {
   border-color: rgba(169, 131, 61, 0.65);
   box-shadow: 6px 7px 0 rgba(166, 122, 59, 0.1);
   transform: translateY(-0.75rem);
+}
+
+.price-card--consult {
+  background: transparent;
+  border-color: var(--color-line-strong);
 }
 
 .price-card__badge {
@@ -1305,7 +1341,7 @@ p {
 .price-card__price small {
   width: 100%;
   color: var(--color-muted);
-  font-size: 0.67rem;
+  font-size: 0.76rem;
   font-weight: 700;
 }
 
@@ -1320,11 +1356,11 @@ p {
 }
 
 .price-card__description {
-  min-height: 82px;
-  margin-bottom: 1.4rem;
-  color: var(--color-muted);
-  font-size: 0.88rem;
-  line-height: 1.85;
+  min-height: 0;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  font-size: 0.94rem;
+  line-height: 1.9;
 }
 
 .price-card__monthly {
@@ -1365,6 +1401,171 @@ p {
   margin-top: auto;
 }
 
+.price-card__plain-note {
+  margin: 0 0 2rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  line-height: 1.75;
+}
+
+.price-help {
+  max-width: 760px;
+  margin: 2rem auto 0;
+  padding: 1.1rem 1.35rem;
+  color: var(--color-text);
+  background: #eee7d8;
+  border-left: 3px solid var(--color-accent);
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+.quick-estimate {
+  margin-top: clamp(5rem, 9vw, 8rem);
+  padding: clamp(2rem, 5vw, 4rem);
+  background:
+    radial-gradient(circle at 88% 4%, rgba(166, 122, 59, 0.1), transparent 21rem),
+    #f1ede3;
+  border: 1px solid var(--color-line);
+}
+
+.quick-estimate__heading {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(270px, 0.55fr);
+  align-items: end;
+  gap: 2rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.quick-estimate__heading h3 {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+}
+
+.quick-estimate__heading > p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.86rem;
+}
+
+.option-details {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--color-line-strong);
+  border-bottom: 1px solid var(--color-line-strong);
+}
+
+.option-details > summary {
+  min-height: 86px;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--color-ink);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.option-details > summary::-webkit-details-marker,
+.option-groups details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.option-details > summary small {
+  margin-bottom: 0.3rem;
+  display: block;
+  color: var(--color-accent-dark);
+  font: 600 0.58rem/1.2 var(--font-en);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.option-details > summary svg {
+  width: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+  transition: transform 180ms ease;
+}
+
+.option-details[open] > summary svg {
+  transform: rotate(180deg);
+}
+
+.option-details__intro {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.option-details__intro p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.86rem;
+}
+
+.option-groups {
+  padding: 1rem 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.option-groups details {
+  padding: 1.25rem;
+  background: rgba(253, 252, 248, 0.75);
+  border: 1px solid var(--color-line);
+}
+
+.option-groups details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-ink);
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+}
+
+.option-groups details > summary::after {
+  color: var(--color-accent-dark);
+  content: "+";
+  font-size: 1rem;
+}
+
+.option-groups details[open] > summary::after {
+  content: "−";
+}
+
+.option-groups dl {
+  margin: 1rem 0 0;
+}
+
+.option-groups dl > div {
+  padding: 0.75rem 0;
+  display: grid;
+  gap: 0.2rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.option-groups dt {
+  color: var(--color-text);
+  font-size: 0.78rem;
+}
+
+.option-groups dd {
+  color: var(--color-ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
 .pricing-tax-note {
   margin: 1rem 0 0;
   color: var(--color-muted);
@@ -1846,6 +2047,19 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .price-grid--simple .price-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .quick-estimate__heading {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .option-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .price-card--featured {
     transform: none;
   }
@@ -2116,9 +2330,31 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .price-grid--simple .price-card:last-child {
+    grid-column: auto;
+  }
+
   .pricing-block--estimate {
     margin-right: -0.25rem;
     margin-left: -0.25rem;
+    padding: 1rem;
+  }
+
+  .quick-estimate {
+    margin-right: -0.25rem;
+    margin-left: -0.25rem;
+    padding: 1.35rem 1rem;
+  }
+
+  .option-details > summary {
+    min-height: 76px;
+  }
+
+  .option-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .option-groups details {
     padding: 1rem;
   }
 

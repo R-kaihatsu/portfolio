@@ -1,471 +1,234 @@
 (() => {
-  const yen = new Intl.NumberFormat("ja-JP");
-
-  const PRICING_DATA = {
-    plans: {
-      maintenance: {
-        label: "保守セットプラン",
-        price: 58000,
-        priceLabel: "58,000円（税別）",
-        note: "基本5ページ・月額保守契約が前提",
-      },
-      once: {
-        label: "買い切り制作プラン",
-        price: 120000,
-        priceLabel: "120,000円（税別）",
-        note: "基本5ページ・月額費用なし",
-      },
-    },
-    pages: {
-      0: { label: "追加なし", price: 0, priceLabel: "0円" },
-      1: { label: "1ページ", price: 10000, priceLabel: "+10,000円" },
-      2: { label: "2ページ", price: 20000, priceLabel: "+20,000円" },
-      3: { label: "3ページ", price: 30000, priceLabel: "+30,000円" },
-      4: { label: "4ページ", price: 40000, priceLabel: "+40,000円" },
-      5: { label: "5ページ", price: 50000, priceLabel: "+50,000円" },
-    },
-    materials: {
-      self: {
-        label: "写真・文章を自分で用意",
-        price: 0,
-        priceLabel: "0円",
-        note: "追加サポートなし",
-        reset: true,
-      },
-      organize: {
-        label: "写真選定・文章整理",
-        price: 20000,
-        priceLabel: "+20,000円（税別）",
-        note: "掲載素材を一緒に整理",
-      },
-      writing: {
-        label: "文章作成をしっかり依頼",
-        price: 30000,
-        priceLabel: "+30,000円〜（税別）",
-        note: "内容量により変動",
-        minimum: true,
-      },
-      image: {
-        label: "ロゴ・画像の簡易加工",
-        price: 10000,
-        priceLabel: "+10,000円〜（税別）",
-        note: "加工点数により変動",
-        minimum: true,
-      },
-    },
-    features: {
-      none: {
-        label: "機能追加なし",
-        price: 0,
-        priceLabel: "0円",
-        note: "基本構成のみ",
-        reset: true,
-        detail: false,
-      },
-      form: {
-        label: "お問い合わせフォーム",
-        price: 20000,
-        priceLabel: "+20,000円（税別）",
-      },
-      booking: {
-        label: "予約システム導入",
-        price: 30000,
-        priceLabel: "+30,000円〜（税別）",
-        minimum: true,
-      },
-      ec: {
-        label: "EC機能導入",
-        price: 50000,
-        priceLabel: "+50,000円〜（税別）",
-        minimum: true,
-      },
-      map: {
-        label: "Googleマップ埋め込み",
-        price: 5000,
-        priceLabel: "+5,000円（税別）",
-      },
-      social: {
-        label: "SNSリンク・Instagram埋め込み",
-        price: 5000,
-        priceLabel: "+5,000円（税別）",
-      },
-      news: {
-        label: "お知らせ更新風セクション",
-        price: 10000,
-        priceLabel: "+10,000円〜（税別）",
-        minimum: true,
-      },
-    },
-    siteTypes: {
-      new: {
-        label: "新規制作",
-        price: 0,
-        priceLabel: "追加費用 0円",
-        note: "基本プランの制作費で計算",
-      },
-      renewal: {
-        label: "既存サイトのリニューアル",
-        price: 30000,
-        priceLabel: "+30,000円〜（税別）",
-        note: "既存データの確認・移行を含む目安",
-        minimum: true,
-      },
-      partial: {
-        label: "一部ページだけ修正",
-        price: 10000,
-        priceLabel: "+10,000円〜（税別）",
-        note: "基本プラン費を除き、修正費の目安で計算",
-        minimum: true,
-      },
-      diagnosis: {
-        label: "まずは改善診断のみ",
-        price: 5000,
-        priceLabel: "5,000円（税別）",
-        note: "制作・追加機能は合計に含めません",
-      },
-    },
-    maintenance: {
-      none: {
-        label: "保守なし",
-        price: 0,
-        priceLabel: "月額 0円",
-        note: "保守セット選択時は買い切りへ変更",
-      },
-      light: {
-        label: "ライト",
-        price: 6980,
-        priceLabel: "月額 6,980円（税込）",
-        note: "状態確認・軽微な相談",
-      },
-      standard: {
-        label: "スタンダード",
-        price: 9800,
-        priceLabel: "月額 9,800円（税込）",
-        note: "お知らせ・画像等の更新",
-      },
-      premium: {
-        label: "プレミアム",
-        price: 14800,
-        priceLabel: "月額 14,800円（税込）",
-        note: "更新・軽微な修正まで手厚く対応",
-      },
-    },
-  };
-
-  const formatYen = (amount) => `${yen.format(amount)}円`;
-
-  const renderPriceDetails = () => {
-    const container = document.querySelector("[data-price-details]");
-    if (!container) return;
-
-    const groups = [
-      {
-        title: "基本制作",
-        eyebrow: "Base plans",
-        rows: [
-          {
-            label: PRICING_DATA.plans.maintenance.label,
-            price: PRICING_DATA.plans.maintenance.priceLabel,
-            note: "月額保守 6,980円（税込）〜",
-          },
-          {
-            label: PRICING_DATA.plans.once.label,
-            price: PRICING_DATA.plans.once.priceLabel,
-            note: "月額 0円",
-          },
-        ],
-      },
-      {
-        title: "ページ・素材",
-        eyebrow: "Content",
-        rows: [
-          {
-            label: "6ページ目以降",
-            price: "+10,000円 / 1ページ（税別）",
-            note: "基本プランは5ページまで",
-          },
-          ...Object.values(PRICING_DATA.materials).map((item) => ({
-            label: item.label,
-            price: item.priceLabel,
-            note: item.note,
-          })),
-        ],
-      },
-      {
-        title: "機能追加",
-        eyebrow: "Features",
-        rows: Object.values(PRICING_DATA.features)
-          .filter((item) => item.detail !== false)
-          .map((item) => ({
-            label: item.label,
-            price: item.priceLabel,
-            note: item.note,
-          })),
-      },
-      {
-        title: "既存サイト対応",
-        eyebrow: "Existing site",
-        rows: Object.values(PRICING_DATA.siteTypes).map((item) => ({
-          label: item.label,
-          price: item.priceLabel,
-          note: item.note,
-        })),
-      },
-      {
-        title: "保守プラン",
-        eyebrow: "Maintenance",
-        rows: Object.values(PRICING_DATA.maintenance).map((item) => ({
-          label: item.label,
-          price: item.priceLabel,
-          note: item.note,
-        })),
-      },
-    ];
-
-    container.innerHTML = groups
-      .map(
-        (group) => `
-          <article class="rate-card">
-            <div class="rate-card__header">
-              <h4>${group.title}</h4>
-              <span>${group.eyebrow}</span>
-            </div>
-            <dl class="rate-list">
-              ${group.rows
-                .map(
-                  (row) => `
-                    <div>
-                      <dt>${row.label}</dt>
-                      <dd>${row.price}</dd>
-                      ${row.note ? `<small>${row.note}</small>` : ""}
-                    </div>
-                  `,
-                )
-                .join("")}
-            </dl>
-          </article>
-        `,
-      )
-      .join("");
-  };
-
-  renderPriceDetails();
-
   const tool = document.querySelector("[data-estimate-tool]");
   if (!tool) return;
 
+  const DATA = {
+    purposes: {
+      new: {
+        label: "新しくサイトを作りたい",
+        shortLabel: "Web制作について相談",
+        note: "お店や事業のサイトを新しく用意したい",
+      },
+      fix: {
+        label: "今のサイトを直したい",
+        shortLabel: "既存サイトの修正について相談",
+        note: "一部修正、見直し、リニューアル",
+      },
+      maintenance: {
+        label: "公開後の保守を頼みたい",
+        shortLabel: "保守サポートについて相談",
+        note: "更新や状態確認を継続して頼みたい",
+      },
+      unsure: {
+        label: "まだ決まっていない",
+        shortLabel: "まずは無料相談",
+        note: "何から頼めばいいか一緒に整理したい",
+      },
+    },
+    pageRanges: {
+      one: { label: "1ページ", note: "小さな紹介ページ" },
+      standard: { label: "2〜5ページ", note: "一般的な店舗・事業サイト" },
+      many: { label: "6ページ以上", note: "内容が多いサイト" },
+    },
+    featureBundles: {
+      none: { label: "特になし", note: "まずは基本構成で" },
+      contact: { label: "フォーム・地図", note: "問い合わせや来店案内" },
+      booking: { label: "予約機能", note: "外部予約サービスを含む" },
+      ec: { label: "販売機能", note: "商品・サービスを販売" },
+    },
+    maintenanceChoices: {
+      none: { label: "保守なし", note: "公開後は自分で管理", monthly: 0 },
+      light: { label: "軽い保守を頼む", note: "状態確認と小さな相談", monthly: 6980 },
+      standard: { label: "更新も頼む", note: "お知らせや画像の更新", monthly: 9800 },
+    },
+  };
+
   const state = {
-    plan: "maintenance",
-    pages: "0",
-    materials: new Set(),
-    features: new Set(),
-    siteType: "new",
-    maintenance: "light",
+    purpose: null,
+    pageRange: "standard",
+    featureBundle: "none",
+    maintenanceChoice: "light",
   };
 
-  const multipleGroups = new Set(["materials", "features"]);
-
-  const isSelected = (group, value) => {
-    if (group === "materials") {
-      return value === "self" ? state.materials.size === 0 : state.materials.has(value);
-    }
-
-    if (group === "features") {
-      return value === "none" ? state.features.size === 0 : state.features.has(value);
-    }
-
-    const stateKey = group === "plans" ? "plan" : group === "siteTypes" ? "siteType" : group;
-    return state[stateKey] === value;
+  const groups = {
+    purposes: "purpose",
+    pageRanges: "pageRange",
+    featureBundles: "featureBundle",
+    maintenanceChoices: "maintenanceChoice",
   };
 
-  const renderOptionGroup = (group) => {
-    const container = tool.querySelector(`[data-estimate-options="${group}"]`);
+  const renderGroup = (groupName) => {
+    const container = tool.querySelector(`[data-estimate-options="${groupName}"]`);
     if (!container) return;
 
-    container.innerHTML = Object.entries(PRICING_DATA[group])
+    const stateKey = groups[groupName];
+    container.innerHTML = Object.entries(DATA[groupName])
       .map(([value, item]) => {
-        const selected = isSelected(group, value);
+        const selected = state[stateKey] === value;
         return `
           <button
             class="estimate-option${selected ? " is-selected" : ""}"
             type="button"
-            data-estimate-group="${group}"
+            data-estimate-group="${groupName}"
             data-estimate-value="${value}"
             aria-pressed="${selected}"
           >
             <span class="estimate-option__label">${item.label}</span>
-            <span class="estimate-option__price">${item.priceLabel}</span>
-            ${item.note ? `<span class="estimate-option__note">${item.note}</span>` : ""}
+            <span class="estimate-option__note">${item.note}</span>
           </button>
         `;
       })
       .join("");
   };
 
-  const renderOptions = () => {
-    Object.keys(PRICING_DATA).forEach((group) => {
-      if (tool.querySelector(`[data-estimate-options="${group}"]`)) {
-        renderOptionGroup(group);
-      }
-    });
+  const renderGroups = () => {
+    Object.keys(groups).forEach(renderGroup);
   };
 
-  const sumSelected = (group, selectedValues) =>
-    [...selectedValues].reduce((total, value) => total + PRICING_DATA[group][value].price, 0);
+  const getInitialEstimate = () => {
+    if (!state.purpose) return "選択後に表示";
+    if (state.purpose === "unsure") return "相談後にご案内";
+    if (state.purpose === "maintenance") return "初期費用なし";
 
-  const getCalculation = () => {
-    const diagnosisOnly = state.siteType === "diagnosis";
-    const partialOnly = state.siteType === "partial";
-    const base = diagnosisOnly || partialOnly ? 0 : PRICING_DATA.plans[state.plan].price;
-    const pages = diagnosisOnly ? 0 : PRICING_DATA.pages[state.pages].price;
-    const materials = diagnosisOnly ? 0 : sumSelected("materials", state.materials);
-    const features = diagnosisOnly ? 0 : sumSelected("features", state.features);
-    const site = PRICING_DATA.siteTypes[state.siteType].price;
-    const monthly = diagnosisOnly ? 0 : PRICING_DATA.maintenance[state.maintenance].price;
+    if (state.purpose === "fix") {
+      const fixPrices = {
+        one: 10000,
+        standard: 30000,
+        many: 80000,
+      };
+      return `${fixPrices[state.pageRange].toLocaleString("ja-JP")}円〜`;
+    }
 
-    return {
-      base,
-      pages,
-      materials,
-      features,
-      site,
-      monthly,
-      total: base + pages + materials + features + site,
-    };
+    const maintenanceIncluded = state.maintenanceChoice !== "none";
+    let total = maintenanceIncluded ? 58000 : 120000;
+
+    if (state.pageRange === "many") total += 10000;
+    if (state.featureBundle === "contact") total += 25000;
+    if (state.featureBundle === "booking") total += 30000;
+    if (state.featureBundle === "ec") total += 50000;
+
+    return `${total.toLocaleString("ja-JP")}円〜`;
   };
 
-  const getSelectedLabels = (group, values, emptyLabel) => {
-    if (values.size === 0) return emptyLabel;
-    return [...values].map((value) => PRICING_DATA[group][value].label).join("、");
+  const getMonthlyEstimate = () => {
+    if (!state.purpose) return "—";
+    if (state.purpose === "unsure") return "必要な場合のみ";
+    if (state.purpose === "fix") return "0円";
+    const monthly = DATA.maintenanceChoices[state.maintenanceChoice].monthly;
+    return monthly === 0 ? "0円" : `${monthly.toLocaleString("ja-JP")}円〜`;
   };
 
-  const getNotes = () => {
-    const notes = ["初期費用・追加オプションは税別、月額保守は税込です。"];
-    const selectedMinimums = [
-      ...[...state.materials].map((value) => PRICING_DATA.materials[value]),
-      ...[...state.features].map((value) => PRICING_DATA.features[value]),
-      PRICING_DATA.siteTypes[state.siteType],
-    ].filter((item) => item.minimum);
-
-    if (state.plan === "maintenance") {
-      notes.push("保守セットの初期制作費は、月額保守の継続利用を前提としています。");
+  const getResultMessage = () => {
+    if (!state.purpose) {
+      return "左から、今の状況にいちばん近いものを選んでください。";
     }
-
-    if (state.siteType === "partial") {
-      notes.push("一部ページ修正では、基本プラン費を含めず最低修正費から計算しています。");
+    if (state.purpose === "unsure") {
+      return "サイトが必要かどうか、というところからお話しできます。";
     }
-
-    if (state.siteType === "diagnosis") {
-      notes.push("改善診断のみでは、制作・ページ・素材・機能・月額保守を合計に含めていません。");
+    if (state.purpose === "maintenance") {
+      return "現在のサイトと更新したい内容を確認して、合う保守範囲をご案内します。";
     }
-
-    if (selectedMinimums.length > 0) {
-      notes.push("「〜」表記の項目は最低価格で計算しています。");
+    if (state.purpose === "fix") {
+      return "直したい箇所を見てから、作り直さずに済む方法も含めて確認します。";
     }
-
-    return notes;
+    return "ページ数や機能は目安です。必要ないものを外しながら一緒に決められます。";
   };
 
-  const renderResult = () => {
-    const calculation = getCalculation();
-    const outputs = {
-      "[data-result-base]": formatYen(calculation.base),
-      "[data-result-pages]": formatYen(calculation.pages),
-      "[data-result-materials]": formatYen(calculation.materials),
-      "[data-result-features]": formatYen(calculation.features),
-      "[data-result-site]": formatYen(calculation.site),
-      "[data-result-total]": formatYen(calculation.total),
-      "[data-result-monthly]": formatYen(calculation.monthly),
-    };
-
-    Object.entries(outputs).forEach(([selector, value]) => {
-      const output = tool.querySelector(selector);
-      if (output) output.textContent = value;
-    });
-
-    const noteList = tool.querySelector("[data-result-notes]");
-    noteList.innerHTML = getNotes().map((note) => `<li>${note}</li>`).join("");
-  };
-
-  const updateSingleSelection = (group, value) => {
-    const stateKey = group === "plans" ? "plan" : group === "siteTypes" ? "siteType" : group;
-    state[stateKey] = value;
-
-    if (group === "plans" && value === "maintenance" && state.maintenance === "none") {
-      state.maintenance = "light";
-    }
-
-    if (group === "maintenance" && value === "none" && state.plan === "maintenance") {
-      state.plan = "once";
-    }
-  };
-
-  const updateMultipleSelection = (group, value) => {
-    const selected = state[group];
-    const item = PRICING_DATA[group][value];
-
-    if (item.reset) {
-      selected.clear();
+  const renderFollowups = () => {
+    if (!state.purpose) {
+      tool.querySelector("[data-estimate-followups]").hidden = true;
       return;
     }
 
-    if (selected.has(value)) {
-      selected.delete(value);
-    } else {
-      selected.add(value);
-    }
+    const showPages = ["new", "fix"].includes(state.purpose);
+    const showFeatures = state.purpose === "new";
+    const showMaintenance = ["new", "maintenance"].includes(state.purpose);
+
+    tool.querySelector('[data-estimate-step="pages"]').hidden = !showPages;
+    tool.querySelector('[data-estimate-step="features"]').hidden = !showFeatures;
+    tool.querySelector('[data-estimate-step="maintenance"]').hidden = !showMaintenance;
+
+    const followups = tool.querySelector("[data-estimate-followups]");
+    followups.hidden = !(showPages || showFeatures || showMaintenance);
+  };
+
+  const renderResult = () => {
+    tool.querySelector("[data-result-initial]").textContent = getInitialEstimate();
+    tool.querySelector("[data-result-monthly]").textContent = getMonthlyEstimate();
+    tool.querySelector("[data-result-recommendation]").textContent =
+      state.purpose ? DATA.purposes[state.purpose].shortLabel : "相談内容を選んでください";
+    tool.querySelector("[data-result-message]").textContent = getResultMessage();
   };
 
   const createInquirySummary = () => {
-    const calculation = getCalculation();
-    const pageLabel =
-      state.pages === "0" ? "追加なし" : `${state.pages}ページ（${formatYen(calculation.pages)}）`;
+    if (!state.purpose) {
+      return "まだ内容が決まっていないため、まずは相談したいです。";
+    }
 
-    return [
-      "【自動見積もりの条件】",
-      `基本プラン：${PRICING_DATA.plans[state.plan].label}`,
-      `追加ページ：${pageLabel}`,
-      `素材準備：${getSelectedLabels("materials", state.materials, "自分で用意")}`,
-      `機能追加：${getSelectedLabels("features", state.features, "追加なし")}`,
-      `既存サイト対応：${PRICING_DATA.siteTypes[state.siteType].label}`,
-      `保守プラン：${PRICING_DATA.maintenance[state.maintenance].label}`,
+    const lines = [
+      "【相談前の目安で選んだ内容】",
+      `相談内容：${DATA.purposes[state.purpose].label}`,
+    ];
+
+    if (["new", "fix"].includes(state.purpose)) {
+      lines.push(`ページ数：${DATA.pageRanges[state.pageRange].label}`);
+    }
+    if (state.purpose === "new") {
+      lines.push(`必要な機能：${DATA.featureBundles[state.featureBundle].label}`);
+    }
+    if (["new", "maintenance"].includes(state.purpose)) {
+      lines.push(`保守：${DATA.maintenanceChoices[state.maintenanceChoice].label}`);
+    }
+
+    lines.push(
       "",
-      `初期費用概算：${formatYen(calculation.total)}（税別）`,
-      `月額保守費：${formatYen(calculation.monthly)}（税込）`,
+      `初期費用の目安：${getInitialEstimate()}（制作・修正費は税別）`,
+      `月額保守の目安：${getMonthlyEstimate()}（税込）`,
       "",
-      "上記の条件で詳しい内容を相談したいです。",
-    ].join("\n");
+      "この内容をもとに相談したいです。",
+    );
+
+    return lines.join("\n");
   };
 
   tool.addEventListener("click", (event) => {
     const option = event.target.closest("[data-estimate-group]");
     if (!option) return;
 
-    const { estimateGroup: group, estimateValue: value } = option.dataset;
+    const { estimateGroup, estimateValue } = option.dataset;
+    state[groups[estimateGroup]] = estimateValue;
 
-    if (multipleGroups.has(group)) {
-      updateMultipleSelection(group, value);
-    } else {
-      updateSingleSelection(group, value);
+    if (estimateGroup === "purposes" && estimateValue === "maintenance") {
+      state.maintenanceChoice = "light";
     }
 
-    renderOptions();
+    renderGroups();
+    renderFollowups();
     renderResult();
   });
 
-  const consultButton = tool.querySelector("[data-estimate-consult]");
-  consultButton.addEventListener("click", () => {
+  tool.querySelector("[data-estimate-consult]").addEventListener("click", () => {
     const inquirySelect = document.querySelector("[data-inquiry-select]");
     const message = document.querySelector("[data-inquiry-message]");
 
-    if (inquirySelect) inquirySelect.value = "Web制作のご相談";
+    const inquiryValues = {
+      new: "Web制作のご相談",
+      fix: "既存サイトの改善",
+      maintenance: "保守サポートのご相談",
+      unsure: "無料相談・簡易チェック",
+    };
+
+    if (inquirySelect) {
+      inquirySelect.value = state.purpose
+        ? inquiryValues[state.purpose]
+        : "無料相談・簡易チェック";
+    }
     if (message) message.value = createInquirySummary();
 
-    window.setTimeout(() => {
-      message?.focus({ preventScroll: true });
-    }, 500);
+    window.setTimeout(() => message?.focus({ preventScroll: true }), 500);
   });
 
-  renderOptions();
+  renderGroups();
+  renderFollowups();
   renderResult();
 })();
